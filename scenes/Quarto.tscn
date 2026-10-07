@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bvwd5tlq0xhfi"]
+
+[ext_resource type="Texture2D" uid="uid://ddfs5rjm3obdk" path="res://assets/quarto/Quarto.png" id="1_uf1dj"]
+[ext_resource type="Script" uid="uid://depye7f7tag1q" path="res://scripts/caixa.gd" id="2_24xt2"]
+[ext_resource type="Texture2D" uid="uid://dv7ncbk8j7qd1" path="res://assets/quarto/Caixa.png" id="2_jev8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
+size = Vector2(490.70114, 342.21405)
+
+[node name="Quarto" type="Sprite2D" unique_id=1344205346]
+position = Vector2(425.02576, 195.40627)
+scale = Vector2(0.2488469, 0.248847)
+texture = ExtResource("1_uf1dj")
+
+[node name="Caixa" type="Area2D" parent="." unique_id=329063121]
+script = ExtResource("2_24xt2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Caixa" unique_id=472578760]
+position = Vector2(-706.2717, 288.3333)
+scale = Vector2(0.7867305, 0.7867305)
+texture = ExtResource("2_jev8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caixa" unique_id=359642764]
+position = Vector2(-739.06055, 299.25513)
+scale = Vector2(1, 0.9999997)
+shape = SubResource("RectangleShape2D_4h5tc")
+
+[connection signal="input_event" from="Caixa" to="Caixa" method="_on_input_event"]
