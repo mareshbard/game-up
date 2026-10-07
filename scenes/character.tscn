@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cl11nb15fop22"]
 
-[ext_resource type="Script" uid="uid://dumo4jjqc8vto" path="res://character.gd" id="1_oqwy7"]
+[ext_resource type="Script" uid="uid://dumo4jjqc8vto" path="res://scripts/character.gd" id="1_agfs1"]
 
 [node name="Character" type="CharacterBody2D" unique_id=394431285]
-script = ExtResource("1_oqwy7")
+script = ExtResource("1_agfs1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1668128834]
 
