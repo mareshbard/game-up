@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dlmiyc6y80pet"]
+
+[ext_resource type="Texture2D" uid="uid://dkoi22hawlvgn" path="res://assets/cenario-BUDEGA.png" id="1_bnlgh"]
+
+[node name="cenário_bodega" type="Node2D" unique_id=190974877]
+
+[node name="CenarioBudega" type="Sprite2D" parent="." unique_id=1328099605]
+position = Vector2(956.9995, 535.9999)
+scale = Vector2(0.5688098, 0.7013359)
+texture = ExtResource("1_bnlgh")
