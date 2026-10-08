@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkoi22hawlvgn"
-path="res://.godot/imported/cenario-BUDEGA.png-6a65f68ad6e8dc054e17b6151e4ca556.ctex"
+uid="uid://gc3ux403a1gg"
+path="res://.godot/imported/jogo_do_bicho.png-c8a1aefb03b96fa69b33380c3bb1d19d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenario-BUDEGA.png"
-dest_files=["res://.godot/imported/cenario-BUDEGA.png-6a65f68ad6e8dc054e17b6151e4ca556.ctex"]
+source_file="res://assets/jogo_do_bicho.png"
+dest_files=["res://.godot/imported/jogo_do_bicho.png-c8a1aefb03b96fa69b33380c3bb1d19d.ctex"]
 
 [params]
 

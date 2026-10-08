@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://dgt52c85mrdlt"]
+
+[ext_resource type="Texture2D" uid="uid://cgsb2gbcf4t4e" path="res://assets/cenario_bodega_ofc.png" id="1_jek3i"]
+[ext_resource type="Script" uid="uid://xerrdekp25ti" path="res://scripts/spot_calendario.gd" id="2_abu8e"]
+[ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/blur_calendario.gdshader" id="2_fdnq5"]
+[ext_resource type="Script" uid="uid://w07ij5k860v" path="res://scripts/spot_armario.gd" id="2_se470"]
+[ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/jogo_do_bicho.png" id="3_e0cgk"]
+[ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/blur_armario.gdshader" id="4_e0cgk"]
+[ext_resource type="Script" uid="uid://dv5ls4to3temf" path="res://scripts/spot_cadeado.gd" id="7_djul6"]
+[ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/armario-fechado-ofc.png" id="7_jcsq8"]
+[ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/blur_cadeado.gdshader" id="8_abu8e"]
+[ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scenes/destrava_cadeado.gd" id="9_jcsq8"]
+[ext_resource type="Texture2D" uid="uid://c00ynv5qmvp6a" path="res://assets/cadeado_ofc.png" id="10_abu8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
+size = Vector2(585.0435, 864.8523)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmfj3"]
+size = Vector2(123, 136)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtndj"]
+shader = ExtResource("2_fdnq5")
+shader_parameter/forca_desfoque = 3.1200001482
+shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0.6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_frm3v"]
+shader = ExtResource("4_e0cgk")
+shader_parameter/forca_desfoque = 3.1200001482
+shader_parameter/cor_escurecimento = Color(0.0627451, 0.0627451, 0.0627451, 0.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fslmp"]
+size = Vector2(43, 54)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fslmp"]
+shader = ExtResource("8_abu8e")
+shader_parameter/forca_desfoque = 3.1200001482
+shader_parameter/cor_escurecimento = Color(0.0627451, 0.0627451, 0.0627451, 0.6)
+
+[node name="cenario_budega" type="Node2D" unique_id=1380752427]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=991758388]
+offset = Vector2(426, 196.5)
+limit_left = 0
+limit_top = 0
+limit_right = 0
+limit_bottom = 0
+
+[node name="Cenário" type="Sprite2D" parent="." unique_id=630500275]
+position = Vector2(426, 196.5)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_jek3i")
+
+[node name="SpotCalendario" type="Area2D" parent="." unique_id=259090627]
+position = Vector2(143, 80)
+scale = Vector2(0.14870687, 0.14568959)
+script = ExtResource("2_abu8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpotCalendario" unique_id=1951859488]
+position = Vector2(3.3623657, -6.8638916)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("RectangleShape2D_frm3v")
+
+[node name="SpotArmario" type="Area2D" parent="." unique_id=1384260507]
+script = ExtResource("2_se470")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpotArmario" unique_id=1523194651]
+position = Vector2(605.5, 89)
+shape = SubResource("RectangleShape2D_dmfj3")
+
+[node name="PopUpCalendario" type="CanvasLayer" parent="." unique_id=1575052524]
+visible = false
+
+[node name="CorDeFundo" type="ColorRect" parent="PopUpCalendario" unique_id=91503247]
+material = SubResource("ShaderMaterial_dtndj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureCalendario" type="TextureRect" parent="PopUpCalendario" unique_id=318112061]
+offset_left = 291.0
+offset_top = 9.0
+offset_right = 540.0
+offset_bottom = 379.92416
+texture = ExtResource("3_e0cgk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PopUpArmario" type="CanvasLayer" parent="." unique_id=1075801639]
+visible = false
+
+[node name="CorDeFundo" type="ColorRect" parent="PopUpArmario" unique_id=1025999525]
+material = SubResource("ShaderMaterial_frm3v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PopUpArmario" unique_id=1213840897]
+offset_left = 252.0
+offset_top = 15.0
+offset_right = 612.0
+offset_bottom = 375.0
+texture = ExtResource("7_jcsq8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpotCadeado" type="Area2D" parent="PopUpArmario" unique_id=1561681220]
+script = ExtResource("7_djul6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUpArmario/SpotCadeado" unique_id=2131314001]
+position = Vector2(290, 210)
+shape = SubResource("RectangleShape2D_fslmp")
+
+[node name="PopUpCadeado" type="CanvasLayer" parent="." unique_id=1397208613]
+visible = false
+script = ExtResource("9_jcsq8")
+
+[node name="CorDeFundo" type="ColorRect" parent="PopUpCadeado" unique_id=909357415]
+material = SubResource("ShaderMaterial_fslmp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PopUpCadeado" unique_id=2085262114]
+offset_left = 267.0
+offset_top = 26.0
+offset_right = 610.0
+offset_bottom = 369.0
+texture = ExtResource("10_abu8e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button1" type="Button" parent="PopUpCadeado/TextureRect" unique_id=715260706]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 281.0
+offset_right = 91.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
+theme_override_font_sizes/font_size = 30
+flat = true
+
+[node name="Button2" type="Button" parent="PopUpCadeado/TextureRect" unique_id=999459523]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 281.0
+offset_right = 137.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
+theme_override_font_sizes/font_size = 30
+flat = true
+
+[node name="Button3" type="Button" parent="PopUpCadeado/TextureRect" unique_id=1305142737]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 280.0
+offset_right = 181.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
+theme_override_font_sizes/font_size = 30
+flat = true
+
+[node name="Button4" type="Button" parent="PopUpCadeado/TextureRect" unique_id=300627255]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 280.0
+offset_right = 225.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
+theme_override_font_sizes/font_size = 30
+flat = true
+
+[connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]
+[connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]
+[connection signal="gui_input" from="PopUpCalendario/CorDeFundo" to="SpotCalendario" method="_on_cor_de_fundo_gui_input"]
+[connection signal="gui_input" from="PopUpArmario/CorDeFundo" to="SpotArmario" method="_on_cor_de_fundo_gui_input"]
+[connection signal="input_event" from="PopUpArmario/SpotCadeado" to="PopUpArmario/SpotCadeado" method="_on_input_event"]
+[connection signal="gui_input" from="PopUpCadeado/CorDeFundo" to="PopUpArmario/SpotCadeado" method="_on_cor_de_fundo_gui_input"]
+[connection signal="pressed" from="PopUpCadeado/TextureRect/Button1" to="PopUpCadeado" method="_on_button_1_pressed"]
+[connection signal="pressed" from="PopUpCadeado/TextureRect/Button2" to="PopUpCadeado" method="_on_button_2_pressed"]
+[connection signal="pressed" from="PopUpCadeado/TextureRect/Button3" to="PopUpCadeado" method="_on_button_3_pressed"]
+[connection signal="pressed" from="PopUpCadeado/TextureRect/Button4" to="PopUpCadeado" method="_on_button_4_pressed"]
