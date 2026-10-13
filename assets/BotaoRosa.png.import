@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddfs5rjm3obdk"
-path="res://.godot/imported/Quarto.png-a9fd51615ed43af2d0b6abdb6c640ba3.ctex"
+uid="uid://c7yy754fwirbn"
+path="res://.godot/imported/BotaoRosa.png-806c59ed6153719efc65c731b5c24ea9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/quarto/Quarto.png"
-dest_files=["res://.godot/imported/Quarto.png-a9fd51615ed43af2d0b6abdb6c640ba3.ctex"]
+source_file="res://assets/BotaoRosa.png"
+dest_files=["res://.godot/imported/BotaoRosa.png-806c59ed6153719efc65c731b5c24ea9.ctex"]
 
 [params]
 

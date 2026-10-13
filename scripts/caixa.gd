@@ -1,18 +1,33 @@
 extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(viewport, event, shape_idx) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-			print("Você tocou no objeto!")
-			# Aqui começa a sua interação[cite: 1]
+			print("Você tocou na caixa!")
+			$"../TelaDaCaixa".show()	
+			$"../TelaDaCaixa/CaixaCompleta".show()	
+			$"../Caixa".hide()
+
+func _on_botao_fechar_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		$"../TelaDaCaixa".hide()
+		$"../TelaDaCaixa/CaixaCompleta".hide()
+		$"../Caixa".show()
+	elif event is InputEventScreenTouch and event.pressed:
+		$"../TelaDaCaixa".hide()	
+		$"../Caixa".show()
+
+
+func _on_urso_1_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
+		$"../TelaDaCaixa/CaixaCompleta".hide()
+		$"../TelaDaCaixa/Urso1".show()
+ 
+
+
+func _on_urso_clicked_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
+		$%Urso4.show()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv7ncbk8j7qd1"
-path="res://.godot/imported/Caixa.png-9e725fb4f1005d8a94207518db5911a7.ctex"
+uid="uid://dvgy8pcfcfdny"
+path="res://.godot/imported/Caixa.png-b60775d55f50e80228e32056242602ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/quarto/Caixa.png"
-dest_files=["res://.godot/imported/Caixa.png-9e725fb4f1005d8a94207518db5911a7.ctex"]
+source_file="res://assets/Quarto/Caixa.png"
+dest_files=["res://.godot/imported/Caixa.png-b60775d55f50e80228e32056242602ee.ctex"]
 
 [params]
 
