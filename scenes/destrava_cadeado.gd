@@ -54,3 +54,10 @@ func _on_button_3_pressed() -> void:
 func _on_button_4_pressed() -> void:
 	num4 = (num4 + 1) % 10 
 	atualizar_visor()
+
+
+func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
+	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
+		get_viewport().set_input_as_handled()
+		
+		call_deferred("hide")
