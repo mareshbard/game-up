@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c00ynv5qmvp6a"
-path="res://.godot/imported/cadeado_ofc.png-44e6a07526141d9b2abf8746a5e4c93f.ctex"
+uid="uid://b4fwkr2aauq0j"
+path="res://.godot/imported/caderno_fiado.png-5963f0bbffc78686b50abc795336d4c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cadeado_ofc.png"
-dest_files=["res://.godot/imported/cadeado_ofc.png-44e6a07526141d9b2abf8746a5e4c93f.ctex"]
+source_file="res://assets/caderno_fiado.png"
+dest_files=["res://.godot/imported/caderno_fiado.png-5963f0bbffc78686b50abc795336d4c3.ctex"]
 
 [params]
 
