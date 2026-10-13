@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vkl7uh414ifc"
-path="res://.godot/imported/Urso-02.png-6adeb44a32e10ac7b2ba700aa312d04c.ctex"
+path="res://.godot/imported/Urso-02.png-283b615635660394e3f452b23038da40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Quarto/Urso-02.png"
-dest_files=["res://.godot/imported/Urso-02.png-6adeb44a32e10ac7b2ba700aa312d04c.ctex"]
+source_file="res://assets/quarto/Urso-02.png"
+dest_files=["res://.godot/imported/Urso-02.png-283b615635660394e3f452b23038da40.ctex"]
 
 [params]
 

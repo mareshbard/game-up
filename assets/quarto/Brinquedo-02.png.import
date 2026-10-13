@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddvj8byyp1dbo"
-path="res://.godot/imported/Brinquedo-02.png-ecef9b8c96eaa5ccdec1f5629d4e9ff2.ctex"
+path="res://.godot/imported/Brinquedo-02.png-3d97e5d2bb97b1efc08622fe39e19ad1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Quarto/Brinquedo-02.png"
-dest_files=["res://.godot/imported/Brinquedo-02.png-ecef9b8c96eaa5ccdec1f5629d4e9ff2.ctex"]
+source_file="res://assets/quarto/Brinquedo-02.png"
+dest_files=["res://.godot/imported/Brinquedo-02.png-3d97e5d2bb97b1efc08622fe39e19ad1.ctex"]
 
 [params]
 
