@@ -6,6 +6,9 @@ var escala_inicial: Vector2 = Vector2.ONE
 
 @onready var posicao_original: Vector2 = position
 
+func _ready() -> void:
+	pivot_offset = size / 2.0
+
 func _input(event: InputEvent) -> void:
 	if not is_visible_in_tree():
 		return

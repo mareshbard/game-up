@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/jogo_do_bicho.png" id="3_e0cgk"]
 [ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/spot_livro.gd" id="4_0kq6u"]
 [ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/blur_armario.gdshader" id="4_e0cgk"]
-[ext_resource type="Script" uid="uid://dv5ls4to3temf" path="res://scripts/spot_cadeado.gd" id="7_djul6"]
+[ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/botao_cadeado.gd" id="7_42k1l"]
 [ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/armario-fechado-ofc.png" id="7_jcsq8"]
 [ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/blur_cadeado.gdshader" id="8_abu8e"]
 [ext_resource type="Shader" uid="uid://6himicivppnw" path="res://scripts/blur_livro.gdshader" id="8_n5u8c"]
@@ -25,15 +25,12 @@ size = Vector2(585.0435, 864.8523)
 size = Vector2(123, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ux7jl"]
-size = Vector2(63, 20)
+size = Vector2(70, 40)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_frm3v"]
 shader = ExtResource("4_e0cgk")
 shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0.0627451, 0.0627451, 0.0627451, 0.6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fslmp"]
-size = Vector2(43, 54)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ux7jl"]
 shader = ExtResource("8_n5u8c")
@@ -85,11 +82,10 @@ shape = SubResource("RectangleShape2D_dmfj3")
 script = ExtResource("4_0kq6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpotCaderno" unique_id=299140683]
-position = Vector2(197.5, 236)
+position = Vector2(198, 235)
 shape = SubResource("RectangleShape2D_ux7jl")
 
 [node name="PopUpArmario" type="CanvasLayer" parent="." unique_id=1075801639]
-visible = false
 
 [node name="CorDeFundo" type="ColorRect" parent="PopUpArmario" unique_id=1025999525]
 material = SubResource("ShaderMaterial_frm3v")
@@ -104,16 +100,18 @@ offset_left = 252.0
 offset_top = 15.0
 offset_right = 612.0
 offset_bottom = 375.0
+mouse_filter = 0
 texture = ExtResource("7_jcsq8")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SpotCadeado" type="Area2D" parent="PopUpArmario" unique_id=1561681220]
-script = ExtResource("7_djul6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PopUpArmario/SpotCadeado" unique_id=2131314001]
-position = Vector2(290, 210)
-shape = SubResource("RectangleShape2D_fslmp")
+[node name="BotaoCadeado" type="Button" parent="PopUpArmario" unique_id=1045972940]
+offset_left = 268.0
+offset_top = 183.0
+offset_right = 312.0
+offset_bottom = 238.0
+flat = true
+script = ExtResource("7_42k1l")
 
 [node name="PopUpCaderno" type="CanvasLayer" parent="." unique_id=2074363279]
 visible = false
@@ -131,6 +129,7 @@ offset_left = 147.0
 offset_top = -71.0
 offset_right = 691.0
 offset_bottom = 473.0
+mouse_filter = 0
 texture = ExtResource("9_42k1l")
 expand_mode = 1
 stretch_mode = 5
@@ -150,61 +149,70 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="PopUpCadeado" unique_id=2085262114]
 offset_left = 267.0
-offset_top = 26.0
+offset_top = 33.0
 offset_right = 610.0
-offset_bottom = 369.0
+offset_bottom = 358.0
+mouse_filter = 0
 texture = ExtResource("11_41774")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Button1" type="Button" parent="PopUpCadeado/TextureRect" unique_id=715260706]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 281.0
-offset_right = 91.0
-offset_bottom = 342.0
+offset_left = 65.0
+offset_top = 266.0
+offset_right = 97.0
+offset_bottom = 326.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
 theme_override_colors/font_focus_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("12_41774")
 theme_override_font_sizes/font_size = 30
 flat = true
 
 [node name="Button2" type="Button" parent="PopUpCadeado/TextureRect" unique_id=999459523]
 layout_mode = 0
-offset_left = 103.0
-offset_top = 281.0
-offset_right = 137.0
-offset_bottom = 342.0
+offset_left = 107.0
+offset_top = 266.0
+offset_right = 140.0
+offset_bottom = 325.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
 theme_override_colors/font_focus_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("12_41774")
 theme_override_font_sizes/font_size = 30
 flat = true
 
 [node name="Button3" type="Button" parent="PopUpCadeado/TextureRect" unique_id=1305142737]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 280.0
-offset_right = 181.0
-offset_bottom = 343.0
+offset_left = 149.0
+offset_top = 266.0
+offset_right = 182.0
+offset_bottom = 326.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
 theme_override_colors/font_focus_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("12_41774")
 theme_override_font_sizes/font_size = 30
 flat = true
 
 [node name="Button4" type="Button" parent="PopUpCadeado/TextureRect" unique_id=300627255]
 layout_mode = 0
-offset_left = 191.0
-offset_top = 280.0
-offset_right = 225.0
-offset_bottom = 343.0
+offset_left = 190.0
+offset_top = 266.0
+offset_right = 223.0
+offset_bottom = 325.0
 focus_mode = 0
 theme_override_colors/font_color = Color(0.23921569, 0.19607843, 0.1254902, 1)
 theme_override_colors/font_focus_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_pressed_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
+theme_override_colors/font_hover_color = Color(0.23921569, 0.19607843, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("12_41774")
 theme_override_font_sizes/font_size = 30
 flat = true
@@ -225,6 +233,7 @@ offset_left = 291.0
 offset_top = 9.0
 offset_right = 540.0
 offset_bottom = 379.92416
+mouse_filter = 0
 texture = ExtResource("3_e0cgk")
 expand_mode = 1
 stretch_mode = 5
@@ -234,9 +243,9 @@ script = ExtResource("16_n5u8c")
 [connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]
 [connection signal="input_event" from="SpotCaderno" to="SpotCaderno" method="_on_input_event"]
 [connection signal="gui_input" from="PopUpArmario/CorDeFundo" to="SpotArmario" method="_on_cor_de_fundo_gui_input"]
-[connection signal="input_event" from="PopUpArmario/SpotCadeado" to="PopUpArmario/SpotCadeado" method="_on_input_event"]
+[connection signal="pressed" from="PopUpArmario/BotaoCadeado" to="SpotCaderno" method="_on_botao_cadeado_pressed"]
 [connection signal="gui_input" from="PopUpCaderno/CorDeFundo" to="SpotCaderno" method="_on_cor_de_fundo_gui_input"]
-[connection signal="gui_input" from="PopUpCadeado/CorDeFundo" to="PopUpArmario/SpotCadeado" method="_on_cor_de_fundo_gui_input"]
+[connection signal="gui_input" from="PopUpCadeado/CorDeFundo" to="PopUpCadeado" method="_on_cor_de_fundo_gui_input"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button1" to="PopUpCadeado" method="_on_button_1_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button2" to="PopUpCadeado" method="_on_button_2_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button3" to="PopUpCadeado" method="_on_button_3_pressed"]
