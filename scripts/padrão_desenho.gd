@@ -30,10 +30,7 @@ func _on_gui_input(event: InputEvent) -> void:
 func iniciar_desenho(posicao: Vector2) -> void:
 	desenhando = true
 	traco_invalido = false
-	
 	pontos_restantes = pontos_molde.duplicate()
-	
-	indice_atual = 0
 	linha_jogador.clear_points()
 	linha_jogador.add_point(posicao)
 	verificar_progresso(posicao)
