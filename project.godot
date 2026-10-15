@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game-up"
-run/main_scene="uid://bvwd5tlq0xhfi"
+run/main_scene="res://scenes/cenario_terreno_baldio.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/Quarto/icon.svg"
 

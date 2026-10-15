@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://7awqndenbrxb"]
+
+[ext_resource type="Shader" uid="uid://bpp8q7ceuiur3" path="res://scripts/blur_terreno_baldio.gdshader" id="1_636ny"]
+[ext_resource type="Script" uid="uid://ck11klam3cjhc" path="res://scripts/local_pentagrama.gd" id="1_sswmf"]
+[ext_resource type="Texture2D" uid="uid://7e0xd431sbi1" path="res://assets/terreno-baldio/Screenshot 2026-10-15 at 08.36.37.png" id="2_0owvl"]
+[ext_resource type="Script" uid="uid://ns0qxgmsqerh" path="res://scripts/padrão_desenho.gd" id="2_mixfy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmfj3"]
+radius = 61.0
+height = 208.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmfj3"]
+shader = ExtResource("1_636ny")
+shader_parameter/forca_desfoque = 3.1200001482
+shader_parameter/cor_escurecimento = Color(0.0627451, 0.0627451, 0.0627451, 0.6)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sswmf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0owvl"]
+noise = SubResource("FastNoiseLite_sswmf")
+
+[node name="cenário-terreno-baldio" type="Node2D" unique_id=290131723]
+
+[node name="pentagrama" type="Area2D" parent="." unique_id=1243445392]
+script = ExtResource("1_sswmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="pentagrama" unique_id=248959100]
+position = Vector2(581.5, 329.96875)
+scale = Vector2(0.29066262, 0.17460468)
+texture = ExtResource("2_0owvl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pentagrama" unique_id=1956551313]
+position = Vector2(581, 332)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_dmfj3")
+
+[node name="PopUpPenta" type="CanvasLayer" parent="." unique_id=829960227]
+visible = false
+
+[node name="CorDeFundo" type="ColorRect" parent="PopUpPenta" unique_id=648337541]
+material = SubResource("ShaderMaterial_dmfj3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PadrãoDesenho" type="TextureRect" parent="PopUpPenta" unique_id=1432659056]
+offset_left = 278.0
+offset_top = 43.0
+offset_right = 587.0
+offset_bottom = 318.0
+mouse_filter = 0
+texture = ExtResource("2_0owvl")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_mixfy")
+
+[node name="LinhaDesenho" type="Line2D" parent="PopUpPenta/PadrãoDesenho" unique_id=106517221]
+texture = SubResource("NoiseTexture2D_0owvl")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="PontosMoldePenta" type="Node2D" parent="PopUpPenta/PadrãoDesenho" unique_id=705370006]
+
+[node name="Marco-1" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=777442318]
+position = Vector2(22, 131)
+
+[node name="Marco-2" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=1889057231]
+position = Vector2(57, 47)
+
+[node name="Marco-3" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=315467041]
+position = Vector2(148, 5)
+
+[node name="Marco-4" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=976832470]
+position = Vector2(259, 54)
+
+[node name="Marco-5" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=1213482202]
+position = Vector2(287, 141)
+
+[node name="Marco-6" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=1771870749]
+position = Vector2(255, 221)
+
+[node name="Marco-7" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=1716254279]
+position = Vector2(155, 271)
+
+[node name="Marco-8" type="Marker2D" parent="PopUpPenta/PadrãoDesenho/PontosMoldePenta" unique_id=1183672424]
+position = Vector2(52, 221)
+
+[connection signal="input_event" from="pentagrama" to="pentagrama" method="_on_input_event"]
+[connection signal="gui_input" from="PopUpPenta/CorDeFundo" to="pentagrama" method="_on_cor_de_fundo_gui_input"]
+[connection signal="gui_input" from="PopUpPenta/PadrãoDesenho" to="PopUpPenta/PadrãoDesenho" method="_on_gui_input"]
