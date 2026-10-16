@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4fwkr2aauq0j"
-path="res://.godot/imported/caderno_fiado.png-5963f0bbffc78686b50abc795336d4c3.ctex"
+uid="uid://gc3ux403a1gg"
+path="res://.godot/imported/jogo_do_bicho.png-62b7de80b48630912443189fa7cd025d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/caderno_fiado.png"
-dest_files=["res://.godot/imported/caderno_fiado.png-5963f0bbffc78686b50abc795336d4c3.ctex"]
+source_file="res://assets/budega/jogo_do_bicho.png"
+dest_files=["res://.godot/imported/jogo_do_bicho.png-62b7de80b48630912443189fa7cd025d.ctex"]
 
 [params]
 

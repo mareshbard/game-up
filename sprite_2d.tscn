@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c50i0jktgd38r"]
+[gd_scene format=3 uid="uid://1300bxnyn5gq"]
 
-[ext_resource type="Texture2D" uid="uid://btcxawn1jfurj" path="res://assets/Quarto/Emilia.PNG" id="1_f7cmv"]
+[ext_resource type="Texture2D" uid="uid://btcxawn1jfurj" path="res://assets/quarto/Emilia.PNG" id="1_f7cmv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mehiu"]
 atlas = ExtResource("1_f7cmv")
