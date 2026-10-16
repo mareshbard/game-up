@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dwrc8fcycuj3r"]
+
+[ext_resource type="Texture2D" uid="uid://dhvejwkn3yjfo" path="res://assets/cemiterio/Interior.png" id="1_x72jc"]
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="2_fcvrn"]
+[ext_resource type="Script" uid="uid://rsv604gh6ncp" path="res://scenes/emilia.gd" id="3_7o2vs"]
+
+[node name="Graveyard" type="Node2D" unique_id=1504887953]
+metadata/_edit_vertical_guides_ = [-791.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164679974]
+position = Vector2(1276, 190)
+scale = Vector2(0.3451411, 0.3451411)
+texture = ExtResource("1_x72jc")
+
+[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("2_fcvrn")]
+position = Vector2(401.00003, 264)
+scale = Vector2(0.006018632, 0.006018632)
+script = ExtResource("3_7o2vs")
+
+[node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1820990912]
+position = Vector2(1661.5006, -13624.357)
+scale = Vector2(3.02611, 3.0308173)
+limit_left = 0
+limit_top = 0
+limit_right = 2500
+limit_bottom = 600
