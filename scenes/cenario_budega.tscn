@@ -86,6 +86,7 @@ position = Vector2(198, 235)
 shape = SubResource("RectangleShape2D_ux7jl")
 
 [node name="PopUpArmario" type="CanvasLayer" parent="." unique_id=1075801639]
+visible = false
 
 [node name="CorDeFundo" type="ColorRect" parent="PopUpArmario" unique_id=1025999525]
 material = SubResource("ShaderMaterial_frm3v")

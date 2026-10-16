@@ -13,10 +13,16 @@ func _on_input_event(viewport, event, shape_idx) -> void:
 
 func _on_botao_fechar_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		$"../TelaDaCaixa/Urso1".hide()
+		$"../TelaDaCaixa/Urso4".hide()
 		$"../TelaDaCaixa".hide()
 		$"../TelaDaCaixa/CaixaCompleta".hide()
 		$"../Caixa".show()
 	elif event is InputEventScreenTouch and event.pressed:
+		$"../TelaDaCaixa/Urso1".hide()
+		$"../TelaDaCaixa/Urso4".hide()
+
+		$"../TelaDaCaixa/CaixaCompleta".hide()
 		$"../TelaDaCaixa".hide()	
 		$"../Caixa".show()
 
@@ -26,7 +32,6 @@ func _on_urso_1_gui_input(event: InputEvent) -> void:
 		$"../TelaDaCaixa/CaixaCompleta".hide()
 		$"../TelaDaCaixa/Urso1".show()
  
-
 
 func _on_urso_clicked_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
