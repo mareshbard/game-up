@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvbwrt68nr4pi"
-path="res://.godot/imported/standing.png-a79e2d9d3fb7ea7a8e54e66d1220d3fa.ctex"
+uid="uid://cptaxxosxmuhw"
+path="res://.godot/imported/armario-aberto-ofc.png-25396ee4890a77d7699cb3afe42c8684.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/standing.png"
-dest_files=["res://.godot/imported/standing.png-a79e2d9d3fb7ea7a8e54e66d1220d3fa.ctex"]
+source_file="res://assets/budega/armario-aberto-ofc.png"
+dest_files=["res://.godot/imported/armario-aberto-ofc.png-25396ee4890a77d7699cb3afe42c8684.ctex"]
 
 [params]
 

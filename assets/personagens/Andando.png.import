@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgsb2gbcf4t4e"
-path="res://.godot/imported/cenario_bodega_ofc.png-17c2e2a1f974a90b21713ed8394b2386.ctex"
+uid="uid://dtxs66tf8if1g"
+path="res://.godot/imported/Andando.png-8b7ca4439df89e1cba877e60ba9296bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cenario_bodega_ofc.png"
-dest_files=["res://.godot/imported/cenario_bodega_ofc.png-17c2e2a1f974a90b21713ed8394b2386.ctex"]
+source_file="res://assets/personagens/Andando.png"
+dest_files=["res://.godot/imported/Andando.png-8b7ca4439df89e1cba877e60ba9296bc.ctex"]
 
 [params]
 

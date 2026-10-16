@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gc3ux403a1gg"
-path="res://.godot/imported/jogo_do_bicho.png-c8a1aefb03b96fa69b33380c3bb1d19d.ctex"
+uid="uid://dncxwar3u4yp4"
+path="res://.godot/imported/cadeado_fechado.png-8af67efcfd3d7698241c6723157aaff7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jogo_do_bicho.png"
-dest_files=["res://.godot/imported/jogo_do_bicho.png-c8a1aefb03b96fa69b33380c3bb1d19d.ctex"]
+source_file="res://assets/budega/cadeado_fechado.png"
+dest_files=["res://.godot/imported/cadeado_fechado.png-8af67efcfd3d7698241c6723157aaff7.ctex"]
 
 [params]
 

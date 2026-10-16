@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dncxwar3u4yp4"
-path="res://.godot/imported/cadeado_fechado.png-864bae59222378d3e4087ce503420b57.ctex"
+uid="uid://bgpqo8xcdelm6"
+path="res://.godot/imported/Caixa-UpVision.png-ed62d15d7da07a532aec055282b65759.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cadeado_fechado.png"
-dest_files=["res://.godot/imported/cadeado_fechado.png-864bae59222378d3e4087ce503420b57.ctex"]
+source_file="res://assets/quarto/Caixa-UpVision.png"
+dest_files=["res://.godot/imported/Caixa-UpVision.png-ed62d15d7da07a532aec055282b65759.ctex"]
 
 [params]
 

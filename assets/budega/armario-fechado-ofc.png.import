@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgpqo8xcdelm6"
-path="res://.godot/imported/Caixa-UpVision.png-8ef2727f5d7b3135a081aca2829aee80.ctex"
+uid="uid://dtsq42p221ui3"
+path="res://.godot/imported/armario-fechado-ofc.png-6a5b7bd697778adc48efd116f72b6130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Caixa-UpVision.png"
-dest_files=["res://.godot/imported/Caixa-UpVision.png-8ef2727f5d7b3135a081aca2829aee80.ctex"]
+source_file="res://assets/budega/armario-fechado-ofc.png"
+dest_files=["res://.godot/imported/armario-fechado-ofc.png-6a5b7bd697778adc48efd116f72b6130.ctex"]
 
 [params]
 
