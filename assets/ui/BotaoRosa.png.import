@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dks6l3dtpf5xs"
-path="res://.godot/imported/cadeado-aberto.png-5c8e3a8f5069f2274ca1ab8a0f196bff.ctex"
+uid="uid://c7yy754fwirbn"
+path="res://.godot/imported/BotaoRosa.png-dde135088e8df41455d243fbd9ad01f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cadeado-aberto.png"
-dest_files=["res://.godot/imported/cadeado-aberto.png-5c8e3a8f5069f2274ca1ab8a0f196bff.ctex"]
+source_file="res://assets/ui/BotaoRosa.png"
+dest_files=["res://.godot/imported/BotaoRosa.png-dde135088e8df41455d243fbd9ad01f0.ctex"]
 
 [params]
 

@@ -8,8 +8,8 @@ extends CanvasLayer
 @onready var imagem_armario = $"../PopUpArmario/TextureRect"
 @onready var imagem_cadeado: TextureRect = $TextureRect
 
-var foto_armario_aberto = preload("res://assets/armario-aberto-ofc.png")
-var foto_cadeado_aberto = preload("res://assets/cadeado-aberto.png")
+var foto_armario_aberto = preload("res://assets/budega/armario-aberto-ofc.png")
+var foto_cadeado_aberto = preload("res://assets/budega/cadeado-aberto.png")
 
 var num1: int = 0
 var num2: int = 0

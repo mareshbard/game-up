@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtsq42p221ui3"
-path="res://.godot/imported/armario-fechado-ofc.png-16f16991efdeacb38f006bcb67db3285.ctex"
+uid="uid://dks6l3dtpf5xs"
+path="res://.godot/imported/cadeado-aberto.png-92d57480e2e0870a226513740cd24f56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/armario-fechado-ofc.png"
-dest_files=["res://.godot/imported/armario-fechado-ofc.png-16f16991efdeacb38f006bcb67db3285.ctex"]
+source_file="res://assets/budega/cadeado-aberto.png"
+dest_files=["res://.godot/imported/cadeado-aberto.png-92d57480e2e0870a226513740cd24f56.ctex"]
 
 [params]
 

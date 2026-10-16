@@ -8,7 +8,7 @@
 metadata/_edit_vertical_guides_ = [-791.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164679974]
-position = Vector2(1276, 190)
+position = Vector2(1282, 206)
 scale = Vector2(0.3451411, 0.3451411)
 texture = ExtResource("1_x72jc")
 
@@ -18,9 +18,9 @@ scale = Vector2(0.006018632, 0.006018632)
 script = ExtResource("3_7o2vs")
 
 [node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1820990912]
-position = Vector2(1661.5006, -13624.357)
+position = Vector2(2824.5557, 14455.113)
 scale = Vector2(3.02611, 3.0308173)
 limit_left = 0
 limit_top = 0
 limit_right = 2500
-limit_bottom = 600
+limit_bottom = 400
