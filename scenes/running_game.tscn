@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dt4qnoe1q0yo0"]
+
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="1_6uox7"]
+[ext_resource type="Script" uid="uid://bh2qveoupd6ye" path="res://scripts/emilia.gd" id="2_3mdbh"]
+[ext_resource type="Texture2D" uid="uid://dym35q738aafa" path="res://assets/cemiterio/Minigame.png" id="3_872uf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ao08h"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4h5tc"]
+distance = 18.373352
+
+[node name="RunningGame" type="Node2D" unique_id=1129295952]
+
+[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
+position = Vector2(2428, 1313.0001)
+scale = Vector2(0.21699996, 0.21699996)
+script = ExtResource("2_3mdbh")
+
+[node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1533308366]
+position = Vector2(392.50555, -2092.1943)
+scale = Vector2(42.248123, -123960.23)
+zoom = Vector2(0.2, 0.18)
+limit_top = 786
+limit_right = 12724
+limit_bottom = 786
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1391584844]
+
+[node name="ButtonPular" type="TouchScreenButton" parent="CanvasLayer" unique_id=596962212]
+position = Vector2(3537, 934)
+scale = Vector2(113.59243, -84.10584)
+shape = SubResource("CapsuleShape2D_ao08h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1840294530]
+z_index = -1
+position = Vector2(18238, 784)
+scale = Vector2(2.804288, 2.804288)
+texture = ExtResource("3_872uf")
+
+[node name="Chao" type="StaticBody2D" parent="." unique_id=1914459209]
+position = Vector2(455, -425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao" unique_id=1603859757]
+physics_interpolation_mode = 1
+position = Vector2(2079, 2207)
+scale = Vector2(2.8846154, 2.8846154)
+shape = SubResource("WorldBoundaryShape2D_4h5tc")

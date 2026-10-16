@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bvwd5tlq0xhfi"]
 
+[ext_resource type="Texture2D" uid="uid://dsfpxadpmbvkj" path="res://assets/quarto/Quarto.png" id="1_05ih3"]
 [ext_resource type="Shader" uid="uid://b7cqihlsoypfk" path="res://scripts/Quarto.gdshader" id="2_8thnl"]
 [ext_resource type="Script" uid="uid://depye7f7tag1q" path="res://scripts/caixa.gd" id="2_24xt2"]
 [ext_resource type="Texture2D" uid="uid://bcee3mc76nlsr" path="res://assets/quarto/Urso-01.png" id="3_1hljf"]
@@ -13,8 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://vkl7uh414ifc" path="res://assets/quarto/Urso-02.png" id="9_pj5fk"]
 [ext_resource type="Texture2D" uid="uid://dtnuyfveu7ogv" path="res://assets/quarto/Urso-03.png" id="10_05ih3"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_avuhy"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3xpb"]
 shader = ExtResource("2_8thnl")
 shader_parameter/forca_desfoque = 3.1200001482
@@ -26,7 +25,7 @@ size = Vector2(490.70114, 342.21405)
 [node name="Quarto" type="Sprite2D" unique_id=1344205346]
 position = Vector2(427.1937, 196.40627)
 scale = Vector2(0.25011918, 0.25011927)
-texture = SubResource("CompressedTexture2D_avuhy")
+texture = ExtResource("1_05ih3")
 
 [node name="TelaDaCaixa" type="CanvasLayer" parent="." unique_id=896079545]
 visible = false
