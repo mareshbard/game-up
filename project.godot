@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="A Boneca de Emilia Rosa"
-run/main_scene="uid://dwrc8fcycuj3r"
+run/main_scene="uid://dgt52c85mrdlt"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/Quarto/icon.svg"
 

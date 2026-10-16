@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dncxwar3u4yp4" path="res://assets/cadeado_fechado.png" id="11_41774"]
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
 [ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/texture_calendario.gd" id="16_n5u8c"]
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
+[ext_resource type="Script" uid="uid://rsv604gh6ncp" path="res://scenes/emilia.gd" id="19_efwru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
@@ -239,6 +241,11 @@ texture = ExtResource("3_e0cgk")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16_n5u8c")
+
+[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
+position = Vector2(57.999996, 275)
+scale = Vector2(0.007346683, 0.007346683)
+script = ExtResource("19_efwru")
 
 [connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]
 [connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]
