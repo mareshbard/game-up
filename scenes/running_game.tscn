@@ -3,29 +3,34 @@
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="1_6uox7"]
 [ext_resource type="Script" uid="uid://bh2qveoupd6ye" path="res://scripts/cemiterio/emilia_corrida.gd" id="2_3mdbh"]
 [ext_resource type="Texture2D" uid="uid://dym35q738aafa" path="res://assets/cemiterio/Minigame.png" id="3_872uf"]
+[ext_resource type="Script" uid="uid://d1pa87vn5f7gn" path="res://scripts/cemiterio/hole.gd" id="4_3mdbh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ao08h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4h5tc"]
 distance = 18.373352
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4h5tc"]
+radius = 643.9331
+
 [node name="RunningGame" type="Node2D" unique_id=1129295952]
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
-position = Vector2(2412, 839.0001)
-scale = Vector2(0.0560134, 0.0560134)
+position = Vector2(2412.0002, 1167)
+scale = Vector2(0.035900656, 0.035900656)
 script = ExtResource("2_3mdbh")
 
 [node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1533308366]
 position = Vector2(23940.7, 25368.928)
 scale = Vector2(42.293144, -123960.23)
 zoom = Vector2(0.2, 0.18)
-limit_left = 0
-limit_top = 0
-limit_right = 12724
-limit_bottom = 786
+limit_left = -19
+limit_top = 390
+limit_right = 65000
+limit_bottom = 1176
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1391584844]
+visible = false
 
 [node name="ButtonPular" type="TouchScreenButton" parent="CanvasLayer" unique_id=596962212]
 position = Vector2(3537, 934)
@@ -34,7 +39,13 @@ shape = SubResource("CapsuleShape2D_ao08h")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1840294530]
 z_index = -1
-position = Vector2(18238, 784)
+position = Vector2(18591, 784)
+scale = Vector2(2.804288, 2.804288)
+texture = ExtResource("3_872uf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=386731935]
+z_index = -1
+position = Vector2(47932.996, 790)
 scale = Vector2(2.804288, 2.804288)
 texture = ExtResource("3_872uf")
 
@@ -46,3 +57,83 @@ physics_interpolation_mode = 1
 position = Vector2(2079, 2207)
 scale = Vector2(2.8846154, 2.8846154)
 shape = SubResource("WorldBoundaryShape2D_4h5tc")
+
+[node name="Hole" type="Area2D" parent="." unique_id=437327358]
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole" unique_id=684564045]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole2" type="Area2D" parent="." unique_id=1202813246]
+position = Vector2(3189, -25)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole2" unique_id=1890133214]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole3" type="Area2D" parent="." unique_id=593413323]
+position = Vector2(6730, 0)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole3" unique_id=1094081930]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole4" type="Area2D" parent="." unique_id=1919457445]
+position = Vector2(10136, 5)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole4" unique_id=1155446976]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole5" type="Area2D" parent="." unique_id=2004267219]
+position = Vector2(13532, 10)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole5" unique_id=34860261]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole6" type="Area2D" parent="." unique_id=1545313253]
+position = Vector2(16925, 5)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole6" unique_id=624319970]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole7" type="Area2D" parent="." unique_id=1304967398]
+position = Vector2(20338, 14)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole7" unique_id=547681062]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Hole8" type="Area2D" parent="." unique_id=937195764]
+position = Vector2(23699, 18)
+script = ExtResource("4_3mdbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole8" unique_id=2058146577]
+position = Vector2(4740.0005, 1622.0001)
+scale = Vector2(0.8662147, 0.17823072)
+shape = SubResource("CircleShape2D_4h5tc")
+
+[connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole2" to="Hole2" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole3" to="Hole3" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole4" to="Hole4" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole5" to="Hole5" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole6" to="Hole6" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole7" to="Hole7" method="_on_body_entered"]
+[connection signal="body_entered" from="Hole8" to="Hole8" method="_on_body_entered"]
