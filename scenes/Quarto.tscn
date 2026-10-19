@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgpqo8xcdelm6" path="res://assets/quarto/Caixa-UpVision.png" id="3_24xt2"]
 [ext_resource type="Texture2D" uid="uid://qy1g4u06slnk" path="res://assets/quarto/Brinquedo-01.png" id="3_84ngr"]
 [ext_resource type="Texture2D" uid="uid://dvgy8pcfcfdny" path="res://assets/quarto/Caixa.png" id="4_8thnl"]
-[ext_resource type="Script" uid="uid://c3823su2ebnua" path="res://scenes/brinquedo.gd" id="4_avuhy"]
+[ext_resource type="Script" uid="uid://c3823su2ebnua" path="res://scripts/quarto/brinquedo.gd" id="4_avuhy"]
 [ext_resource type="Texture2D" uid="uid://ddvj8byyp1dbo" path="res://assets/quarto/Brinquedo-02.png" id="5_84ngr"]
 [ext_resource type="Texture2D" uid="uid://ok3ihdw6oheq" path="res://assets/quarto/Brinquedo-03.png" id="6_5myvk"]
 [ext_resource type="Texture2D" uid="uid://c7yy754fwirbn" path="res://assets/ui/BotaoRosa.png" id="8_vlhge"]
@@ -23,8 +23,8 @@ shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 size = Vector2(490.70114, 342.21405)
 
 [node name="Quarto" type="Sprite2D" unique_id=1344205346]
-position = Vector2(427.1937, 196.40627)
-scale = Vector2(0.25011918, 0.25011927)
+position = Vector2(428.99997, 197)
+scale = Vector2(0.25080746, 0.25080746)
 texture = ExtResource("1_05ih3")
 
 [node name="TelaDaCaixa" type="CanvasLayer" parent="." unique_id=896079545]

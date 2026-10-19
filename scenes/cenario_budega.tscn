@@ -12,7 +12,7 @@
 [ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/budega/blur_cadeado.gdshader" id="8_abu8e"]
 [ext_resource type="Shader" uid="uid://6himicivppnw" path="res://scripts/budega/blur_livro.gdshader" id="8_n5u8c"]
 [ext_resource type="Texture2D" uid="uid://b4fwkr2aauq0j" path="res://assets/budega/caderno_fiado.png" id="9_42k1l"]
-[ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scenes/destrava_cadeado.gd" id="9_jcsq8"]
+[ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scripts/budega/destrava_cadeado.gd" id="9_jcsq8"]
 [ext_resource type="Script" uid="uid://dbro0ora8sa6u" path="res://scripts/budega/texture_rect.gd" id="10_42k1l"]
 [ext_resource type="Texture2D" uid="uid://dncxwar3u4yp4" path="res://assets/budega/cadeado_fechado.png" id="11_41774"]
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
