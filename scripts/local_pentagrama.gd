@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var PopUpPenta: CanvasLayer = $"../PopUpPenta"
+@onready var PopUpPenta: CanvasLayer = $"../PopUpChao"
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:

@@ -2,10 +2,20 @@
 
 [ext_resource type="Texture2D" uid="uid://cgsb2gbcf4t4e" path="res://assets/budega/cenario_bodega_ofc.png" id="1_scfn4"]
 [ext_resource type="Script" uid="uid://xerrdekp25ti" path="res://scripts/budega/spot_calendario.gd" id="2_se470"]
+[ext_resource type="Script" uid="uid://w07ij5k860v" path="res://scripts/budega/spot_armario.gd" id="3_41774"]
+[ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_2qeuy"]
+[ext_resource type="Script" uid="uid://dbro0ora8sa6u" path="res://scripts/budega/texture_rect.gd" id="5_2sqrl"]
 [ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/budega/blur_calendario.gdshader" id="5_c3esr"]
+[ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="5_r51w4"]
+[ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/budega/armario-fechado-ofc.png" id="6_efwru"]
 [ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/budega/jogo_do_bicho.png" id="6_pq150"]
+[ext_resource type="Shader" uid="uid://6himicivppnw" path="res://scripts/budega/blur_livro.gdshader" id="7_nw8s6"]
+[ext_resource type="Texture2D" uid="uid://b4fwkr2aauq0j" path="res://assets/budega/caderno_fiado.png" id="8_j5nj5"]
 [ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scenes/destrava_cadeado.gd" id="9_jcsq8"]
+[ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/budega/texture_calendario.gd" id="10_0kq6u"]
+[ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/budega/blur_cadeado.gdshader" id="11_fyxpd"]
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
+[ext_resource type="Texture2D" uid="uid://dncxwar3u4yp4" path="res://assets/budega/cadeado_fechado.png" id="12_u7jy7"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
 [ext_resource type="Script" uid="uid://rsv604gh6ncp" path="res://scenes/emilia.gd" id="19_efwru"]
 
@@ -19,10 +29,19 @@ size = Vector2(123, 136)
 size = Vector2(70, 40)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_frm3v"]
+shader = ExtResource("5_r51w4")
+shader_parameter/forca_desfoque = 2.5
+shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ux7jl"]
+shader = ExtResource("7_nw8s6")
+shader_parameter/forca_desfoque = 2.5
+shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fslmp"]
+shader = ExtResource("11_fyxpd")
+shader_parameter/forca_desfoque = 2.5
+shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dtndj"]
 shader = ExtResource("5_c3esr")
@@ -54,12 +73,14 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_frm3v")
 
 [node name="SpotArmario" type="Area2D" parent="." unique_id=1384260507]
+script = ExtResource("3_41774")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpotArmario" unique_id=1523194651]
 position = Vector2(605.5, 89)
 shape = SubResource("RectangleShape2D_dmfj3")
 
 [node name="SpotCaderno" type="Area2D" parent="." unique_id=520704059]
+script = ExtResource("4_2qeuy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpotCaderno" unique_id=299140683]
 position = Vector2(198, 235)
@@ -82,6 +103,7 @@ offset_top = 15.0
 offset_right = 612.0
 offset_bottom = 375.0
 mouse_filter = 0
+texture = ExtResource("6_efwru")
 expand_mode = 1
 stretch_mode = 5
 
@@ -109,8 +131,10 @@ offset_top = -71.0
 offset_right = 691.0
 offset_bottom = 473.0
 mouse_filter = 0
+texture = ExtResource("8_j5nj5")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("5_2sqrl")
 
 [node name="PopUpCadeado" type="CanvasLayer" parent="." unique_id=1397208613]
 visible = false
@@ -130,6 +154,7 @@ offset_top = 33.0
 offset_right = 610.0
 offset_bottom = 358.0
 mouse_filter = 0
+texture = ExtResource("12_u7jy7")
 expand_mode = 1
 stretch_mode = 5
 
@@ -213,9 +238,10 @@ mouse_filter = 0
 texture = ExtResource("6_pq150")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("10_0kq6u")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
-position = Vector2(94, 272.99997)
+position = Vector2(106, 272)
 scale = Vector2(0.007346683, 0.007346683)
 script = ExtResource("19_efwru")
 
