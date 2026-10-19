@@ -35,9 +35,6 @@ region = Rect2(3068, 1751, 1534, 1751)
 atlas = ExtResource("1_nq5le")
 region = Rect2(4602, 1751, 1534, 1751)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pow6n"]
-load_path = "res://.godot/imported/standing.png-a79e2d9d3fb7ea7a8e54e66d1220d3fa.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pow6n"]
 atlas = ExtResource("2_pow6n")
 region = Rect2(0, 0, 1554, 4128)
@@ -91,14 +88,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("CompressedTexture2D_pow6n")
-}],
-"loop": 1,
-"name": &"standing",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_pow6n")
 }, {
 "duration": 1.0,
@@ -119,8 +108,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4shbi"]
-radius = 134.5952
-height = 966.0453
+radius = 1273.282
+height = 8809.995
 
 [node name="Emilia" type="CharacterBody2D" unique_id=1594740485]
 scale = Vector2(1.2565283, 1.2565283)
@@ -129,10 +118,11 @@ scale = Vector2(1.2565283, 1.2565283)
 position = Vector2(-279.34113, 211.6944)
 scale = Vector2(8.316735, 8.294929)
 sprite_frames = SubResource("SpriteFrames_4h5tc")
-animation = &"run"
+animation = &"walk"
+frame_progress = 0.43439394
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1500110265]
-position = Vector2(-139.27263, 224.42789)
+position = Vector2(-1034.5967, 224.42792)
 scale = Vector2(2.8145251, 3.3875318)
 shape = SubResource("CapsuleShape2D_4shbi")
 
