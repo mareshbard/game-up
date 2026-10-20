@@ -15,7 +15,6 @@ func _on_gui_input(event: InputEvent) -> void:
 			arrastando = false
 			_soltou()
 	elif event is InputEventMouseMotion and arrastando:
-		print("movendo")
 		global_position = get_global_mouse_position() + offset
 		
 func _soltou() -> void:
