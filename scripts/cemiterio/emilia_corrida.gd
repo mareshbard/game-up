@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
-const SPEED = 2500.0
-const JUMP_VELOCITY = -1500.0
-const FALL_MULTIPLIER = 3.5 
+const SPEED = 2000.0
+const JUMP_VELOCITY = -1300.0
+const FALL_MULTIPLIER = 3.0
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("run")
+	$AnimatedSprite2D.flip_h = true
+	
+	
 func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
@@ -16,13 +21,12 @@ func _physics_process(delta: float) -> void:
 		
 	velocity.x = SPEED
 	
-	if is_on_floor() and Input.is_action_just_pressed("pular"):
-		velocity.y = JUMP_VELOCITY
+	if is_on_floor():
+		if Input.is_action_just_pressed("pular"):
+			velocity.y = JUMP_VELOCITY
+		else:
+			$AnimatedSprite2D.play("run")
 
-	if not is_on_floor():
-		$AnimatedSprite2D.play("jump")
-	else:
-		$AnimatedSprite2D.play("walk")
 				
 	move_and_slide()
 

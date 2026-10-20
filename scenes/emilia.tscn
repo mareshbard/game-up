@@ -1,39 +1,23 @@
 [gd_scene format=3 uid="uid://c4dmbowgw8cje"]
 
-[ext_resource type="Texture2D" uid="uid://dhm0yes0o8uah" path="res://assets/personagens/teste.png" id="1_nq5le"]
+[ext_resource type="Texture2D" uid="uid://cqxhv80o4x4wv" path="res://assets/personagens/Correndo.png" id="1_pow6n"]
 [ext_resource type="Texture2D" uid="uid://dtxs66tf8if1g" path="res://assets/personagens/Andando.png" id="2_pow6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y5hi"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(0, 0, 1534, 1751)
+atlas = ExtResource("1_pow6n")
+region = Rect2(0, 0, 1553, 2206)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4shbi"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(1534, 0, 1534, 1751)
+atlas = ExtResource("1_pow6n")
+region = Rect2(1553, 0, 1553, 2206)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p61ur"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(3068, 0, 1534, 1751)
+atlas = ExtResource("1_pow6n")
+region = Rect2(3106, 0, 1553, 2206)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iefuo"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(4602, 0, 1534, 1751)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_os3ca"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(0, 1751, 1534, 1751)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aa6jm"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(1534, 1751, 1534, 1751)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kas4m"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(3068, 1751, 1534, 1751)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kwqde"]
-atlas = ExtResource("1_nq5le")
-region = Rect2(4602, 1751, 1534, 1751)
+atlas = ExtResource("1_pow6n")
+region = Rect2(4659, 0, 1553, 2206)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pow6n"]
 atlas = ExtResource("2_pow6n")
@@ -69,18 +53,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iefuo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_os3ca")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aa6jm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kas4m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kwqde")
 }],
 "loop": 1,
 "name": &"run",
@@ -108,8 +80,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4shbi"]
-radius = 1273.282
-height = 8809.995
+radius = 1253.2058
+height = 4888.4893
 
 [node name="Emilia" type="CharacterBody2D" unique_id=1594740485]
 scale = Vector2(1.2565283, 1.2565283)
@@ -118,12 +90,11 @@ scale = Vector2(1.2565283, 1.2565283)
 position = Vector2(-279.34113, 211.6944)
 scale = Vector2(8.316735, 8.294929)
 sprite_frames = SubResource("SpriteFrames_4h5tc")
-animation = &"walk"
-frame_progress = 0.43439394
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1500110265]
-position = Vector2(-1034.5967, 224.42792)
-scale = Vector2(2.8145251, 3.3875318)
+position = Vector2(-2767.9443, 705.11755)
+scale = Vector2(3.3053691, 3.809898)
 shape = SubResource("CapsuleShape2D_4shbi")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1192494556]
