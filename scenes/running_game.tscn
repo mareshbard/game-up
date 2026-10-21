@@ -36,13 +36,21 @@ shape = SubResource("CapsuleShape2D_ao08h")
 action = "pular"
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
-position = Vector2(2201, 1169)
+position = Vector2(2202, 1307)
 scale = Vector2(0.056538615, 0.056538615)
 script = ExtResource("2_3mdbh")
 
+[node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
+position = Vector2(17.68744, 0)
+animation = &"run"
+
 [node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=107168342]
-position = Vector2(11478.881, -1627.2065)
-zoom = Vector2(0.25, 0.25)
+position = Vector2(9674.805, 123.80884)
+zoom = Vector2(0.2, 0.18)
+limit_left = 1200
+limit_top = 390
+limit_right = 65000
+limit_bottom = 1176
 
 [node name="Chao" type="StaticBody2D" parent="." unique_id=1914459209]
 position = Vector2(455, -425)
@@ -213,3 +221,5 @@ shape = SubResource("CircleShape2D_4h5tc")
 [connection signal="body_entered" from="Hole14" to="Hole14" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole15" to="Hole15" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole16" to="Hole16" method="_on_body_entered"]
+
+[editable path="Emilia"]

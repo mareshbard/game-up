@@ -87,9 +87,10 @@ height = 12980.209
 scale = Vector2(1.2565283, 1.2565283)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768111284]
+position = Vector2(23.875309, 0)
 scale = Vector2(7.1980844, 7.17921)
 sprite_frames = SubResource("SpriteFrames_4h5tc")
-animation = &"run"
+animation = &"walk"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1192494556]
 

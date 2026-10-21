@@ -55,7 +55,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if MOVENDO and get_slide_collision_count() > 0:
-		MOVENDO = false
-		velocity = Vector2.ZERO
-		$AnimatedSprite2D.stop()
+	#if MOVENDO and get_slide_collision_count() > 0:
+		#MOVENDO = false
+		#velocity = Vector2.ZERO
+		#$AnimatedSprite2D.stop()

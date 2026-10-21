@@ -188,7 +188,17 @@ position = Vector2(-1224.0463, 195.36896)
 scale = Vector2(0.03956324, 0.03956324)
 script = ExtResource("15_aedt3")
 
+[node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
+position = Vector2(-100.78145, 806.22766)
+scale = Vector2(6.2429414, 6.2265716)
+
+[node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
+position = Vector2(-503.89505, 10884.072)
+scale = Vector2(1.4647785, 0.28590798)
+
 [connection signal="gui_input" from="TelaDaCaixa/CaixaCompleta/Urso" to="Caixa" method="_on_urso_1_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_botao_fechar_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/Urso1" to="Caixa" method="_on_urso_clicked_gui_input"]
 [connection signal="input_event" from="Caixa" to="Caixa" method="_on_input_event"]
+
+[editable path="Emilia"]

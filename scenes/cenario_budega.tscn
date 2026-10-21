@@ -49,6 +49,8 @@ shader = ExtResource("2_fdnq5")
 shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0.6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
+
 [node name="cenario_budega" type="Node2D" unique_id=1380752427]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=991758388]
@@ -64,9 +66,13 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_jek3i")
 
 [node name="Emilia2" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
-position = Vector2(115.00001, 273)
-scale = Vector2(0.0105278995, 0.010535577)
+position = Vector2(81, 283)
+scale = Vector2(0.0072395694, 0.0072448496)
 script = ExtResource("3_efwru")
+
+[node name="CollisionShape2D" parent="Emilia2" index="2" unique_id=72783836]
+position = Vector2(-552.51855, 11180.358)
+scale = Vector2(-0.6478942, 0.3120213)
 
 [node name="SpotCalendario" type="Area2D" parent="." unique_id=259090627]
 position = Vector2(143, 80)
@@ -247,6 +253,13 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16_n5u8c")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1203134426]
+position = Vector2(255, 301.00003)
+scale = Vector2(25.56763, -4.7432423)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1067387524]
+shape = SubResource("RectangleShape2D_4h5tc")
+
 [connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]
 [connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]
 [connection signal="input_event" from="SpotCaderno" to="SpotCaderno" method="_on_input_event"]
@@ -259,3 +272,5 @@ script = ExtResource("16_n5u8c")
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button3" to="PopUpCadeado" method="_on_button_3_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button4" to="PopUpCadeado" method="_on_button_4_pressed"]
 [connection signal="gui_input" from="PopUpCalendario/CorDeFundo" to="SpotCalendario" method="_on_cor_de_fundo_gui_input"]
+
+[editable path="Emilia2"]
