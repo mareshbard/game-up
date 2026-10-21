@@ -81,13 +81,13 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4shbi"]
 radius = 5041.17
-height = 40793.496
+height = 40235.176
 
 [node name="Emilia" type="CharacterBody2D" unique_id=1594740485]
 scale = Vector2(1.2565283, 1.2565283)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768111284]
-scale = Vector2(7.038497, 7.020041)
+scale = Vector2(7.1980844, 7.17921)
 sprite_frames = SubResource("SpriteFrames_4h5tc")
 animation = &"run"
 

@@ -28,13 +28,13 @@ scale = Vector2(2.804288, 2.804288)
 texture = ExtResource("3_872uf")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
-position = Vector2(2583.0002, 1394.0001)
-scale = Vector2(0.04516922, 0.04516922)
+position = Vector2(2575.0002, 1287)
+scale = Vector2(0.039998174, 0.039998174)
 script = ExtResource("2_3mdbh")
 
 [node name="CollisionShape2D" parent="Emilia" index="1" unique_id=1500110265]
-position = Vector2(-2036.79, 863.41626)
-scale = Vector2(1.3080373, -0.30291873)
+position = Vector2(-1815.4001, 575.6094)
+scale = Vector2(1, 0.356)
 
 [node name="VisibleOnScreenNotifier2D" parent="Emilia" index="2" unique_id=1192494556]
 position = Vector2(-4139.9927, 531.3326)
@@ -67,7 +67,7 @@ scale = Vector2(2.8846154, 2.8846154)
 shape = SubResource("WorldBoundaryShape2D_4h5tc")
 
 [node name="Hole" type="Area2D" parent="." unique_id=437327358]
-position = Vector2(-2402, -1485)
+position = Vector2(4, -1)
 script = ExtResource("4_3mdbh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole" unique_id=684564045]
