@@ -8,9 +8,7 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("run")
 	$AnimatedSprite2D.flip_h = true
 	
-	
 func _physics_process(delta: float) -> void:
-
 	if not is_on_floor():
 		if velocity.y > 0:
 			# peso maior na queda
@@ -18,7 +16,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			# gravidade normal
 			velocity += get_gravity() * (FALL_MULTIPLIER-1)* delta 
-		
 	velocity.x = SPEED
 	
 	if is_on_floor():
@@ -27,9 +24,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.play("run")
 
-				
 	move_and_slide()
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	get_tree().change_scene_to_file("res://scenes/Quarto.tscn")
