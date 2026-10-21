@@ -28,12 +28,20 @@ scale = Vector2(2.804288, 2.804288)
 texture = ExtResource("3_872uf")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
-position = Vector2(2553.0002, 1336.0001)
+position = Vector2(2583.0002, 1394.0001)
 scale = Vector2(0.04516922, 0.04516922)
 script = ExtResource("2_3mdbh")
 
+[node name="CollisionShape2D" parent="Emilia" index="1" unique_id=1500110265]
+position = Vector2(-2036.79, 863.41626)
+scale = Vector2(1.3080373, -0.30291873)
+
+[node name="VisibleOnScreenNotifier2D" parent="Emilia" index="2" unique_id=1192494556]
+position = Vector2(-4139.9927, 531.3326)
+rect = Rect2(-730.58984, -10, 3652.9297, 5256.9336)
+
 [node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1533308366]
-position = Vector2(23940.7, 25368.928)
+position = Vector2(23932.225, 25371.252)
 scale = Vector2(42.293144, -123960.23)
 zoom = Vector2(0.2, 0.18)
 limit_left = -19
@@ -59,6 +67,7 @@ scale = Vector2(2.8846154, 2.8846154)
 shape = SubResource("WorldBoundaryShape2D_4h5tc")
 
 [node name="Hole" type="Area2D" parent="." unique_id=437327358]
+position = Vector2(-2402, -1485)
 script = ExtResource("4_3mdbh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole" unique_id=684564045]
@@ -217,3 +226,5 @@ shape = SubResource("CircleShape2D_4h5tc")
 [connection signal="body_entered" from="Hole14" to="Hole14" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole15" to="Hole15" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole16" to="Hole16" method="_on_body_entered"]
+
+[editable path="Emilia"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 2000.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -1300.0
 const FALL_MULTIPLIER = 3.0
 
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 			# gravidade normal
 			velocity += get_gravity() * (FALL_MULTIPLIER-1)* delta 
 		
-	velocity.x = SPEED
+	velocity.x = -SPEED
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("pular"):

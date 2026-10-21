@@ -80,21 +80,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4shbi"]
-radius = 1253.2058
-height = 4888.4893
+radius = 5041.17
+height = 40793.496
 
 [node name="Emilia" type="CharacterBody2D" unique_id=1594740485]
 scale = Vector2(1.2565283, 1.2565283)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768111284]
-position = Vector2(-279.34113, 211.6944)
-scale = Vector2(8.316735, 8.294929)
+scale = Vector2(7.038497, 7.020041)
 sprite_frames = SubResource("SpriteFrames_4h5tc")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1500110265]
-position = Vector2(-2767.9443, 705.11755)
-scale = Vector2(3.3053691, 3.809898)
+scale = Vector2(-1.1106073, -0.3962684)
 shape = SubResource("CapsuleShape2D_4shbi")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1192494556]

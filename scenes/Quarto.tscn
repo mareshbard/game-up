@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://c7yy754fwirbn" path="res://assets/ui/BotaoRosa.png" id="8_vlhge"]
 [ext_resource type="Texture2D" uid="uid://vkl7uh414ifc" path="res://assets/quarto/Urso-02.png" id="9_pj5fk"]
 [ext_resource type="Texture2D" uid="uid://dtnuyfveu7ogv" path="res://assets/quarto/Urso-03.png" id="10_05ih3"]
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="14_ofrq6"]
+[ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="15_aedt3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3xpb"]
 shader = ExtResource("2_8thnl")
@@ -20,7 +22,7 @@ shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
-size = Vector2(490.70114, 342.21405)
+size = Vector2(580.2689, 334.579)
 
 [node name="Quarto" type="Sprite2D" unique_id=1344205346]
 position = Vector2(428.99997, 197)
@@ -164,19 +166,27 @@ offset_bottom = 2568.0
 scale = Vector2(0.1431793, 0.1431793)
 texture = ExtResource("3_1hljf")
 
-[node name="Caixa" type="Area2D" parent="." unique_id=329063121]
+[node name="Caixa" type="StaticBody2D" parent="." unique_id=2092880442]
+position = Vector2(-19.93549, -11.961365)
 scale = Vector2(0.99999994, 0.99999994)
+input_pickable = true
 script = ExtResource("2_24xt2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Caixa" unique_id=472578760]
-position = Vector2(-724.4294, 294.23462)
-scale = Vector2(0.25607497, 0.25607494)
+position = Vector2(-724.4293, 294.23462)
+scale = Vector2(0.2560749, 0.25607488)
 texture = ExtResource("4_8thnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caixa" unique_id=359642764]
-position = Vector2(-739.06055, 299.25513)
-scale = Vector2(1, 0.9999997)
+physics_interpolation_mode = 1
+position = Vector2(-684.8594, 302.85156)
+scale = Vector2(1, 0.99999964)
 shape = SubResource("RectangleShape2D_4h5tc")
+
+[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("14_ofrq6")]
+position = Vector2(-1224.0463, 195.36896)
+scale = Vector2(0.03956324, 0.03956324)
+script = ExtResource("15_aedt3")
 
 [connection signal="gui_input" from="TelaDaCaixa/CaixaCompleta/Urso" to="Caixa" method="_on_urso_1_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_botao_fechar_gui_input"]

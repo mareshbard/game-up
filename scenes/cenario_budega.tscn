@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/budega/blur_calendario.gdshader" id="2_fdnq5"]
 [ext_resource type="Script" uid="uid://w07ij5k860v" path="res://scripts/budega/spot_armario.gd" id="2_se470"]
 [ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/budega/jogo_do_bicho.png" id="3_e0cgk"]
+[ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="3_efwru"]
 [ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_0kq6u"]
 [ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="4_e0cgk"]
 [ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/budega/botao_cadeado.gd" id="7_42k1l"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dncxwar3u4yp4" path="res://assets/budega/cadeado_fechado.png" id="11_41774"]
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
 [ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/budega/texture_calendario.gd" id="16_n5u8c"]
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
@@ -60,6 +62,11 @@ limit_bottom = 0
 position = Vector2(426, 196.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_jek3i")
+
+[node name="Emilia2" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
+position = Vector2(115.00001, 273)
+scale = Vector2(0.0105278995, 0.010535577)
+script = ExtResource("3_efwru")
 
 [node name="SpotCalendario" type="Area2D" parent="." unique_id=259090627]
 position = Vector2(143, 80)
