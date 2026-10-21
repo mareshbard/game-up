@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://cxk7rwf847rr3" path="res://assets/terreno-baldio/telhinhas.png" id="22_afgox"]
 [ext_resource type="Script" uid="uid://psm73ykguw56" path="res://scripts/terreno/telhinhas.gd" id="23_g6i3f"]
 [ext_resource type="Script" uid="uid://b3pusd5yq26ns" path="res://scripts/terreno/penta.gd" id="24_g6i3f"]
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="25_xjxfh"]
+[ext_resource type="Script" uid="uid://b5eikkhrj503y" path="res://scripts/terreno/emilia_terreno.gd" id="26_f23t7"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sswmf"]
 
@@ -33,6 +35,9 @@ noise = SubResource("FastNoiseLite_sswmf")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmfj3"]
 radius = 36.0
 height = 230.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
+size = Vector2(230, 95)
 
 [node name="cenário-terreno-baldio" type="Node2D" unique_id=290131723]
 
@@ -1512,6 +1517,17 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 script = ExtResource("23_g6i3f")
+
+[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("25_xjxfh")]
+position = Vector2(174, 301)
+scale = Vector2(0.004539084, 0.004539084)
+script = ExtResource("26_f23t7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1384386005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1565652848]
+position = Vector2(213, 224)
+shape = SubResource("RectangleShape2D_4h5tc")
 
 [connection signal="gui_input" from="Desenho/PadrãoDesenho" to="Desenho/PadrãoDesenho" method="_on_gui_input"]
 [connection signal="input_event" from="pentagrama" to="pentagrama" method="_on_input_event"]

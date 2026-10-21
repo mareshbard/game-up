@@ -37,6 +37,8 @@ func verificar_senha() -> void:
 		botao2.hide()
 		botao3.hide()
 		botao4.hide()
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
 
 
 func _on_button_1_pressed() -> void:
