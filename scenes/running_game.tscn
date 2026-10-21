@@ -27,28 +27,6 @@ position = Vector2(47932.996, 790)
 scale = Vector2(2.804288, 2.804288)
 texture = ExtResource("3_872uf")
 
-[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
-position = Vector2(2575.0002, 1287)
-scale = Vector2(0.039998174, 0.039998174)
-script = ExtResource("2_3mdbh")
-
-[node name="CollisionShape2D" parent="Emilia" index="1" unique_id=1500110265]
-position = Vector2(-1815.4001, 575.6094)
-scale = Vector2(1, 0.356)
-
-[node name="VisibleOnScreenNotifier2D" parent="Emilia" index="2" unique_id=1192494556]
-position = Vector2(-4139.9927, 531.3326)
-rect = Rect2(-730.58984, -10, 3652.9297, 5256.9336)
-
-[node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1533308366]
-position = Vector2(23932.225, 25371.252)
-scale = Vector2(42.293144, -123960.23)
-zoom = Vector2(0.2, 0.18)
-limit_left = -19
-limit_top = 390
-limit_right = 65000
-limit_bottom = 1176
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1391584844]
 
 [node name="ButtonPular" type="TouchScreenButton" parent="CanvasLayer" unique_id=596962212]
@@ -56,6 +34,15 @@ position = Vector2(5802, 993)
 scale = Vector2(298.25494, -108.62787)
 shape = SubResource("CapsuleShape2D_ao08h")
 action = "pular"
+
+[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
+position = Vector2(2201, 1169)
+scale = Vector2(0.056538615, 0.056538615)
+script = ExtResource("2_3mdbh")
+
+[node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=107168342]
+position = Vector2(11478.881, -1627.2065)
+zoom = Vector2(0.25, 0.25)
 
 [node name="Chao" type="StaticBody2D" parent="." unique_id=1914459209]
 position = Vector2(455, -425)
@@ -226,5 +213,3 @@ shape = SubResource("CircleShape2D_4h5tc")
 [connection signal="body_entered" from="Hole14" to="Hole14" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole15" to="Hole15" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole16" to="Hole16" method="_on_body_entered"]
-
-[editable path="Emilia"]
