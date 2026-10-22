@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://d271wq3ysx1yy"]
 
+[ext_resource type="Script" uid="uid://nacx2kqv8wnl" path="res://scripts/game-kit.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://cu6hg8pqyjr1f" path="res://assets/menu/cenario_menu_ofc.png" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://bmcimeoewlajm" path="res://assets/menu/botao_novo_jogo.png" id="2_vjb58"]
 [ext_resource type="Script" uid="uid://cksku4ndk6o2h" path="res://scripts/botao_novo_jogo.gd" id="3_con2f"]
 
 [node name="Node2D" type="Node2D" unique_id=1195655275]
+script = ExtResource("1_mhnvy")
 
 [node name="CenarioMenuOfc" type="Sprite2D" parent="." unique_id=222695804]
 position = Vector2(535, 196)
