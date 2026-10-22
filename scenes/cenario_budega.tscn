@@ -50,6 +50,7 @@ shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0.6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
+size = Vector2(20, 19.487188)
 
 [node name="cenario_budega" type="Node2D" unique_id=1380752427]
 
@@ -258,6 +259,8 @@ position = Vector2(255, 301.00003)
 scale = Vector2(25.56763, -4.7432423)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1067387524]
+position = Vector2(0, -0.25640488)
+scale = Vector2(1, 0.9999999)
 shape = SubResource("RectangleShape2D_4h5tc")
 
 [connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]

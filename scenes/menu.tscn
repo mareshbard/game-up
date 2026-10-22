@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d271wq3ysx1yy"]
+
+[ext_resource type="Texture2D" uid="uid://cu6hg8pqyjr1f" path="res://assets/menu/cenario_menu_ofc.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://bmcimeoewlajm" path="res://assets/menu/botao_novo_jogo.png" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://cksku4ndk6o2h" path="res://scripts/botao_novo_jogo.gd" id="3_con2f"]
+
+[node name="Node2D" type="Node2D" unique_id=1195655275]
+
+[node name="CenarioMenuOfc" type="Sprite2D" parent="." unique_id=222695804]
+position = Vector2(535, 196)
+scale = Vector2(0.25493002, 0.25493)
+texture = ExtResource("1_yqeox")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1365761253]
+offset_left = 516.0
+offset_top = 234.0
+offset_right = 1016.0
+offset_bottom = 410.0
+scale = Vector2(0.3047506, 0.3047506)
+texture_normal = ExtResource("2_vjb58")
+script = ExtResource("3_con2f")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
