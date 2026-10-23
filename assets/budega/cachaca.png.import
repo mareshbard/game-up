@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cptaxxosxmuhw"
-path="res://.godot/imported/armario-aberto-ofc.png-25396ee4890a77d7699cb3afe42c8684.ctex"
+uid="uid://3icdh7psds42"
+path="res://.godot/imported/cachaca.png-171e0a43749a85e82f316486daeccb75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/budega/armario-aberto-ofc.png"
-dest_files=["res://.godot/imported/armario-aberto-ofc.png-25396ee4890a77d7699cb3afe42c8684.ctex"]
+source_file="res://assets/budega/cachaca.png"
+dest_files=["res://.godot/imported/cachaca.png-171e0a43749a85e82f316486daeccb75.ctex"]
 
 [params]
 
