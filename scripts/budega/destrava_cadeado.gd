@@ -8,7 +8,10 @@ extends CanvasLayer
 @onready var imagem_armario = $"../PopUpArmario/TextureRect"
 @onready var imagem_cadeado: TextureRect = $TextureRect
 
-var foto_armario_aberto = preload("res://assets/budega/armario-aberto-ofc.png")
+@onready var botao_cachaca = $"../PopUpArmario/Texture_Cachaca"
+@onready var botao_giz = $"../PopUpArmario/Texture_Giz"
+
+var foto_armario_aberto = preload("res://assets/budega/armario-aberto-ofc-ofc.png")
 var foto_cadeado_aberto = preload("res://assets/budega/cadeado-aberto.png")
 
 var num1: int = 0
@@ -37,10 +40,10 @@ func verificar_senha() -> void:
 		botao2.hide()
 		botao3.hide()
 		botao4.hide()
-		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
-
-
+		
+		botao_cachaca.show()
+		botao_giz.show()
+		
 func _on_button_1_pressed() -> void:
 	num1 = (num1 + 1) % 10 
 	atualizar_visor()
@@ -57,9 +60,14 @@ func _on_button_4_pressed() -> void:
 	num4 = (num4 + 1) % 10 
 	atualizar_visor()
 
-
 func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		get_viewport().set_input_as_handled()
-		
 		call_deferred("hide")
+
+func _on_texture_cachaca_pressed() -> void:
+	botao_cachaca.hide()
+
+
+func _on_texture_giz_pressed() -> void:
+	botao_giz.hide()

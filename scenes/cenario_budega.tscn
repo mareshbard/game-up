@@ -9,8 +9,10 @@
 [ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_0kq6u"]
 [ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="4_e0cgk"]
 [ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/budega/botao_cadeado.gd" id="7_42k1l"]
+[ext_resource type="Texture2D" uid="uid://dvtpjmp4jfoat" path="res://assets/budega/giz_ofc.png" id="7_j5nj5"]
 [ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/budega/armario-fechado-ofc.png" id="7_jcsq8"]
 [ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/budega/blur_cadeado.gdshader" id="8_abu8e"]
+[ext_resource type="Texture2D" uid="uid://3icdh7psds42" path="res://assets/budega/cachaca.png" id="8_fyxpd"]
 [ext_resource type="Shader" uid="uid://6himicivppnw" path="res://scripts/budega/blur_livro.gdshader" id="8_n5u8c"]
 [ext_resource type="Texture2D" uid="uid://b4fwkr2aauq0j" path="res://assets/budega/caderno_fiado.png" id="9_42k1l"]
 [ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scripts/budega/destrava_cadeado.gd" id="9_jcsq8"]
@@ -127,6 +129,26 @@ offset_right = 312.0
 offset_bottom = 238.0
 flat = true
 script = ExtResource("7_42k1l")
+
+[node name="Texture_Cachaca" type="TextureButton" parent="PopUpArmario" unique_id=1117178132]
+visible = false
+z_index = 1
+offset_left = 387.00003
+offset_top = 100.00001
+offset_right = 2947.0
+offset_bottom = 8765.0
+scale = Vector2(0.010224946, 0.010224946)
+texture_normal = ExtResource("8_fyxpd")
+
+[node name="Texture_Giz" type="TextureButton" parent="PopUpArmario" unique_id=866897320]
+visible = false
+z_index = 1
+offset_left = 351.0
+offset_top = 279.0
+offset_right = 2911.0
+offset_bottom = 2343.0
+scale = Vector2(0.016666671, 0.016666671)
+texture_normal = ExtResource("7_j5nj5")
 
 [node name="PopUpCaderno" type="CanvasLayer" parent="." unique_id=2074363279]
 visible = false
@@ -268,6 +290,8 @@ shape = SubResource("RectangleShape2D_4h5tc")
 [connection signal="input_event" from="SpotCaderno" to="SpotCaderno" method="_on_input_event"]
 [connection signal="gui_input" from="PopUpArmario/CorDeFundo" to="SpotArmario" method="_on_cor_de_fundo_gui_input"]
 [connection signal="pressed" from="PopUpArmario/BotaoCadeado" to="SpotCaderno" method="_on_botao_cadeado_pressed"]
+[connection signal="pressed" from="PopUpArmario/Texture_Cachaca" to="PopUpCadeado" method="_on_texture_cachaca_pressed"]
+[connection signal="pressed" from="PopUpArmario/Texture_Giz" to="PopUpCadeado" method="_on_texture_giz_pressed"]
 [connection signal="gui_input" from="PopUpCaderno/CorDeFundo" to="SpotCaderno" method="_on_cor_de_fundo_gui_input"]
 [connection signal="gui_input" from="PopUpCadeado/CorDeFundo" to="PopUpCadeado" method="_on_cor_de_fundo_gui_input"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button1" to="PopUpCadeado" method="_on_button_1_pressed"]
