@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://dgt52c85mrdlt"]
 
-[ext_resource type="Texture2D" uid="uid://cgsb2gbcf4t4e" path="res://assets/cenario_bodega_ofc.png" id="1_jek3i"]
-[ext_resource type="Script" uid="uid://xerrdekp25ti" path="res://scripts/spot_calendario.gd" id="2_abu8e"]
-[ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/blur_calendario.gdshader" id="2_fdnq5"]
-[ext_resource type="Script" uid="uid://w07ij5k860v" path="res://scripts/spot_armario.gd" id="2_se470"]
-[ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/jogo_do_bicho.png" id="3_e0cgk"]
-[ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/spot_livro.gd" id="4_0kq6u"]
-[ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/blur_armario.gdshader" id="4_e0cgk"]
-[ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/botao_cadeado.gd" id="7_42k1l"]
-[ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/armario-fechado-ofc.png" id="7_jcsq8"]
-[ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/blur_cadeado.gdshader" id="8_abu8e"]
-[ext_resource type="Shader" uid="uid://6himicivppnw" path="res://scripts/blur_livro.gdshader" id="8_n5u8c"]
-[ext_resource type="Texture2D" uid="uid://b4fwkr2aauq0j" path="res://assets/caderno_fiado.png" id="9_42k1l"]
-[ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scenes/destrava_cadeado.gd" id="9_jcsq8"]
-[ext_resource type="Script" uid="uid://dbro0ora8sa6u" path="res://scripts/texture_rect.gd" id="10_42k1l"]
-[ext_resource type="Texture2D" uid="uid://dncxwar3u4yp4" path="res://assets/cadeado_fechado.png" id="11_41774"]
+[ext_resource type="Texture2D" uid="uid://cgsb2gbcf4t4e" path="res://assets/budega/cenario_bodega_ofc.png" id="1_jek3i"]
+[ext_resource type="Script" uid="uid://xerrdekp25ti" path="res://scripts/budega/spot_calendario.gd" id="2_abu8e"]
+[ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/budega/blur_calendario.gdshader" id="2_fdnq5"]
+[ext_resource type="Script" uid="uid://w07ij5k860v" path="res://scripts/budega/spot_armario.gd" id="2_se470"]
+[ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/budega/jogo_do_bicho.png" id="3_e0cgk"]
+[ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="3_efwru"]
+[ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_0kq6u"]
+[ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="4_e0cgk"]
+[ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/budega/botao_cadeado.gd" id="7_42k1l"]
+[ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/budega/armario-fechado-ofc.png" id="7_jcsq8"]
+[ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/budega/blur_cadeado.gdshader" id="8_abu8e"]
+[ext_resource type="Shader" uid="uid://6himicivppnw" path="res://scripts/budega/blur_livro.gdshader" id="8_n5u8c"]
+[ext_resource type="Texture2D" uid="uid://b4fwkr2aauq0j" path="res://assets/budega/caderno_fiado.png" id="9_42k1l"]
+[ext_resource type="Script" uid="uid://dw30o5h0ta52j" path="res://scripts/budega/destrava_cadeado.gd" id="9_jcsq8"]
+[ext_resource type="Script" uid="uid://dbro0ora8sa6u" path="res://scripts/budega/texture_rect.gd" id="10_42k1l"]
+[ext_resource type="Texture2D" uid="uid://dncxwar3u4yp4" path="res://assets/budega/cadeado_fechado.png" id="11_41774"]
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
-[ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/texture_calendario.gd" id="16_n5u8c"]
+[ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/budega/texture_calendario.gd" id="16_n5u8c"]
+[ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
@@ -47,6 +49,9 @@ shader = ExtResource("2_fdnq5")
 shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0.6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
+size = Vector2(20, 19.487188)
+
 [node name="cenario_budega" type="Node2D" unique_id=1380752427]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=991758388]
@@ -60,6 +65,15 @@ limit_bottom = 0
 position = Vector2(426, 196.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_jek3i")
+
+[node name="Emilia2" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
+position = Vector2(81, 283)
+scale = Vector2(0.0072395694, 0.0072448496)
+script = ExtResource("3_efwru")
+
+[node name="CollisionShape2D" parent="Emilia2" index="2" unique_id=72783836]
+position = Vector2(-552.51855, 11180.358)
+scale = Vector2(-0.6478942, 0.3120213)
 
 [node name="SpotCalendario" type="Area2D" parent="." unique_id=259090627]
 position = Vector2(143, 80)
@@ -86,6 +100,7 @@ position = Vector2(198, 235)
 shape = SubResource("RectangleShape2D_ux7jl")
 
 [node name="PopUpArmario" type="CanvasLayer" parent="." unique_id=1075801639]
+visible = false
 
 [node name="CorDeFundo" type="ColorRect" parent="PopUpArmario" unique_id=1025999525]
 material = SubResource("ShaderMaterial_frm3v")
@@ -239,6 +254,15 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16_n5u8c")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1203134426]
+position = Vector2(255, 301.00003)
+scale = Vector2(25.56763, -4.7432423)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1067387524]
+position = Vector2(0, -0.25640488)
+scale = Vector2(1, 0.9999999)
+shape = SubResource("RectangleShape2D_4h5tc")
+
 [connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]
 [connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]
 [connection signal="input_event" from="SpotCaderno" to="SpotCaderno" method="_on_input_event"]
@@ -251,3 +275,5 @@ script = ExtResource("16_n5u8c")
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button3" to="PopUpCadeado" method="_on_button_3_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button4" to="PopUpCadeado" method="_on_button_4_pressed"]
 [connection signal="gui_input" from="PopUpCalendario/CorDeFundo" to="SpotCalendario" method="_on_cor_de_fundo_gui_input"]
+
+[editable path="Emilia2"]

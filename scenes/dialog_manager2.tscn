@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://2g5gc4w23prj"]
+
+[ext_resource type="Script" uid="uid://2eyvgvwhllty" path="res://scripts/ui/dialogue_manager.gd" id="1_7xxlb"]
+
+[sub_resource type="SystemFont" id="SystemFont_smvbx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h5tc"]
+font = SubResource("SystemFont_smvbx")
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DialogManager" type="CanvasLayer" unique_id=2113483920]
+process_mode = 3
+script = ExtResource("1_7xxlb")
+
+[node name="DialogBox" type="Control" parent="." unique_id=1787423296]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Ballon" type="TextureRect" parent="DialogBox" unique_id=1906721777]
+layout_mode = 0
+offset_right = 523.0
+offset_bottom = 40.0
+expand_mode = 1
+
+[node name="DialogText" type="Label" parent="DialogBox" unique_id=1115957257]
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 0
+offset_right = 740.78467
+offset_bottom = 84.656586
+scale = Vector2(1.1474321, 1.039494)
+text = "This is some text njsdhdhfbbfbvfbvbvbvbvbvbvbvbvbvbvb"
+label_settings = SubResource("LabelSettings_4h5tc")
+autowrap_mode = 3

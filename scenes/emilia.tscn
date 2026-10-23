@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://c4dmbowgw8cje"]
+
+[ext_resource type="Texture2D" uid="uid://cqxhv80o4x4wv" path="res://assets/personagens/Correndo.png" id="1_pow6n"]
+[ext_resource type="Texture2D" uid="uid://dtxs66tf8if1g" path="res://assets/personagens/Andando.png" id="2_pow6n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y5hi"]
+atlas = ExtResource("1_pow6n")
+region = Rect2(0, 0, 1553, 2206)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4shbi"]
+atlas = ExtResource("1_pow6n")
+region = Rect2(1553, 0, 1553, 2206)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p61ur"]
+atlas = ExtResource("1_pow6n")
+region = Rect2(3106, 0, 1553, 2206)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iefuo"]
+atlas = ExtResource("1_pow6n")
+region = Rect2(4659, 0, 1553, 2206)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pow6n"]
+atlas = ExtResource("2_pow6n")
+region = Rect2(0, 0, 1554, 4128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq5le"]
+atlas = ExtResource("2_pow6n")
+region = Rect2(1554, 0, 1554, 4128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmlpj"]
+atlas = ExtResource("2_pow6n")
+region = Rect2(3108, 0, 1554, 4128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3543"]
+atlas = ExtResource("2_pow6n")
+region = Rect2(4662, 0, 1554, 4128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pccbn"]
+atlas = ExtResource("2_pow6n")
+region = Rect2(6216, 0, 1554, 4128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h5tc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y5hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4shbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p61ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iefuo")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pow6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq5le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmlpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3543")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pccbn")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_frm3v"]
+radius = 1631.4794
+height = 12980.209
+
+[node name="Emilia" type="CharacterBody2D" unique_id=1594740485]
+scale = Vector2(1.2565283, 1.2565283)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768111284]
+position = Vector2(23.875309, 0)
+scale = Vector2(7.1980844, 7.17921)
+sprite_frames = SubResource("SpriteFrames_4h5tc")
+animation = &"walk"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1192494556]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72783836]
+position = Vector2(-97.09292, 915.2201)
+shape = SubResource("CapsuleShape2D_frm3v")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

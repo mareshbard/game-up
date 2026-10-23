@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c1hepntu002jl"]
+
+[ext_resource type="Script" uid="uid://b83hdc5ljckwr" path="res://scripts/cemiterio/rosa.gd" id="1_jgcyg"]
+[ext_resource type="Texture2D" uid="uid://biwa3mcthejn6" path="res://assets/cemiterio/rosa.png" id="2_hs5u3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
+size = Vector2(55.653946, 62.226784)
+
+[node name="rosa" type="Area2D" unique_id=252298766]
+script = ExtResource("1_jgcyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1688222727]
+position = Vector2(1286, 1062)
+texture = ExtResource("2_hs5u3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1001268872]
+position = Vector2(1314, 1140)
+scale = Vector2(44.04001, 29.279995)
+shape = SubResource("RectangleShape2D_4h5tc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
