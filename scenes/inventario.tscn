@@ -11,10 +11,10 @@ script = ExtResource("1_mu20r")
 [node name="PopUpInventario" type="CanvasLayer" parent="." unique_id=416924790]
 
 [node name="botaoBolsa" type="TextureButton" parent="PopUpInventario" unique_id=88876574]
-offset_left = 761.0
-offset_top = 300.0
-offset_right = 1174.0
-offset_bottom = 700.0
+offset_left = 764.0
+offset_top = 4.9999695
+offset_right = 1177.0
+offset_bottom = 404.99997
 scale = Vector2(0.192012, 0.192012)
 texture_normal = ExtResource("1_q836x")
 
@@ -29,14 +29,73 @@ stretch_mode = 5
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PopUpInventario/fundoInventario" unique_id=1023459207]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 15.723639
+offset_top = 1.2018074
+offset_right = 26.1304
+offset_bottom = 49.0114
+scale = Vector2(0.8853719, 0.7687846)
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopUpInventario/fundoInventario/ScrollContainer" unique_id=842161137]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
 
 [node name="Slot1" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1783327040]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Slot2" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1065620057]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Slot3" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1159883435]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Slot4" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=534589139]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Slot5" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=40001347]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Slot6" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=2112578899]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Slot7" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1411933373]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_1ji4w")
+expand_mode = 1
+stretch_mode = 6
 
 [connection signal="pressed" from="PopUpInventario/botaoBolsa" to="." method="_on_botao_bolsa_pressed"]

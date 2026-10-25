@@ -9,7 +9,7 @@ var esta_aberto: bool = false
 
 func _ready() -> void:
 	pos_aberto = painel_inventario.position.y
-	pos_fechado = get_viewport_rect().size.y
+	pos_fechado = -get_viewport_rect().size.y -50
 	painel_inventario.position.y = pos_fechado
 
 func _on_botao_bolsa_pressed() -> void:
