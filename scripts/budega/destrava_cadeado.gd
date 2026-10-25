@@ -14,6 +14,9 @@ extends CanvasLayer
 var foto_armario_aberto = preload("res://assets/budega/armario-aberto-ofc-ofc.png")
 var foto_cadeado_aberto = preload("res://assets/budega/cadeado-aberto.png")
 
+var collected_cachaca: bool = false
+var collected_giz: bool = false
+
 var num1: int = 0
 var num2: int = 0
 var num3: int = 0
@@ -66,8 +69,16 @@ func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 		call_deferred("hide")
 
 func _on_texture_cachaca_pressed() -> void:
+	collected_cachaca = true
 	botao_cachaca.hide()
-
+	scene_pass()
 
 func _on_texture_giz_pressed() -> void:
+	collected_giz = true
 	botao_giz.hide()
+	scene_pass()
+	
+func scene_pass() -> void:
+	if collected_cachaca && collected_giz:
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
