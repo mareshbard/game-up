@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhm0yes0o8uah"
-path="res://.godot/imported/teste.png-e12b5efd9167c2e8b8dd1f734be13f33.ctex"
+uid="uid://babaxw0hb8rfu"
+path="res://.godot/imported/Pulo.png-78215e8df7a7c006ab4fd9e6c1e3813d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/personagens/teste.png"
-dest_files=["res://.godot/imported/teste.png-e12b5efd9167c2e8b8dd1f734be13f33.ctex"]
+source_file="res://assets/personagens/Pulo.png"
+dest_files=["res://.godot/imported/Pulo.png-78215e8df7a7c006ab4fd9e6c1e3813d.ctex"]
 
 [params]
 

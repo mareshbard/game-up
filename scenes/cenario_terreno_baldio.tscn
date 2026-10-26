@@ -1543,9 +1543,18 @@ texture_normal = ExtResource("26_7xcnt")
 texture_pressed = ExtResource("27_vid8f")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("25_xjxfh")]
+process_mode = 0
 position = Vector2(174, 301)
 scale = Vector2(0.004539084, 0.004539084)
 script = ExtResource("26_f23t7")
+
+[node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
+position = Vector2(881.23486, -10134.202)
+scale = Vector2(9.207621, 9.210002)
+animation = &"walk"
+
+[node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
+scale = Vector2(-1.446631, 1.1044477)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1384386005]
 
@@ -1682,3 +1691,5 @@ shape = SubResource("RectangleShape2D_4h5tc")
 [connection signal="gui_input" from="PopUpChao/telhinhas5" to="PopUpChao/telhinhas5" method="_on_gui_input"]
 [connection signal="gui_input" from="PopUpChao/telhinhas8" to="PopUpChao/telhinhas8" method="_on_gui_input"]
 [connection signal="pressed" from="PopUpChao/BotaoFechar" to="pentagrama" method="_on_botao_fechar_pressed"]
+
+[editable path="Emilia"]

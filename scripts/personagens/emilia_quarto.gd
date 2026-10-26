@@ -10,6 +10,8 @@ var MOVENDO = false
 var tempo_travada: float = 0.0
 var ultima_posicao: Vector2 = Vector2.ZERO
 
+signal target_reached
+
 @export var LIMITE_TOPO: float = 200
 @export var LIMITE_BASE: float = 270
 
@@ -21,7 +23,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			ALVO.y = clamp(posicao_clique.y, LIMITE_TOPO, LIMITE_BASE)
 			MOVENDO = true
 
+func walk_to(destination: Vector2) -> void:
+	ALVO.x = destination.x
+	ALVO.y = clamp(destination.y, LIMITE_TOPO, LIMITE_BASE)
+	MOVENDO = true
+
 func _physics_process(delta: float) -> void:
+	if get_tree().paused:
+		velocity = Vector2.ZERO
+		return
 	if MOVENDO:
 		var distancia_alvo = global_position.distance_to(ALVO)
 		if distancia_alvo > DIST_PARADA:
@@ -45,7 +55,7 @@ func _physics_process(delta: float) -> void:
 				if desvio.dot(direcao) < 0:
 					desvio = -desvio	
 				direcao = (desvio + direcao * 0.25).normalized()
-			
+				
 			velocity = direcao * SPEED	 	
 			
 			if velocity.x < -15.0:
@@ -75,3 +85,4 @@ func parar_personagem() -> void:
 	tempo_travada = 0.0
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.stop()
+	target_reached.emit()

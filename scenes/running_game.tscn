@@ -36,13 +36,13 @@ shape = SubResource("CapsuleShape2D_ao08h")
 action = "pular"
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("1_6uox7")]
+process_mode = 3
 position = Vector2(2202, 1307)
 scale = Vector2(0.056538615, 0.056538615)
 script = ExtResource("2_3mdbh")
 
 [node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
 position = Vector2(17.68744, 0)
-animation = &"run"
 
 [node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=107168342]
 position = Vector2(9674.805, 123.80884)
