@@ -208,8 +208,8 @@ scale = Vector2(6.2429414, 6.2265716)
 animation = &"walk"
 
 [node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
-position = Vector2(-503.89505, 10884.072)
-scale = Vector2(1.4647785, 0.28590798)
+position = Vector2(-503.89505, 8868.503)
+scale = Vector2(1.0251, 0.20927884)
 
 [node name="Balao" type="Sprite2D" parent="." unique_id=780074764]
 visible = false
@@ -240,8 +240,7 @@ shape = SubResource("RectangleShape2D_ao08h")
 
 [connection signal="gui_input" from="TelaDaCaixa/CaixaCompleta/Urso" to="Caixa" method="_on_urso_1_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/Urso1" to="Caixa" method="_on_urso_clicked_gui_input"]
-[connection signal="gui_input" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_texture_button_gui_input"]
-[connection signal="pressed" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_botao_fechar_pressed"]
+[connection signal="button_down" from="TelaDaCaixa/Urso4" to="Caixa" method="_on_urso_4_button_down"]
 [connection signal="input_event" from="Caixa" to="Caixa" method="_on_input_event"]
 [connection signal="input_event" from="Nena" to="Nena" method="_on_input_event"]
 [connection signal="input_event" from="Porta" to="Nena" method="_on_static_body_2d_input_event"]

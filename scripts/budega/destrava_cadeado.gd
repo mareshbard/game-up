@@ -8,8 +8,14 @@ signal abriu
 @onready var imagem_armario = $"../PopUpArmario/TextureRect"
 @onready var imagem_cadeado: TextureRect = $TextureRect
 
-var foto_armario_aberto = preload("res://assets/budega/armario-aberto-ofc.png")
+@onready var botao_cachaca = $"../PopUpArmario/Texture_Cachaca"
+@onready var botao_giz = $"../PopUpArmario/Texture_Giz"
+
+var foto_armario_aberto = preload("res://assets/budega/armario-aberto-ofc-ofc.png")
 var foto_cadeado_aberto = preload("res://assets/budega/cadeado-aberto.png")
+
+var collected_cachaca: bool = false
+var collected_giz: bool = false
 
 var num1: int = 0
 var num2: int = 0
@@ -39,10 +45,10 @@ func verificar_senha() -> void:
 		botao4.hide()
 		abriu.emit()
 		#await get_tree().create_timer(2.0).timeout
-	#
 		#get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
-
-
+		botao_cachaca.show()
+		botao_giz.show()
+		
 func _on_button_1_pressed() -> void:
 	num1 = (num1 + 1) % 10 
 	atualizar_visor()
@@ -59,11 +65,9 @@ func _on_button_4_pressed() -> void:
 	num4 = (num4 + 1) % 10 
 	atualizar_visor()
 
-
 func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		get_viewport().set_input_as_handled()
-		
 		call_deferred("hide")
 		esperar_abrir()
 func esperar_abrir() -> void:
@@ -72,3 +76,18 @@ func esperar_abrir() -> void:
 		"text": "Acho que essa cachaça serve.", "character": "emilia"},
 		{"text": "Eba, é isso aí! Vamos para o nosso próximo item.", "character": "nena"}])
 	await DialogueManager.dialogue_finished
+
+func _on_texture_cachaca_pressed() -> void:
+	collected_cachaca = true
+	botao_cachaca.hide()
+	scene_pass()
+
+func _on_texture_giz_pressed() -> void:
+	collected_giz = true
+	botao_giz.hide()
+	scene_pass()
+	
+func scene_pass() -> void:
+	if collected_cachaca && collected_giz:
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")

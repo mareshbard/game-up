@@ -46,16 +46,16 @@ func _on_botao_fechar_gui_input(event: InputEvent) -> void:
 		$"../Caixa".show()
 		get_tree().paused = false
 
-
 func _on_urso_1_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		$"../TelaDaCaixa/CaixaCompleta".hide()
 		$"../TelaDaCaixa/Urso1".show()
  
-
 func _on_urso_clicked_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		$%Urso4.show()
+
+func _on_urso_4_button_down() -> void:
 		print("Pegou pilhas")
 		
 

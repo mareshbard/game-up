@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cptaxxosxmuhw"
-path="res://.godot/imported/armario-aberto-ofc.png-25396ee4890a77d7699cb3afe42c8684.ctex"
+uid="uid://dxhx7gth5a34c"
+path="res://.godot/imported/slot-inventario.png-91d5e719ba2c84537da2c22effe77d8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/budega/armario-aberto-ofc.png"
-dest_files=["res://.godot/imported/armario-aberto-ofc.png-25396ee4890a77d7699cb3afe42c8684.ctex"]
+source_file="res://assets/inventario/slot-inventario.png"
+dest_files=["res://.godot/imported/slot-inventario.png-91d5e719ba2c84537da2c22effe77d8f.ctex"]
 
 [params]
 
