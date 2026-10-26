@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cvtaow2173a7v"]
+
+[ext_resource type="Script" uid="uid://dxok85dvf3kul" path="res://scripts/ui/dialogue_manager.tscn.gd" id="1_516v5"]
+[ext_resource type="Texture2D" uid="uid://dy3t5gkghd163" path="res://assets/ui/Textbox.png" id="2_516v5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h5tc"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=838223547]
+process_mode = 3
+script = ExtResource("1_516v5")
+
+[node name="DialogueBox" type="Control" parent="." unique_id=935353815]
+custom_minimum_size = Vector2(802, 100)
+custom_maximum_size = Vector2(802, -1)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextBox" type="TextureRect" parent="DialogueBox" unique_id=835818236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_516v5")
+expand_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="DialogueBox/TextBox" unique_id=836568867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="DialogueText" type="Label" parent="DialogueBox/TextBox/Margin" unique_id=578163100]
+layout_mode = 2
+text = "Olá, me chamo Emília
+"
+label_settings = SubResource("LabelSettings_4h5tc")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NameTag" type="TextureRect" parent="DialogueBox" unique_id=890223301]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -17.0
+offset_right = 415.0
+offset_bottom = 104.0
+scale = Vector2(0.29764214, 0.29764214)
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="gui_input" from="DialogueBox/TextBox" to="." method="_on_texture_rect_gui_input"]

@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://dtnuyfveu7ogv" path="res://assets/quarto/Urso-03.png" id="10_05ih3"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="14_ofrq6"]
 [ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="15_aedt3"]
+[ext_resource type="Texture2D" uid="uid://dx6mrfpu5cqlr" path="res://assets/ui/balao.png" id="16_m0x61"]
+[ext_resource type="Script" uid="uid://cxe3le8byoox7" path="res://scripts/personagens/nena.gd" id="17_cp8v5"]
+[ext_resource type="Texture2D" uid="uid://daixsap8t7qmc" path="res://assets/personagens/nena.png" id="18_cp8v5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3xpb"]
 shader = ExtResource("2_8thnl")
@@ -24,12 +27,20 @@ shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(580.2689, 334.579)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp8v5"]
+size = Vector2(127.58777, 334.91837)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao08h"]
+size = Vector2(550.2226, 905.0768)
+
 [node name="Quarto" type="Sprite2D" unique_id=1344205346]
-position = Vector2(428.99997, 197)
+z_index = -2
+position = Vector2(428, 197)
 scale = Vector2(0.25080746, 0.25080746)
 texture = ExtResource("1_05ih3")
 
 [node name="TelaDaCaixa" type="CanvasLayer" parent="." unique_id=896079545]
+process_mode = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="TelaDaCaixa" unique_id=1550424761]
@@ -118,14 +129,6 @@ expand_mode = 1
 script = ExtResource("4_avuhy")
 caixa = NodePath("../Caixa")
 
-[node name="BotaoFechar" type="TextureRect" parent="TelaDaCaixa" unique_id=1920850083]
-offset_left = 779.0
-offset_top = 21.0
-offset_right = 979.0
-offset_bottom = 221.0
-scale = Vector2(0.2300301, 0.23017618)
-texture = ExtResource("8_vlhge")
-
 [node name="Urso1" type="TextureRect" parent="TelaDaCaixa" unique_id=745247874]
 visible = false
 offset_left = 232.0
@@ -166,39 +169,81 @@ offset_bottom = 2568.0
 scale = Vector2(0.1431793, 0.1431793)
 texture = ExtResource("3_1hljf")
 
+[node name="BotaoFechar" type="TextureButton" parent="TelaDaCaixa" unique_id=331924847]
+offset_left = 781.00006
+offset_top = 20.000002
+offset_right = 3341.0
+offset_bottom = 2581.0
+scale = Vector2(0.020624438, 0.020624438)
+texture_normal = ExtResource("8_vlhge")
+
 [node name="Caixa" type="StaticBody2D" parent="." unique_id=2092880442]
-position = Vector2(-19.93549, -11.961365)
+position = Vector2(-789.4502, 307.00842)
 scale = Vector2(0.99999994, 0.99999994)
 input_pickable = true
 script = ExtResource("2_24xt2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Caixa" unique_id=472578760]
-position = Vector2(-724.4293, 294.23462)
+position = Vector2(27.909912, 31.896942)
 scale = Vector2(0.2560749, 0.25607488)
 texture = ExtResource("4_8thnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caixa" unique_id=359642764]
 physics_interpolation_mode = 1
-position = Vector2(-684.8594, 302.85156)
+position = Vector2(43.8584, 43.858307)
 scale = Vector2(1, 0.99999964)
 shape = SubResource("RectangleShape2D_4h5tc")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("14_ofrq6")]
+unique_name_in_owner = true
+process_mode = 1
+z_index = 1
 position = Vector2(-1224.0463, 195.36896)
 scale = Vector2(0.03956324, 0.03956324)
 script = ExtResource("15_aedt3")
 
 [node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
-position = Vector2(-100.78145, 806.22766)
+position = Vector2(-100.78452, 806.22766)
 scale = Vector2(6.2429414, 6.2265716)
+animation = &"walk"
 
 [node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
 position = Vector2(-503.89505, 10884.072)
 scale = Vector2(1.4647785, 0.28590798)
 
+[node name="Balao" type="Sprite2D" parent="." unique_id=780074764]
+visible = false
+position = Vector2(-239.2273, -9.059906e-06)
+scale = Vector2(0.5927238, 0.5927238)
+texture = ExtResource("16_m0x61")
+
+[node name="Nena" type="StaticBody2D" parent="." unique_id=687621328]
+position = Vector2(606.04254, 426.62207)
+input_pickable = true
+script = ExtResource("17_cp8v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Nena" unique_id=876016427]
+position = Vector2(-7.974243, -43.858032)
+scale = Vector2(0.06541364, 0.065413654)
+texture = ExtResource("18_cp8v5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nena" unique_id=362063756]
+position = Vector2(-11.961426, -43.858154)
+shape = SubResource("RectangleShape2D_cp8v5")
+
+[node name="Porta" type="Area2D" parent="." unique_id=1454960980]
+position = Vector2(1379.5442, -67.781075)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta" unique_id=179475862]
+position = Vector2(7.9743347, -35.88412)
+shape = SubResource("RectangleShape2D_ao08h")
+
 [connection signal="gui_input" from="TelaDaCaixa/CaixaCompleta/Urso" to="Caixa" method="_on_urso_1_gui_input"]
-[connection signal="gui_input" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_botao_fechar_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/Urso1" to="Caixa" method="_on_urso_clicked_gui_input"]
+[connection signal="gui_input" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_texture_button_gui_input"]
+[connection signal="pressed" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_botao_fechar_pressed"]
 [connection signal="input_event" from="Caixa" to="Caixa" method="_on_input_event"]
+[connection signal="input_event" from="Nena" to="Nena" method="_on_input_event"]
+[connection signal="input_event" from="Porta" to="Nena" method="_on_static_body_2d_input_event"]
 
 [editable path="Emilia"]

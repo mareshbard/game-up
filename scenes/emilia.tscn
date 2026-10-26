@@ -1,23 +1,27 @@
 [gd_scene format=3 uid="uid://c4dmbowgw8cje"]
 
-[ext_resource type="Texture2D" uid="uid://cqxhv80o4x4wv" path="res://assets/personagens/Correndo.png" id="1_pow6n"]
+[ext_resource type="Texture2D" uid="uid://cn2jwu87x20o8" path="res://assets/personagens/Correndo2.png" id="1_nq5le"]
 [ext_resource type="Texture2D" uid="uid://dtxs66tf8if1g" path="res://assets/personagens/Andando.png" id="2_pow6n"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_os3ca"]
+atlas = ExtResource("1_nq5le")
+region = Rect2(2048, 0, 512, 642)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6y5hi"]
-atlas = ExtResource("1_pow6n")
-region = Rect2(0, 0, 1553, 2206)
+atlas = ExtResource("1_nq5le")
+region = Rect2(0, 0, 512, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4shbi"]
-atlas = ExtResource("1_pow6n")
-region = Rect2(1553, 0, 1553, 2206)
+atlas = ExtResource("1_nq5le")
+region = Rect2(512, 0, 512, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p61ur"]
-atlas = ExtResource("1_pow6n")
-region = Rect2(3106, 0, 1553, 2206)
+atlas = ExtResource("1_nq5le")
+region = Rect2(1024, 0, 512, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iefuo"]
-atlas = ExtResource("1_pow6n")
-region = Rect2(4659, 0, 1553, 2206)
+atlas = ExtResource("1_nq5le")
+region = Rect2(1536, 0, 512, 642)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pow6n"]
 atlas = ExtResource("2_pow6n")
@@ -41,6 +45,14 @@ region = Rect2(6216, 0, 1554, 4128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4h5tc"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os3ca")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6y5hi")
@@ -84,13 +96,14 @@ radius = 1631.4794
 height = 12980.209
 
 [node name="Emilia" type="CharacterBody2D" unique_id=1594740485]
+process_mode = 2
 scale = Vector2(1.2565283, 1.2565283)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768111284]
-position = Vector2(23.875309, 0)
-scale = Vector2(7.1980844, 7.17921)
+position = Vector2(1338.609, 604.04517)
+scale = Vector2(19.287422, 19.292412)
 sprite_frames = SubResource("SpriteFrames_4h5tc")
-animation = &"walk"
+animation = &"jump"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1192494556]
 

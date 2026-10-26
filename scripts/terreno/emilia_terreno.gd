@@ -1,4 +1,5 @@
 extends CharacterBody2D
+signal target_reached
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -1700.0
@@ -10,6 +11,18 @@ var MOVENDO = false
 @export var LIMITE_TOPO: float = 230
 @export var LIMITE_BASE: float = 330
 
+func _ready() -> void:
+	DialogueManager.start_dialogue([
+	{"text": "É aqui que você queria parar? Não tem nada aqui.", "character": "rosa"}, #[cite: 7]
+	{"text": "Se você procurar direitinho, vai ver que tem uma coisa muito interessante. Mas esse é o lugar perfeito.", "character": "nena"}, #[cite: 7]
+	{"text": "Mas eu tenho que entrar aí?", "character": "rosa"}, #[cite: 7]
+	{"text": "Sim. Esse é o momento em que tudo se complementa. Precisamos de um lugar deSErto para ninguém atrapalhar o nosso ri-.. feitiço.", "character": "nena"} #[cite: 7]
+])
+
+func walk_to(destination: Vector2) -> void:
+	ALVO.x = destination.x
+	ALVO.y = clamp(destination.y, LIMITE_TOPO, LIMITE_BASE)
+	MOVENDO = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

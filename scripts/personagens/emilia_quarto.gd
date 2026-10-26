@@ -4,8 +4,11 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -1700.0
 const FALL_MULTIPLIER = 3.5 
 const DIST_PARADA = 5.0
+
 var ALVO: Vector2 = Vector2.ZERO
 var MOVENDO = false
+
+signal target_reached
 
 @export var LIMITE_TOPO: float = 200
 @export var LIMITE_BASE: float = 270
@@ -19,27 +22,37 @@ func _unhandled_input(event: InputEvent) -> void:
 			ALVO.y = clamp(posicao_clique.y, LIMITE_TOPO, LIMITE_BASE)
 			MOVENDO = true
 
+func walk_to(destination: Vector2) -> void:
+	ALVO.x = destination.x
+	ALVO.y = clamp(destination.y, LIMITE_TOPO, LIMITE_BASE)
+	MOVENDO = true
 
 func _physics_process(delta: float) -> void:
-
+	if get_tree().paused:
+		velocity = Vector2.ZERO
+		return
 	if MOVENDO:
 		var distancia_alvo = global_position.distance_to(ALVO)
 		if distancia_alvo > DIST_PARADA:
 			var direcao = global_position.direction_to(ALVO)
 			var colisao = move_and_collide(direcao * 4.0, true) 
-			velocity = direcao * SPEED
+			
 			if colisao:
 				if distancia_alvo < 45.0:
 					MOVENDO = false
 					velocity = Vector2.ZERO
 					$AnimatedSprite2D.stop()
+					# CORREÇÃO: Dispara o sinal se ela parar por colisão muito perto do alvo, evitando travar o jogo.
+					target_reached.emit()
 					return
+					
 				var normal = colisao.get_normal()
 				var desvio = normal.orthogonal()
 				
 				if desvio.dot(direcao) < 0:
 					desvio = - desvio	
 				direcao = (desvio + direcao * 0.25).normalized()
+				
 			velocity = direcao * SPEED	 	
 			if direcao.x < -0.05:
 				$AnimatedSprite2D.flip_h = true
@@ -50,12 +63,8 @@ func _physics_process(delta: float) -> void:
 			MOVENDO = false
 			velocity = Vector2.ZERO
 			$AnimatedSprite2D.stop()
+			target_reached.emit()
 	else:
 		velocity = Vector2.ZERO
 
 	move_and_slide()
-	
-	#if MOVENDO and get_slide_collision_count() > 0:
-		#MOVENDO = false
-		#velocity = Vector2.ZERO
-		#$AnimatedSprite2D.stop()

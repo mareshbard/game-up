@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqxhv80o4x4wv"
-path="res://.godot/imported/Correndo.png-85fe887a09b12326041d10051154272c.ctex"
+uid="uid://bam4jn1gju8tw"
+path="res://.godot/imported/guarda.png-b7e723a1e4fcdb5934cc9b6fccd46555.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/personagens/Correndo.png"
-dest_files=["res://.godot/imported/Correndo.png-85fe887a09b12326041d10051154272c.ctex"]
+source_file="res://assets/personagens/guarda.png"
+dest_files=["res://.godot/imported/guarda.png-b7e723a1e4fcdb5934cc9b6fccd46555.ctex"]
 
 [params]
 

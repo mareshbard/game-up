@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/budega/blur_calendario.gdshader" id="2_fdnq5"]
 [ext_resource type="Script" uid="uid://w07ij5k860v" path="res://scripts/budega/spot_armario.gd" id="2_se470"]
 [ext_resource type="Texture2D" uid="uid://gc3ux403a1gg" path="res://assets/budega/jogo_do_bicho.png" id="3_e0cgk"]
-[ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="3_efwru"]
+[ext_resource type="Script" uid="uid://btu2cgrllc77w" path="res://scripts/budega/emilia.gd" id="3_efwru"]
 [ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_0kq6u"]
 [ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="4_e0cgk"]
 [ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/budega/botao_cadeado.gd" id="7_42k1l"]
@@ -19,6 +19,8 @@
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
 [ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/budega/texture_calendario.gd" id="16_n5u8c"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
+[ext_resource type="Script" uid="uid://bc7a65de08ple" path="res://scripts/budega/balanca.gd" id="20_nw8s6"]
+[ext_resource type="Script" uid="uid://dxxtsammfnpfq" path="res://scripts/budega/quadro.gd" id="21_j5nj5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
@@ -51,6 +53,12 @@ shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao08h"]
+size = Vector2(102, 97)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ao08h"]
+radius = 54.02002
+
 [node name="cenario_budega" type="Node2D" unique_id=1380752427]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=991758388]
@@ -70,9 +78,14 @@ position = Vector2(81, 283)
 scale = Vector2(0.0072395694, 0.0072448496)
 script = ExtResource("3_efwru")
 
+[node name="AnimatedSprite2D" parent="Emilia2" index="0" unique_id=1768111284]
+position = Vector2(138.13037, 552.1158)
+scale = Vector2(6.9128933, 6.8947673)
+animation = &"walk"
+
 [node name="CollisionShape2D" parent="Emilia2" index="2" unique_id=72783836]
 position = Vector2(-552.51855, 11180.358)
-scale = Vector2(-0.6478942, 0.3120213)
+scale = Vector2(-1.0682842, 0.51447815)
 
 [node name="SpotCalendario" type="Area2D" parent="." unique_id=259090627]
 position = Vector2(143, 80)
@@ -260,6 +273,23 @@ scale = Vector2(25.56763, -4.7432423)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1067387524]
 shape = SubResource("RectangleShape2D_4h5tc")
 
+[node name="Balanca" type="Area2D" parent="." unique_id=1785651816]
+position = Vector2(295, 206)
+script = ExtResource("20_nw8s6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balanca" unique_id=1036003031]
+position = Vector2(-1, -8.5)
+shape = SubResource("RectangleShape2D_ao08h")
+
+[node name="Quadro" type="Area2D" parent="." unique_id=1253173931]
+position = Vector2(748, 63)
+script = ExtResource("21_j5nj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quadro" unique_id=838391929]
+position = Vector2(2, -3)
+scale = Vector2(1, -0.67999995)
+shape = SubResource("CircleShape2D_ao08h")
+
 [connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]
 [connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]
 [connection signal="input_event" from="SpotCaderno" to="SpotCaderno" method="_on_input_event"]
@@ -272,5 +302,7 @@ shape = SubResource("RectangleShape2D_4h5tc")
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button3" to="PopUpCadeado" method="_on_button_3_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button4" to="PopUpCadeado" method="_on_button_4_pressed"]
 [connection signal="gui_input" from="PopUpCalendario/CorDeFundo" to="SpotCalendario" method="_on_cor_de_fundo_gui_input"]
+[connection signal="input_event" from="Balanca" to="Balanca" method="_on_balanca_input_event"]
+[connection signal="input_event" from="Quadro" to="Quadro" method="_on_quadro_input_event"]
 
 [editable path="Emilia2"]
