@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bih2vy5ayn2en"]
+
+[ext_resource type="Texture2D" uid="uid://dx2nvj1jxgm8h" path="res://assets/cutscenes/1primeiro.png" id="1_4abnw"]
+[ext_resource type="Script" uid="uid://jpofnvg0pdsy" path="res://scripts/cutscenes/intro.gd" id="1_em3cl"]
+[ext_resource type="Texture2D" uid="uid://dbjbhsu3osypt" path="res://assets/buttons/proximo-off.png" id="2_b03oe"]
+[ext_resource type="Texture2D" uid="uid://7vqi6fbswa5n" path="res://assets/buttons/proximo-on.png" id="3_rq63o"]
+[ext_resource type="Texture2D" uid="uid://5cf4b3nfwhpn" path="res://assets/cutscenes/2segundo.png" id="4_afpks"]
+[ext_resource type="Texture2D" uid="uid://k8bovys6y7cd" path="res://assets/cutscenes/3terceiro.png" id="5_em3cl"]
+
+[node name="Intro" type="Node2D" unique_id=617930239]
+script = ExtResource("1_em3cl")
+
+[node name="1Primeiro" type="Sprite2D" parent="." unique_id=820076921]
+position = Vector2(424.44827, 196.71446)
+scale = Vector2(0.3355873, 0.33634686)
+texture = ExtResource("1_4abnw")
+
+[node name="BotaoProximo1" type="TextureButton" parent="1Primeiro" unique_id=1083133091]
+offset_left = 681.05
+offset_top = 194.10178
+offset_right = 1258.05
+offset_bottom = 417.10178
+scale = Vector2(0.8602645, 0.8602645)
+texture_normal = ExtResource("2_b03oe")
+texture_pressed = ExtResource("3_rq63o")
+
+[node name="2Segundo" type="Sprite2D" parent="." unique_id=1169384818]
+visible = false
+position = Vector2(424.39532, 196.58728)
+scale = Vector2(0.33562863, 0.33487377)
+texture = ExtResource("4_afpks")
+
+[node name="BotaoProximo2" type="TextureButton" parent="2Segundo" unique_id=166183292]
+offset_left = 681.05
+offset_top = 194.10178
+offset_right = 1258.05
+offset_bottom = 417.10178
+scale = Vector2(0.8602645, 0.8602645)
+texture_normal = ExtResource("2_b03oe")
+texture_pressed = ExtResource("3_rq63o")
+
+[node name="3Terceiro" type="Sprite2D" parent="." unique_id=1726988724]
+visible = false
+position = Vector2(424.54013, 195.25)
+scale = Vector2(0.33576125, 0.33576128)
+texture = ExtResource("5_em3cl")
+
+[node name="BotaoProximo3" type="TextureButton" parent="3Terceiro" unique_id=1360554764]
+offset_left = 681.05
+offset_top = 194.10178
+offset_right = 1258.05
+offset_bottom = 417.10178
+scale = Vector2(0.8602645, 0.8602645)
+texture_normal = ExtResource("2_b03oe")
+texture_pressed = ExtResource("3_rq63o")
+
+[connection signal="pressed" from="1Primeiro/BotaoProximo1" to="." method="_on_botao_proximo_1_pressed"]
+[connection signal="pressed" from="2Segundo/BotaoProximo2" to="." method="_on_botao_proximo_2_pressed"]
+[connection signal="pressed" from="3Terceiro/BotaoProximo3" to="." method="_on_botao_proximo_3_pressed"]

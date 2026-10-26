@@ -88,6 +88,16 @@ func _on_texture_giz_pressed() -> void:
 	scene_pass()
 	
 func scene_pass() -> void:
-	if collected_cachaca && collected_giz:
+	if collected_cachaca and collected_giz:
+		Global.progresso["cachaca_pega"] = true
+		Global.progresso["giz_pego"] = true
+		Global.progresso["cena_atual"] = "res://scenes/graveyard.tscn"
+		Global.salvar_jogo()
+		
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
+
+
+func _on_botao_fechar_pressed() -> void:
+	get_viewport().set_input_as_handled()
+	call_deferred("hide")

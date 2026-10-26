@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dwrc8fcycuj3r"]
 
+[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="1_gcky3"]
 [ext_resource type="Texture2D" uid="uid://dhvejwkn3yjfo" path="res://assets/cemiterio/Interior.png" id="1_x72jc"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="2_fcvrn"]
 [ext_resource type="Script" uid="uid://c5sjuqyyxhurf" path="res://scripts/cemiterio/cemiterio.gd" id="2_gcky3"]
@@ -18,6 +19,9 @@ size = Vector2(49, 33)
 [node name="Graveyard" type="Node2D" unique_id=1504887953]
 metadata/_edit_vertical_guides_ = [-791.0]
 
+[node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("1_gcky3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164679974]
 [node name="Cemiterio" type="Sprite2D" parent="." unique_id=1164679974]
 position = Vector2(1270, 200.99998)
 scale = Vector2(0.50994456, 0.50994456)

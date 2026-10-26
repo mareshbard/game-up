@@ -85,4 +85,4 @@ func parar_personagem() -> void:
 	tempo_travada = 0.0
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.stop()
-  target_reached.emit()
+	target_reached.emit()
