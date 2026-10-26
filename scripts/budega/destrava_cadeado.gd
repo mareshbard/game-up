@@ -66,7 +66,6 @@ func _on_button_4_pressed() -> void:
 func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		get_viewport().set_input_as_handled()
-		call_deferred("hide")
 
 func _on_texture_cachaca_pressed() -> void:
 	collected_cachaca = true
@@ -87,3 +86,8 @@ func scene_pass() -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
+
+
+func _on_botao_fechar_pressed() -> void:
+	get_viewport().set_input_as_handled()
+	call_deferred("hide")

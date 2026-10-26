@@ -26,7 +26,9 @@
 [ext_resource type="Script" uid="uid://psm73ykguw56" path="res://scripts/terreno/telhinhas.gd" id="23_g6i3f"]
 [ext_resource type="Script" uid="uid://b3pusd5yq26ns" path="res://scripts/terreno/penta.gd" id="24_g6i3f"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="25_xjxfh"]
+[ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="26_7xcnt"]
 [ext_resource type="Script" uid="uid://b5eikkhrj503y" path="res://scripts/terreno/emilia_terreno.gd" id="26_f23t7"]
+[ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="27_vid8f"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sswmf"]
 
@@ -177,6 +179,16 @@ position = Vector2(356, 503)
 
 [node name="Marco-18" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=626967926]
 position = Vector2(349, 375)
+
+[node name="BotaoFechar" type="TextureButton" parent="Desenho/PadrãoDesenho" unique_id=2072570019]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 198.99998
+offset_right = 1035.0
+offset_bottom = 438.0
+scale = Vector2(0.22960281, 0.22512239)
+texture_normal = ExtResource("26_7xcnt")
+texture_pressed = ExtResource("27_vid8f")
 
 [node name="cenario" type="Sprite2D" parent="." unique_id=1360097442]
 position = Vector2(429.00003, 209)
@@ -1291,10 +1303,10 @@ stretch_mode = 5
 script = ExtResource("21_g6i3f")
 
 [node name="telha-cima14" type="TextureRect" parent="PopUpChao" unique_id=443044180]
-offset_left = 772.0
-offset_top = 30.0
-offset_right = 822.0
-offset_bottom = 80.0
+offset_left = 750.0
+offset_top = 49.0
+offset_right = 800.0
+offset_bottom = 99.0
 texture = ExtResource("20_afgox")
 expand_mode = 1
 stretch_mode = 5
@@ -1521,6 +1533,15 @@ stretch_mode = 5
 flip_h = true
 script = ExtResource("23_g6i3f")
 
+[node name="BotaoFechar" type="TextureButton" parent="PopUpChao" unique_id=1631730278]
+offset_left = 778.00006
+offset_top = 12.0
+offset_right = 1017.00006
+offset_bottom = 251.0
+scale = Vector2(0.22960281, 0.22512239)
+texture_normal = ExtResource("26_7xcnt")
+texture_pressed = ExtResource("27_vid8f")
+
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("25_xjxfh")]
 position = Vector2(174, 301)
 scale = Vector2(0.004539084, 0.004539084)
@@ -1533,6 +1554,7 @@ position = Vector2(213, 224)
 shape = SubResource("RectangleShape2D_4h5tc")
 
 [connection signal="gui_input" from="Desenho/PadrãoDesenho" to="Desenho/PadrãoDesenho" method="_on_gui_input"]
+[connection signal="pressed" from="Desenho/PadrãoDesenho/BotaoFechar" to="Desenho/PadrãoDesenho" method="_on_botao_fechar_pressed"]
 [connection signal="input_event" from="pentagrama" to="pentagrama" method="_on_input_event"]
 [connection signal="gui_input" from="PopUpChao/Penta" to="PopUpChao/Penta" method="_on_gui_input"]
 [connection signal="gui_input" from="PopUpChao/pedras" to="PopUpChao/pedras" method="_on_gui_input"]
@@ -1659,3 +1681,4 @@ shape = SubResource("RectangleShape2D_4h5tc")
 [connection signal="gui_input" from="PopUpChao/telhinhas6" to="PopUpChao/telhinhas6" method="_on_gui_input"]
 [connection signal="gui_input" from="PopUpChao/telhinhas5" to="PopUpChao/telhinhas5" method="_on_gui_input"]
 [connection signal="gui_input" from="PopUpChao/telhinhas8" to="PopUpChao/telhinhas8" method="_on_gui_input"]
+[connection signal="pressed" from="PopUpChao/BotaoFechar" to="pentagrama" method="_on_botao_fechar_pressed"]

@@ -2,6 +2,9 @@ extends TextureRect
 
 @onready var linha_jogador: Line2D = $LinhaDesenho
 @onready var container_pontos: Node2D = $PontosMoldePenta
+@onready var tela_desenho = $".."
+@onready var tela_chao: CanvasLayer = $"../../PopUpChao"
+
 
 @export var raio_tolerancia: float = 40.0 
 @export var distancia_maxima_erro: float = 65.0
@@ -67,4 +70,10 @@ func desafio_concluido() -> void:
 	Global.progresso["pentagrama_desenhado"] = true
 	
 	Global.salvar_jogo()
+
+
+func _on_botao_fechar_pressed() -> void:
+	get_viewport().set_input_as_handled()
 	
+	tela_chao.show()
+	tela_desenho.call_deferred("hide")

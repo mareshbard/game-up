@@ -11,8 +11,10 @@ func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		
 		PopUpCaderno.get_node("TextureRect").resetar_zoom()
-		
-		PopUpCaderno.call_deferred("hide")
 
 func _on_botao_cadeado_pressed() -> void:
 	$"../PopUpCadeado".show()
+
+func _on_botao_fechar_pressed() -> void:
+	get_viewport().set_input_as_handled()
+	PopUpCaderno.call_deferred("hide")
