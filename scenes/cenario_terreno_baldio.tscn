@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7awqndenbrxb"]
 
 [ext_resource type="Texture2D" uid="uid://dyxnjf0ffqoy8" path="res://assets/terreno-baldio/cenario-terreno-baldio.png" id="1_2mcuf"]
+[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="1_r03x8"]
 [ext_resource type="Script" uid="uid://ck11klam3cjhc" path="res://scripts/local_pentagrama.gd" id="1_sswmf"]
 [ext_resource type="Texture2D" uid="uid://dt6n5geuuq6g5" path="res://assets/terreno-baldio/penta.png" id="2_g6i3f"]
 [ext_resource type="Script" uid="uid://ns0qxgmsqerh" path="res://scripts/padrão_desenho.gd" id="2_mixfy"]
@@ -40,6 +41,8 @@ height = 230.0
 size = Vector2(230, 95)
 
 [node name="cenário-terreno-baldio" type="Node2D" unique_id=290131723]
+
+[node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("1_r03x8")]
 
 [node name="Desenho" type="CanvasLayer" parent="." unique_id=186350063]
 

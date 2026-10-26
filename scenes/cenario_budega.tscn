@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dgt52c85mrdlt"]
 
+[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="1_fyxpd"]
 [ext_resource type="Texture2D" uid="uid://cgsb2gbcf4t4e" path="res://assets/budega/cenario_bodega_ofc.png" id="1_jek3i"]
 [ext_resource type="Script" uid="uid://xerrdekp25ti" path="res://scripts/budega/spot_calendario.gd" id="2_abu8e"]
 [ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/budega/blur_calendario.gdshader" id="2_fdnq5"]
@@ -55,6 +56,8 @@ shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0
 size = Vector2(20, 19.487188)
 
 [node name="cenario_budega" type="Node2D" unique_id=1380752427]
+
+[node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("1_fyxpd")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=991758388]
 offset = Vector2(426, 196.5)

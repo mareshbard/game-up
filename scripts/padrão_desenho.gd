@@ -64,4 +64,7 @@ func finalizar_desenho() -> void:
 func desafio_concluido() -> void:
 	print("Padrão correto")
 	linha_jogador.default_color = Color.GREEN
+	Global.progresso["pentagrama_desenhado"] = true
+	
+	Global.salvar_jogo()
 	

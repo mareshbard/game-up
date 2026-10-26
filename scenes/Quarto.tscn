@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dtnuyfveu7ogv" path="res://assets/quarto/Urso-03.png" id="10_05ih3"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="14_ofrq6"]
 [ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="15_aedt3"]
+[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="16_pfmra"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3xpb"]
 shader = ExtResource("2_8thnl")
@@ -28,6 +29,8 @@ size = Vector2(580.2689, 334.579)
 position = Vector2(428.99997, 197)
 scale = Vector2(0.25080746, 0.25080746)
 texture = ExtResource("1_05ih3")
+
+[node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("16_pfmra")]
 
 [node name="TelaDaCaixa" type="CanvasLayer" parent="." unique_id=896079545]
 visible = false

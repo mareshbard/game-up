@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://nacx2kqv8wnl" path="res://scripts/game-kit.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://cu6hg8pqyjr1f" path="res://assets/menu/cenario_menu_ofc.png" id="1_yqeox"]
-[ext_resource type="Texture2D" uid="uid://bmcimeoewlajm" path="res://assets/menu/botao_novo_jogo.png" id="2_vjb58"]
 [ext_resource type="Script" uid="uid://cksku4ndk6o2h" path="res://scripts/botao_novo_jogo.gd" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://cab68lu5xiu2j" path="res://assets/menu/novojogo-off.png" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://cpcouna41kjgn" path="res://assets/menu/novo-jogo-on.png" id="4_4ytvr"]
 
-[node name="Node2D" type="Node2D" unique_id=1195655275]
+[node name="Menu" type="Node2D" unique_id=1195655275]
 script = ExtResource("1_mhnvy")
 
 [node name="CenarioMenuOfc" type="Sprite2D" parent="." unique_id=222695804]
@@ -14,12 +15,13 @@ scale = Vector2(0.25493002, 0.25493)
 texture = ExtResource("1_yqeox")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1365761253]
-offset_left = 516.0
-offset_top = 234.0
-offset_right = 1016.0
-offset_bottom = 410.0
-scale = Vector2(0.3047506, 0.3047506)
-texture_normal = ExtResource("2_vjb58")
+offset_left = 515.0
+offset_top = 236.0
+offset_right = 1092.0
+offset_bottom = 459.0
+scale = Vector2(0.24863191, 0.24863191)
+texture_normal = ExtResource("3_mhnvy")
+texture_pressed = ExtResource("4_4ytvr")
 script = ExtResource("3_con2f")
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
