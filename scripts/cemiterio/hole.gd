@@ -8,9 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	pass 
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Emilia":
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")

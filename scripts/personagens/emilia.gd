@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal target_reached
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -1700.0
 const FALL_MULTIPLIER = 3.5 
@@ -10,15 +12,19 @@ var MOVENDO = false
 @export var LIMITE_TOPO: float = 250
 @export var LIMITE_BASE: float = 270
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			print("CLICOU NO CHÃO! O mouse está funcionando!") # <--- ADICIONE ESTA LINHA
 			var posicao_clique = get_global_mouse_position()
 			ALVO.x = posicao_clique.x
 			ALVO.y = clamp(posicao_clique.y, LIMITE_TOPO, LIMITE_BASE)
 			MOVENDO = true
-
+			
+func walk_to(destination: Vector2) -> void:
+	ALVO.x = destination.x
+	ALVO.y = clamp(destination.y, LIMITE_TOPO, LIMITE_BASE)
+	MOVENDO = true
 
 func _physics_process(delta: float) -> void:
 
@@ -35,6 +41,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			MOVENDO = false
 			velocity = Vector2.ZERO
+			target_reached.emit()
 			$AnimatedSprite2D.stop()
 	else:
 		velocity = Vector2.ZERO

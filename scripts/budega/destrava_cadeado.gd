@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+signal abriu
 @onready var botao1: Button = $TextureRect/Button1
 @onready var botao2: Button = $TextureRect/Button2
 @onready var botao3: Button = $TextureRect/Button3
@@ -27,13 +27,13 @@ var senha_correta = [1, 4, 2, 5]
 func _ready() -> void:
 	atualizar_visor()
 
+
 func atualizar_visor() -> void:
 	botao1.text = str(num1)
 	botao2.text = str(num2)
 	botao3.text = str(num3)
 	botao4.text = str(num4)
 	verificar_senha()
-
 func verificar_senha() -> void:
 	if num1 == senha_correta[0] and num2 == senha_correta[1] and num3 == senha_correta[2] and num4 == senha_correta[3]:
 		imagem_cadeado.texture = foto_cadeado_aberto
@@ -43,7 +43,9 @@ func verificar_senha() -> void:
 		botao2.hide()
 		botao3.hide()
 		botao4.hide()
-		
+		abriu.emit()
+		#await get_tree().create_timer(2.0).timeout
+		#get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
 		botao_cachaca.show()
 		botao_giz.show()
 		
@@ -67,6 +69,13 @@ func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		get_viewport().set_input_as_handled()
 		call_deferred("hide")
+		esperar_abrir()
+func esperar_abrir() -> void:
+	await abriu
+	DialogueManager.start_dialogue([{
+		"text": "Acho que essa cachaça serve.", "character": "emilia"},
+		{"text": "Eba, é isso aí! Vamos para o nosso próximo item.", "character": "nena"}])
+	await DialogueManager.dialogue_finished
 
 func _on_texture_cachaca_pressed() -> void:
 	collected_cachaca = true

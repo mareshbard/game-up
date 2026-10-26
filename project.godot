@@ -15,6 +15,10 @@ run/main_scene="uid://d271wq3ysx1yy"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/Quarto/icon.svg"
 
+[autoload]
+
+DialogueManager="*uid://cvtaow2173a7v"
+
 [display]
 
 window/size/viewport_width=852
