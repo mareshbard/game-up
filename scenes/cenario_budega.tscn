@@ -77,6 +77,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_jek3i")
 
 [node name="Emilia2" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
+process_mode = 0
 position = Vector2(81, 283)
 scale = Vector2(0.0072395694, 0.0072448496)
 script = ExtResource("3_efwru")

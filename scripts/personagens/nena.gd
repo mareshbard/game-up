@@ -7,7 +7,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	{"text": "Eu te amo muito. Conta uma historinha pra mim?", "character": "nena"}]
 	
 	var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)	
-	if click_esquerdo:
+	
+	if click_esquerdo and Global.collected_pilhas:
 		var nena = get_node("../Nena") 
 		var posicao_alvo = nena.global_position + Vector2(-50, 25)
 		var emilia = get_node("../Emilia") 
@@ -30,8 +31,8 @@ func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx
 		# Espera ela chegar
 		await emilia.target_reached
 		
-		# Abre o diálogo
-		DialogueManager.start_dialogue([
+		if Global.collected_pilhas:
+			DialogueManager.start_dialogue([
 			{"text": "Não me deixe sozinha! :(", "character": "nena"},
 			{"text": "Vamos ser amigas? Vamos ser amigas? Vamos ser amigas?", "character": "nena"},
 			{"text": "Essa boneca tá emperrada?", "character": "emilia"},
@@ -53,5 +54,5 @@ func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx
 			{"text": "Hm… Tudo aqui é novo, acabamos de mudar… Ah! Tem a antiga bodega do meu avô. Lá é cheio de coisa velha e guardada. Deve ter alguma coisa.", "character": "rosa"},
 			{"text": "Então vamos lá? Quanto mais rápido a gente conseguir tudo, melhor!", "character": "boneca"}
 		])
-		await DialogueManager.dialogue_finished
-		get_tree().change_scene_to_file("res://scenes/cenario_budega.tscn")
+			await DialogueManager.dialogue_finished
+			get_tree().change_scene_to_file("res://scenes/cenario_budega.tscn")
