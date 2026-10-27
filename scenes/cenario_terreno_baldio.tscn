@@ -196,10 +196,11 @@ scale = Vector2(0.2542347, 0.2542347)
 texture = ExtResource("1_2mcuf")
 
 [node name="pentagrama" type="Area2D" parent="." unique_id=1243445392]
+position = Vector2(615, 270)
 script = ExtResource("1_sswmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pentagrama" unique_id=1956551313]
-position = Vector2(616, 269)
+position = Vector2(24, 0)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_dmfj3")
 

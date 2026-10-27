@@ -82,13 +82,25 @@ func _on_texture_cachaca_pressed() -> void:
 	botao_cachaca.hide()
 	scene_pass()
 
+
 func _on_texture_giz_pressed() -> void:
 	collected_giz = true
 	botao_giz.hide()
 	scene_pass()
 	
 func scene_pass() -> void:
-	if collected_cachaca and collected_giz:
+	if collected_cachaca && collected_giz:
+		$"../PopUpArmario".hide()
+		DialogueManager.start_dialogue([
+	{"text": "Eba, é isso aí! Vamos para o nosso próximo item.", "character": "nena"},
+	{"text": "O próximo item precisamos buscar em um lugar um pouco diferente. ", "character": "nena"}, #[cite: 5]
+	{"text": "Encontre algo vivo que vive onde ninguém está vivo... mas que já esteve. Esse item é perfumado, com raízes e colorido... bem semelhante ao seu nome.", "character": "nena"}, #[cite: 5]
+	{"text": "Raízes... rosa... Só pode ser uma flor!", "character": "rosa"}, #[cite: 5]
+	{"text": "Isso! Você é muito inteligente.", "character": "nena"}, #[cite: 5]
+	{"text": "Mas um lugar... onde ninguém está vivo? Você quer que eu vá num cemitério!?", "character": "rosa"}, #[cite: 5]
+	{"text": "Não precisa ter medo! Eu sempre vou estar te protegendo.", "character": "nena"} #[cite: 5]
+])
+		await DialogueManager.dialogue_finished
 		Global.progresso["cachaca_pega"] = true
 		Global.progresso["giz_pego"] = true
 		Global.progresso["cena_atual"] = "res://scenes/graveyard.tscn"

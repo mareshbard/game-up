@@ -173,6 +173,7 @@ scale = Vector2(0.1431793, 0.1431793)
 texture = ExtResource("3_1hljf")
 
 [node name="BotaoFechar" type="TextureButton" parent="TelaDaCaixa" unique_id=331924847]
+process_mode = 3
 offset_left = 781.00006
 offset_top = 20.000002
 offset_right = 3341.0
@@ -244,6 +245,7 @@ shape = SubResource("RectangleShape2D_ao08h")
 [connection signal="gui_input" from="TelaDaCaixa/CaixaCompleta/Urso" to="Caixa" method="_on_urso_1_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/Urso1" to="Caixa" method="_on_urso_clicked_gui_input"]
 [connection signal="button_down" from="TelaDaCaixa/Urso4" to="Caixa" method="_on_urso_4_button_down"]
+[connection signal="button_down" from="TelaDaCaixa/BotaoFechar" to="Caixa" method="_on_botao_fechar_button_down"]
 [connection signal="input_event" from="Caixa" to="Caixa" method="_on_input_event"]
 [connection signal="input_event" from="Nena" to="Nena" method="_on_input_event"]
 [connection signal="input_event" from="Porta" to="Nena" method="_on_static_body_2d_input_event"]

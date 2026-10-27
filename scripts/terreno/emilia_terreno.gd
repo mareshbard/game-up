@@ -28,6 +28,10 @@ func walk_to(destination: Vector2) -> void:
 	MOVENDO = true
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Trava o clique se o jogo estiver pausado (diálogo aberto)
+	if get_tree().paused:
+		return
+		
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			var posicao_clique = get_global_mouse_position()
@@ -36,6 +40,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			MOVENDO = true
 
 func _physics_process(delta: float) -> void:
+	# Impede cálculo de física durante o pause
+	if get_tree().paused:
+		velocity = Vector2.ZERO
+		return
+		
 	if MOVENDO:
 		var distancia_alvo = global_position.distance_to(ALVO)
 		if distancia_alvo > DIST_PARADA:
@@ -89,3 +98,5 @@ func parar_personagem() -> void:
 	tempo_travada = 0.0
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.stop()
+	# Emite o sinal ao parar para desbloquear interações!
+	target_reached.emit()

@@ -56,6 +56,7 @@ func _on_urso_clicked_gui_input(event: InputEvent) -> void:
 		$%Urso4.show()
 
 func _on_urso_4_button_down() -> void:
+		Global.collected_pilhas = true
 		Global.progresso["pilhas_pegas"] = true
 		Global.progresso["cena_atual"] = "res://scenes/cenario_budega.tscn"
 		Global.salvar_jogo()
@@ -65,7 +66,8 @@ func _on_urso_4_button_down() -> void:
 		
 
 
-func _on_botao_fechar_pressed() -> void:
+
+func _on_botao_fechar_button_down() -> void:
 		$%Emilia.MOVENDO = false
 		$%Emilia.velocity = Vector2.ZERO
 		$%Emilia.get_node("AnimatedSprite2D").stop()
