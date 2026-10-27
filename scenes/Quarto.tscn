@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dtnuyfveu7ogv" path="res://assets/quarto/Urso-03.png" id="10_05ih3"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="14_ofrq6"]
 [ext_resource type="Script" uid="uid://bl8y1dbb20i1v" path="res://scripts/personagens/emilia_quarto.gd" id="15_aedt3"]
-[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="16_pfmra"]
 [ext_resource type="Texture2D" uid="uid://dx6mrfpu5cqlr" path="res://assets/ui/balao.png" id="16_m0x61"]
+[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="16_pfmra"]
 [ext_resource type="Script" uid="uid://cxe3le8byoox7" path="res://scripts/personagens/nena.gd" id="17_cp8v5"]
 [ext_resource type="Texture2D" uid="uid://daixsap8t7qmc" path="res://assets/personagens/nena.png" id="18_cp8v5"]
 
@@ -25,8 +25,12 @@ shader = ExtResource("2_8thnl")
 shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
-size = Vector2(580.2689, 334.579)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l0ahu"]
+radius = 136.27332
+height = 337.8042
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0ahu"]
+radius = 2542.124
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp8v5"]
 size = Vector2(127.58777, 334.91837)
@@ -193,9 +197,9 @@ texture = ExtResource("4_8thnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Caixa" unique_id=359642764]
 physics_interpolation_mode = 1
-position = Vector2(43.8584, 43.858307)
-scale = Vector2(1, 0.99999964)
-shape = SubResource("RectangleShape2D_4h5tc")
+position = Vector2(43.858337, 59.806797)
+scale = Vector2(2.0773377, 1.1082941)
+shape = SubResource("CapsuleShape2D_l0ahu")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("14_ofrq6")]
 unique_name_in_owner = true
@@ -211,8 +215,9 @@ scale = Vector2(6.2429414, 6.2265716)
 animation = &"walk"
 
 [node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
-position = Vector2(-503.89505, 8868.503)
-scale = Vector2(1.0251, 0.20927884)
+position = Vector2(-403.1197, 10581.738)
+scale = Vector2(-0.8641867, 0.75022835)
+shape = SubResource("CircleShape2D_l0ahu")
 
 [node name="Balao" type="Sprite2D" parent="." unique_id=780074764]
 visible = false
