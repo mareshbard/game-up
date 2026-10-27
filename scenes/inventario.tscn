@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://rsbweq8cosum" path="res://assets/inventario/bolsa-inventario.png" id="1_q836x"]
 [ext_resource type="Texture2D" uid="uid://dspmjkxswx1bd" path="res://assets/inventario/fundo-inventario.png" id="2_hswsb"]
 [ext_resource type="Texture2D" uid="uid://dxhx7gth5a34c" path="res://assets/inventario/slot-inventario.png" id="4_1ji4w"]
+[ext_resource type="Texture2D" uid="uid://dh64fhgixncqt" path="res://assets/buttons/fechar-off-small.png" id="4_t6213"]
+[ext_resource type="Texture2D" uid="uid://pl5e4irl1hhh" path="res://assets/buttons/fechar-on-small.png" id="5_ai134"]
+[ext_resource type="Script" uid="uid://cwco7o0j7gb5i" path="res://scripts/inventory/slot_inventario.gd" id="7_ai134"]
 
 [node name="Inventario" type="Node2D" unique_id=1051308000]
 script = ExtResource("1_mu20r")
@@ -27,75 +30,205 @@ texture = ExtResource("2_hswsb")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="botaoFechar" type="TextureButton" parent="PopUpInventario/fundoInventario" unique_id=126420729]
+layout_mode = 0
+offset_left = 13.119724
+offset_top = 3.104669
+offset_right = 182.11972
+offset_bottom = 172.10468
+scale = Vector2(0.01792022, 0.01792022)
+texture_normal = ExtResource("4_t6213")
+texture_pressed = ExtResource("5_ai134")
+
 [node name="ScrollContainer" type="ScrollContainer" parent="PopUpInventario/fundoInventario" unique_id=1023459207]
 layout_mode = 0
-offset_left = 15.723639
-offset_top = 1.2018074
-offset_right = 26.1304
-offset_bottom = 49.0114
+offset_left = 16.024088
+offset_top = 1.6024097
+offset_right = 26.024088
+offset_bottom = 49.412
 scale = Vector2(0.8853719, 0.7687846)
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopUpInventario/fundoInventario/ScrollContainer" unique_id=842161137]
+[node name="grade_slots" type="VBoxContainer" parent="PopUpInventario/fundoInventario/ScrollContainer" unique_id=842161137]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 0
+theme_override_constants/separation = 1
 
-[node name="Slot1" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1783327040]
-custom_minimum_size = Vector2(10, 10)
+[node name="Slot1" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=1783327040]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
 
-[node name="Slot2" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1065620057]
-custom_minimum_size = Vector2(10, 10)
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot1" unique_id=184475323]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot2" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=934504329]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
 
-[node name="Slot3" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1159883435]
-custom_minimum_size = Vector2(10, 10)
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot2" unique_id=235038585]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot3" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=1354209238]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
 
-[node name="Slot4" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=534589139]
-custom_minimum_size = Vector2(10, 10)
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot3" unique_id=243508767]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot4" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=1076737088]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
 
-[node name="Slot5" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=40001347]
-custom_minimum_size = Vector2(10, 10)
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot4" unique_id=1157273793]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot5" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=92690252]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
 
-[node name="Slot6" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=2112578899]
-custom_minimum_size = Vector2(10, 10)
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot5" unique_id=1450013313]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot6" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=806001119]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
 
-[node name="Slot7" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/VBoxContainer" unique_id=1411933373]
-custom_minimum_size = Vector2(10, 10)
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot6" unique_id=1955645722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot7" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots" unique_id=1045767529]
+custom_minimum_size = Vector2(9, 9)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("4_1ji4w")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_ai134")
+
+[node name="Item" type="TextureRect" parent="PopUpInventario/fundoInventario/ScrollContainer/grade_slots/Slot7" unique_id=504190458]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.1425939
+offset_top = -3.4578292
+offset_right = 3.8574066
+offset_bottom = 3.5421705
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="PopUpInventario/botaoBolsa" to="." method="_on_botao_bolsa_pressed"]
+[connection signal="pressed" from="PopUpInventario/fundoInventario/botaoFechar" to="." method="_on_botao_fechar_pressed"]

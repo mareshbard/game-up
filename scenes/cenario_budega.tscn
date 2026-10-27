@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dgt52c85mrdlt"]
 
+[ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="1_fyxpd"]
 [ext_resource type="Texture2D" uid="uid://cgsb2gbcf4t4e" path="res://assets/budega/cenario_bodega_ofc.png" id="1_jek3i"]
 [ext_resource type="Script" uid="uid://xerrdekp25ti" path="res://scripts/budega/spot_calendario.gd" id="2_abu8e"]
 [ext_resource type="Shader" uid="uid://dudhkugqa3f27" path="res://scripts/budega/blur_calendario.gdshader" id="2_fdnq5"]
@@ -8,7 +9,6 @@
 [ext_resource type="Script" uid="uid://btu2cgrllc77w" path="res://scripts/budega/emilia.gd" id="3_efwru"]
 [ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_0kq6u"]
 [ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="4_e0cgk"]
-[ext_resource type="Script" uid="uid://60o6rpah5rwo" path="res://scripts/budega/botao_cadeado.gd" id="7_42k1l"]
 [ext_resource type="Texture2D" uid="uid://dvtpjmp4jfoat" path="res://assets/budega/giz_ofc.png" id="7_j5nj5"]
 [ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/budega/armario-fechado-ofc.png" id="7_jcsq8"]
 [ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/budega/blur_cadeado.gdshader" id="8_abu8e"]
@@ -21,6 +21,8 @@
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
 [ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/budega/texture_calendario.gd" id="16_n5u8c"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
+[ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="23_nbk48"]
+[ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="24_1mqyq"]
 [ext_resource type="Script" uid="uid://bc7a65de08ple" path="res://scripts/budega/balanca.gd" id="20_nw8s6"]
 [ext_resource type="Script" uid="uid://dxxtsammfnpfq" path="res://scripts/budega/quadro.gd" id="21_j5nj5"]
 
@@ -63,6 +65,8 @@ size = Vector2(102, 97)
 radius = 54.02002
 
 [node name="cenario_budega" type="Node2D" unique_id=1380752427]
+
+[node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("1_fyxpd")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=991758388]
 offset = Vector2(426, 196.5)
@@ -142,7 +146,6 @@ offset_top = 183.0
 offset_right = 312.0
 offset_bottom = 238.0
 flat = true
-script = ExtResource("7_42k1l")
 
 [node name="Texture_Cachaca" type="TextureButton" parent="PopUpArmario" unique_id=1117178132]
 visible = false
@@ -163,6 +166,15 @@ offset_right = 2911.0
 offset_bottom = 2343.0
 scale = Vector2(0.016666671, 0.016666671)
 texture_normal = ExtResource("7_j5nj5")
+
+[node name="BotaoFechar" type="TextureButton" parent="PopUpArmario" unique_id=753571156]
+offset_left = 760.99994
+offset_top = 14.0
+offset_right = 999.99994
+offset_bottom = 253.0
+scale = Vector2(0.22960281, 0.22512239)
+texture_normal = ExtResource("23_nbk48")
+texture_pressed = ExtResource("24_1mqyq")
 
 [node name="PopUpCaderno" type="CanvasLayer" parent="." unique_id=2074363279]
 visible = false
@@ -185,6 +197,15 @@ texture = ExtResource("9_42k1l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("10_42k1l")
+
+[node name="BotaoFechar" type="TextureButton" parent="PopUpCaderno" unique_id=457598113]
+offset_left = 760.99994
+offset_top = 14.0
+offset_right = 999.99994
+offset_bottom = 253.0
+scale = Vector2(0.22960281, 0.22512239)
+texture_normal = ExtResource("23_nbk48")
+texture_pressed = ExtResource("24_1mqyq")
 
 [node name="PopUpCadeado" type="CanvasLayer" parent="." unique_id=1397208613]
 visible = false
@@ -268,6 +289,15 @@ theme_override_fonts/font = ExtResource("12_41774")
 theme_override_font_sizes/font_size = 30
 flat = true
 
+[node name="BotaoFechar" type="TextureButton" parent="PopUpCadeado" unique_id=1368607320]
+offset_left = 760.99994
+offset_top = 14.0
+offset_right = 999.99994
+offset_bottom = 253.0
+scale = Vector2(0.22960281, 0.22512239)
+texture_normal = ExtResource("23_nbk48")
+texture_pressed = ExtResource("24_1mqyq")
+
 [node name="PopUpCalendario" type="CanvasLayer" parent="." unique_id=1575052524]
 visible = false
 
@@ -289,6 +319,15 @@ texture = ExtResource("3_e0cgk")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16_n5u8c")
+
+[node name="BotaoFechar" type="TextureButton" parent="PopUpCalendario" unique_id=1128755223]
+offset_left = 760.99994
+offset_top = 14.0
+offset_right = 999.99994
+offset_bottom = 253.0
+scale = Vector2(0.22960281, 0.22512239)
+texture_normal = ExtResource("23_nbk48")
+texture_pressed = ExtResource("24_1mqyq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1203134426]
 position = Vector2(255, 301.00003)
@@ -323,13 +362,17 @@ shape = SubResource("CircleShape2D_ao08h")
 [connection signal="pressed" from="PopUpArmario/BotaoCadeado" to="SpotCaderno" method="_on_botao_cadeado_pressed"]
 [connection signal="pressed" from="PopUpArmario/Texture_Cachaca" to="PopUpCadeado" method="_on_texture_cachaca_pressed"]
 [connection signal="pressed" from="PopUpArmario/Texture_Giz" to="PopUpCadeado" method="_on_texture_giz_pressed"]
+[connection signal="pressed" from="PopUpArmario/BotaoFechar" to="SpotArmario" method="_on_botao_fechar_pressed"]
 [connection signal="gui_input" from="PopUpCaderno/CorDeFundo" to="SpotCaderno" method="_on_cor_de_fundo_gui_input"]
+[connection signal="pressed" from="PopUpCaderno/BotaoFechar" to="SpotCaderno" method="_on_botao_fechar_pressed"]
 [connection signal="gui_input" from="PopUpCadeado/CorDeFundo" to="PopUpCadeado" method="_on_cor_de_fundo_gui_input"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button1" to="PopUpCadeado" method="_on_button_1_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button2" to="PopUpCadeado" method="_on_button_2_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button3" to="PopUpCadeado" method="_on_button_3_pressed"]
 [connection signal="pressed" from="PopUpCadeado/TextureRect/Button4" to="PopUpCadeado" method="_on_button_4_pressed"]
+[connection signal="pressed" from="PopUpCadeado/BotaoFechar" to="PopUpCadeado" method="_on_botao_fechar_pressed"]
 [connection signal="gui_input" from="PopUpCalendario/CorDeFundo" to="SpotCalendario" method="_on_cor_de_fundo_gui_input"]
+[connection signal="pressed" from="PopUpCalendario/BotaoFechar" to="SpotCalendario" method="_on_botao_fechar_pressed"]
 [connection signal="input_event" from="Balanca" to="Balanca" method="_on_balanca_input_event"]
 [connection signal="input_event" from="Quadro" to="Quadro" method="_on_quadro_input_event"]
 

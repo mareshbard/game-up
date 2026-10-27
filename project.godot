@@ -17,6 +17,7 @@ config/icon="res://assets/Quarto/icon.svg"
 
 [autoload]
 
+Global="*uid://be27g0dmfa7do"
 DialogueManager="*uid://cvtaow2173a7v"
 Global="*uid://c5ekdx81hgj1c"
 
