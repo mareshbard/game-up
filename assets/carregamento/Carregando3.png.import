@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyxnjf0ffqoy8"
-path="res://.godot/imported/cenario-terreno-baldio.png-efc20e54f0338e4f79d868fee7289758.ctex"
+uid="uid://c3s5wb30r1x7b"
+path="res://.godot/imported/Carregando3.png-0babe0eba8fde7ec2826329feeadc398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/terreno-baldio/cenario-terreno-baldio.png"
-dest_files=["res://.godot/imported/cenario-terreno-baldio.png-efc20e54f0338e4f79d868fee7289758.ctex"]
+source_file="res://assets/carregamento/Carregando3.png"
+dest_files=["res://.godot/imported/Carregando3.png-0babe0eba8fde7ec2826329feeadc398.ctex"]
 
 [params]
 

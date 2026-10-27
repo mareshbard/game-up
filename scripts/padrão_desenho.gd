@@ -4,7 +4,7 @@ extends TextureRect
 @onready var container_pontos: Node2D = $PontosMoldePenta
 @onready var tela_desenho = $".."
 @onready var tela_chao: CanvasLayer = $"../../PopUpChao"
-
+@onready var inventario = $"../../Inventario" 
 
 @export var raio_tolerancia: float = 40.0 
 @export var distancia_maxima_erro: float = 65.0
@@ -14,6 +14,9 @@ var pontos_restantes: Array[Vector2] = []
 var indice_atual: int = 0
 var desenhando: bool = false
 var traco_invalido: bool = false
+
+var etapa_ritual: int = 0
+var ordem_correta = ["cachaca", "urso", "rosa"]
 
 func _ready() -> void:
 	for filho in container_pontos.get_children():
@@ -68,12 +71,46 @@ func desafio_concluido() -> void:
 	print("Padrão correto")
 	linha_jogador.default_color = Color.GREEN
 	Global.progresso["pentagrama_desenhado"] = true
-	
 	Global.salvar_jogo()
-
 
 func _on_botao_fechar_pressed() -> void:
 	get_viewport().set_input_as_handled()
-	
-	tela_chao.show()
+	#tela_chao.show()
 	tela_desenho.call_deferred("hide")
+	
+	if inventario and inventario.has_node("PopUpInventario"):
+		inventario.get_node("PopUpInventario").hide()
+
+
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	if Global.progresso["pentagrama_desenhado"] == false:
+		return false
+
+	if typeof(data) == TYPE_STRING and etapa_ritual < ordem_correta.size():
+		return data == ordem_correta[etapa_ritual]
+	return false
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	if data == "cachaca":
+		$SpriteCachaca.show()
+		Global.progresso["cachaca_pega"] = false 
+	elif data == "urso":
+		$SpriteUrso.show()
+		Global.progresso["peguei_urso"] = false 
+	elif data == "rosa":
+		$SpriteRosa.show()
+		Global.progresso["rosa_pega"] = false 
+		
+	Global.salvar_jogo()
+	
+	if inventario:
+		inventario.atualizar_visual_dos_slots()
+	
+	etapa_ritual += 1
+	print("Item aceito! Etapa atual: ", etapa_ritual)
+	
+	if etapa_ritual == 3:
+		concluir_ritual()
+
+func concluir_ritual() -> void:
+	print("Ritual Concluído! A boneca vai aparecer...")

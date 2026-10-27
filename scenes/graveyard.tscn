@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://d3kc7c3p4uhhd" path="res://scripts/cemiterio/rose.gd" id="5_f4ox2"]
 [ext_resource type="Script" uid="uid://ckgfy2v8ohepo" path="res://scripts/cemiterio/flor_murcha.gd" id="7_7y5ee"]
 [ext_resource type="Script" uid="uid://b5wnhbsdi56ph" path="res://scripts/cemiterio/flor_amarela.gd" id="8_8sax4"]
+[ext_resource type="Script" uid="uid://ccsgmjn0u7m8r" path="res://scripts/frente.gd" id="10_ggykg"]
+[ext_resource type="Texture2D" uid="uid://h16621rkhn3r" path="res://assets/cemiterio/frente-cemiterio.png" id="10_q8rmc"]
+[ext_resource type="Script" uid="uid://cliupbgd5l64w" path="res://scripts/personagens/emilia_frente_cemi.gd" id="12_3ef2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(34, 58)
@@ -16,19 +19,24 @@ size = Vector2(34, 58)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao08h"]
 size = Vector2(49, 33)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmfj3"]
+
 [node name="Graveyard" type="Node2D" unique_id=1504887953]
 metadata/_edit_vertical_guides_ = [-791.0]
 
-[node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("1_gcky3")]
+[node name="Fundo" type="Node2D" parent="." unique_id=616395952]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164679974]
-[node name="Cemiterio" type="Sprite2D" parent="." unique_id=1164679974]
+[node name="Inventario" parent="Fundo" unique_id=1051308000 instance=ExtResource("1_gcky3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Fundo" unique_id=1164679974]
+
+[node name="Cemiterio" type="Sprite2D" parent="Fundo" unique_id=1442918222]
 position = Vector2(1270, 200.99998)
 scale = Vector2(0.50994456, 0.50994456)
 texture = ExtResource("1_x72jc")
 script = ExtResource("2_gcky3")
 
-[node name="Rose" type="TextureRect" parent="." unique_id=1079613403]
+[node name="Rose" type="TextureRect" parent="Fundo" unique_id=1079613403]
 offset_left = 2324.0
 offset_top = 186.0
 offset_right = 4884.0
@@ -37,16 +45,16 @@ scale = Vector2(0.016514722, 0.016514722)
 texture = ExtResource("4_parnt")
 script = ExtResource("5_f4ox2")
 
-[node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("2_fcvrn")]
+[node name="Emilia" parent="Fundo" unique_id=1594740485 instance=ExtResource("2_fcvrn")]
 process_mode = 0
 position = Vector2(401, 264)
 scale = Vector2(0.0024083105, 0.0024083105)
 script = ExtResource("3_7o2vs")
 
-[node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
+[node name="AnimatedSprite2D" parent="Fundo/Emilia" index="0" unique_id=1768111284]
 animation = &"walk"
 
-[node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=1820990912]
+[node name="Camera2D" type="Camera2D" parent="Fundo/Emilia" unique_id=1820990912]
 position = Vector2(2824.5557, 14455.113)
 scale = Vector2(3.02611, 3.0308173)
 limit_left = 0
@@ -54,24 +62,55 @@ limit_top = 0
 limit_right = 2500
 limit_bottom = 400
 
-[node name="FlorMurcha" type="Area2D" parent="." unique_id=844542425]
+[node name="FlorMurcha" type="Area2D" parent="Fundo" unique_id=844542425]
 position = Vector2(677, 288)
 script = ExtResource("7_7y5ee")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlorMurcha" unique_id=1446377449]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fundo/FlorMurcha" unique_id=1446377449]
 position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_4h5tc")
 
-[node name="FlorAmarela" type="Area2D" parent="." unique_id=25883900]
+[node name="FlorAmarela" type="Area2D" parent="Fundo" unique_id=25883900]
 position = Vector2(1281, 300)
 script = ExtResource("8_8sax4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlorAmarela" unique_id=203607284]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fundo/FlorAmarela" unique_id=203607284]
 position = Vector2(-1.5, -4.5)
 shape = SubResource("RectangleShape2D_ao08h")
 
-[connection signal="gui_input" from="Rose" to="Rose" method="_on_gui_input"]
-[connection signal="input_event" from="FlorMurcha" to="FlorMurcha" method="_on_input_event"]
-[connection signal="input_event" from="FlorAmarela" to="FlorAmarela" method="_on_input_event"]
+[node name="Frente" type="Area2D" parent="." unique_id=1856408250]
+position = Vector2(448.00003, 206)
+scale = Vector2(0.26590326, 0.26590332)
+script = ExtResource("10_ggykg")
 
-[editable path="Emilia"]
+[node name="FrenteCemiterio" type="Sprite2D" parent="Frente" unique_id=1582729339]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("10_q8rmc")
+
+[node name="portao" type="Button" parent="Frente" unique_id=2082407999]
+offset_left = -304.62216
+offset_top = -3.7607498
+offset_right = 248.21048
+offset_bottom = 631.8089
+scale = Vector2(0.9999999, 0.99999946)
+flat = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frente" unique_id=769974824]
+shape = SubResource("RectangleShape2D_dmfj3")
+
+[node name="Emilia" parent="Frente" unique_id=714122355 instance=ExtResource("2_fcvrn")]
+process_mode = 0
+position = Vector2(-1271.1389, 455.05264)
+scale = Vector2(0.00881524, 0.00881524)
+script = ExtResource("12_3ef2y")
+
+[node name="AnimatedSprite2D" parent="Frente/Emilia" index="0" unique_id=1768111284]
+animation = &"walk"
+
+[connection signal="gui_input" from="Fundo/Rose" to="Fundo/Rose" method="_on_gui_input"]
+[connection signal="input_event" from="Fundo/FlorMurcha" to="Fundo/FlorMurcha" method="_on_input_event"]
+[connection signal="input_event" from="Fundo/FlorAmarela" to="Fundo/FlorAmarela" method="_on_input_event"]
+[connection signal="pressed" from="Frente/portao" to="Frente" method="_on_portao_pressed"]
+
+[editable path="Fundo/Emilia"]
+[editable path="Frente/Emilia"]

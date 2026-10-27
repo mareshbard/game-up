@@ -26,9 +26,11 @@ func _ao_receber_autenticacao(autenticado: bool) -> void:
 		print("Game Center: jogador não autenticado.")
 		
 func _on_continuar_pressed() -> void:
-	get_tree().change_scene_to_file(Global.progresso["cena_atual"])
+	Global.cena_destino = Global.progresso["cena_atual"]
+	
+	get_tree().change_scene_to_file("res://scenes/tela_carregamento.tscn")
 
 func _on_novo_jogo_pressed() -> void:
 	Global.novo_jogo()
-	
-	get_tree().change_scene_to_file("res://scenes/scenes/intro.tscn")
+	Global.cena_destino = "res://scenes/scenes/intro.tscn"
+	get_tree().change_scene_to_file("res://scenes/tela_carregamento.tscn")

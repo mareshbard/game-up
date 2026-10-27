@@ -8,7 +8,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	
 	var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)	
 	
-	if click_esquerdo and Global.collected_pilhas:
+	if click_esquerdo and Global.progresso["pilhas_pegas"]:
 		var nena = get_node("../Nena") 
 		var posicao_alvo = nena.global_position + Vector2(-50, 25)
 		var emilia = get_node("../Emilia") 
@@ -31,7 +31,7 @@ func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx
 		# Espera ela chegar
 		await emilia.target_reached
 		
-		if Global.collected_pilhas:
+		if Global.progresso["pilhas_pegas"]:
 			DialogueManager.start_dialogue([
 			{"text": "Não me deixe sozinha! :(", "character": "nena"},
 			{"text": "Vamos ser amigas? Vamos ser amigas? Vamos ser amigas?", "character": "nena"},

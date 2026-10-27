@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u4fdp2005d45"
-path="res://.godot/imported/cenario_chao.png-ad47620841e7801eacd8bfa46504d2ca.ctex"
+uid="uid://bms340iqnefvo"
+path="res://.godot/imported/Carregando2.png-f56b7ea5776b101a8a19d26ff071e3d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/terreno-baldio/cenario_chao.png"
-dest_files=["res://.godot/imported/cenario_chao.png-ad47620841e7801eacd8bfa46504d2ca.ctex"]
+source_file="res://assets/carregamento/Carregando2.png"
+dest_files=["res://.godot/imported/Carregando2.png-f56b7ea5776b101a8a19d26ff071e3d8.ctex"]
 
 [params]
 
