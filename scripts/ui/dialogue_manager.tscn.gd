@@ -4,7 +4,7 @@ signal dialogue_finished
 @onready var dialogue_box: Control = $DialogueBox
 @onready var dialogue_text: Label = $DialogueBox/TextBox/Margin/DialogueText
 @onready var name_tag: TextureRect = $DialogueBox/NameTag
-
+@onready var som_digitacao: AudioStreamPlayer = $SomDigitacao
 
 var imagens_tag: Dictionary = {
 	"rosa": preload("res://assets/ui/ID-EMILIA.png"),
@@ -27,11 +27,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if digitando:
 		digitando_timer += delta
+		
 		if digitando_timer >= velocidade_dig:
 			dialogue_text.visible_characters += 1
 			digitando_timer = 0.0
+			som_digitacao.play()
 			if dialogue_text.visible_characters >= dialogue_text.text.length():
 				digitando = false
+				som_digitacao.stop()
 				
 func start_dialogue(lines: Array[Dictionary]):
 	get_tree(). paused = true
@@ -63,19 +66,7 @@ func advance_dialogue():
 		dialogue_finished.emit()
 
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
-	#if not is_dialogue_active:
-		#return
-		#
-	#var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)	
-	#
-	#if click_esquerdo:
-		#get_viewport().set_input_as_handled()
-		#if digitando:
-			#dialogue_text.visible_characters = dialogue_text.text.length()
-			#digitando = false
-		#else:
-			#advance_dialogue()	
-			pass
+	pass
 
 
 func _on_proximo_botao_pressed() -> void:
@@ -87,4 +78,5 @@ func _on_proximo_botao_pressed() -> void:
 			digitando = false
 	else:
 			advance_dialogue()	
+	som_digitacao.stop()		
 	get_viewport().set_input_as_handled()	

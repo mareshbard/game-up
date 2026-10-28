@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dxxtsammfnpfq" path="res://scripts/budega/quadro.gd" id="21_j5nj5"]
 [ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="23_nbk48"]
 [ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="24_1mqyq"]
+[ext_resource type="AudioStream" uid="uid://eyu4yvdetpj1" path="res://sounds/BASE DE BREGA PARA COMPOR USO LIVRE Observação so for jogar no YouTube colocar meu nome com a # ou @.mp3" id="26_ce4lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
@@ -355,6 +356,12 @@ script = ExtResource("21_j5nj5")
 position = Vector2(2, -3)
 scale = Vector2(1, -0.67999995)
 shape = SubResource("CircleShape2D_ao08h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1655192106]
+process_mode = 3
+stream = ExtResource("26_ce4lj")
+autoplay = true
+parameters/looping = true
 
 [connection signal="input_event" from="SpotCalendario" to="SpotCalendario" method="_on_input_event"]
 [connection signal="input_event" from="SpotArmario" to="SpotArmario" method="_on_input_event"]

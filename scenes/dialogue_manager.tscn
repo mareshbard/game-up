@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dtumpam0lwdmd" path="res://fonts/Mali-Medium.ttf" id="3_5hf3l"]
 [ext_resource type="Texture2D" uid="uid://ckndlruiu85nb" path="res://assets/ui/pressed=off.png" id="3_61474"]
 [ext_resource type="Texture2D" uid="uid://7vqi6fbswa5n" path="res://assets/buttons/proximo-on.png" id="4_5hf3l"]
+[ext_resource type="AudioStream" uid="uid://c1atrqf53p5d" path="res://sounds/efeito para dialógos.mp3" id="6_507jh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4h5tc"]
 font = ExtResource("3_5hf3l")
@@ -14,6 +15,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="DialogueManager" type="CanvasLayer" unique_id=838223547]
 process_mode = 3
 script = ExtResource("1_516v5")
+
+[node name="SomDigitacao" type="AudioStreamPlayer" parent="." unique_id=1184608249]
+stream = ExtResource("6_507jh")
+parameters/looping = true
 
 [node name="DialogueBox" type="Control" parent="." unique_id=935353815]
 custom_minimum_size = Vector2(802, 100)

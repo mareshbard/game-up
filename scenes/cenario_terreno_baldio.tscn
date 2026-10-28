@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="27_vid8f"]
 [ext_resource type="Texture2D" uid="uid://oi0sq0ldw5ou" path="res://assets/terreno-baldio/urso_marron.png" id="29_vid8f"]
 [ext_resource type="Texture2D" uid="uid://dk6eekncf8yew" path="res://assets/terreno-baldio/cena_final.png" id="33_v4g4a"]
+[ext_resource type="AudioStream" uid="uid://b1dwyjqbptnaj" path="res://sounds/Música Assustadora - Tema do Terreno Baldio.mp3" id="34_6moh8"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sswmf"]
 
@@ -1611,6 +1612,12 @@ visible = false
 position = Vector2(430, 195)
 scale = Vector2(0.2577499, 0.2577499)
 texture = ExtResource("33_v4g4a")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1956351174]
+process_mode = 3
+stream = ExtResource("34_6moh8")
+autoplay = true
+parameters/looping = true
 
 [connection signal="gui_input" from="Desenho/PadrãoDesenho" to="Desenho/PadrãoDesenho" method="_on_gui_input"]
 [connection signal="pressed" from="Desenho/PadrãoDesenho/BotaoFechar" to="Desenho/PadrãoDesenho" method="_on_botao_fechar_pressed"]

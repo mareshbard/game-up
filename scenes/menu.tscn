@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpcouna41kjgn" path="res://assets/menu/novo-jogo-on.png" id="4_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://y58nno4b4bxs" path="res://assets/menu/continuar-off.png" id="6_v86rl"]
 [ext_resource type="Texture2D" uid="uid://gpik78e6h7oo" path="res://assets/menu/continuar-on.png" id="7_13sgg"]
+[ext_resource type="AudioStream" uid="uid://vbid3wgw78g6" path="res://sounds/Tema da Emília.mp3" id="7_v86rl"]
 
 [node name="Menu" type="Node2D" unique_id=1195655275]
 script = ExtResource("1_mhnvy")
@@ -31,6 +32,12 @@ texture_pressed = ExtResource("7_13sgg")
 layout_mode = 2
 texture_normal = ExtResource("3_mhnvy")
 texture_pressed = ExtResource("4_4ytvr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=897041979]
+process_mode = 3
+stream = ExtResource("7_v86rl")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="VBoxContainer/NovoJogo" to="." method="_on_novo_jogo_pressed"]

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://p7jsrsg2nfks" path="res://assets/ui/AvancarPressed.png" id="13_wcthp"]
 [ext_resource type="FontFile" uid="uid://ci4afabstkp15" path="res://fonts/Gorditas-Bold.ttf" id="14_kvjg5"]
 [ext_resource type="Script" uid="uid://dyq0cq8wccfna" path="res://scripts/cemiterio/fade_fala.gd" id="15_afn5j"]
+[ext_resource type="AudioStream" uid="uid://cq80fk17aq7u3" path="res://sounds/Tema do Cemitério.wav" id="17_ukcdm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(34, 58)
@@ -33,20 +34,14 @@ font = ExtResource("14_kvjg5")
 font_size = 22
 outline_size = 10
 outline_color = Color(0.70980394, 0.49411765, 0.53333336, 1)
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmfj3"]
 
 [node name="Graveyard" type="Node2D" unique_id=1504887953]
-metadata/_edit_vertical_guides_ = [-791.0]
 
 [node name="Fundo" type="Node2D" parent="." unique_id=616395952]
 
 [node name="Inventario" parent="Fundo" unique_id=1051308000 instance=ExtResource("1_gcky3")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Fundo" unique_id=1164679974]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164679974]
-
-[node name="Cemiterio" type="Sprite2D" parent="." unique_id=1176635]
+[node name="Cemiterio" type="Sprite2D" parent="Fundo" unique_id=1176635]
 position = Vector2(1270, 200.99998)
 scale = Vector2(0.50994456, 0.50994456)
 texture = ExtResource("1_x72jc")
@@ -93,10 +88,6 @@ script = ExtResource("8_8sax4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fundo/FlorAmarela" unique_id=203607284]
 position = Vector2(-1.5, -4.5)
 shape = SubResource("RectangleShape2D_ao08h")
-
-[node name="FadeQueda" type="CanvasLayer" parent="." unique_id=131999287]
-
-[node name="Queda" type="Sprite2D" parent="FadeQueda" unique_id=1274602747]
 
 [node name="FadeEmilia" type="CanvasLayer" parent="." unique_id=666048518]
 process_mode = 3
@@ -171,45 +162,16 @@ scale = Vector2(0.019894186, 0.019894186)
 texture_normal = ExtResource("12_kvjg5")
 texture_pressed = ExtResource("13_wcthp")
 
-[connection signal="gui_input" from="Rose" to="Rose" method="_on_gui_input"]
-[connection signal="input_event" from="FlorMurcha" to="FlorMurcha" method="_on_input_event"]
-[connection signal="input_event" from="FlorAmarela" to="FlorAmarela" method="_on_input_event"]
-[connection signal="button_down" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_button_down"]
-[connection signal="pressed" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_pressed"]
-[connection signal="pressed" from="FadeFala/BotaoFechar" to="FadeFala" method="_on_botao_fechar_pressed"]
-[node name="Frente" type="Area2D" parent="." unique_id=1856408250]
-position = Vector2(448.00003, 206)
-scale = Vector2(0.26590326, 0.26590332)
-script = ExtResource("10_ggykg")
-
-[node name="FrenteCemiterio" type="Sprite2D" parent="Frente" unique_id=1582729339]
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("10_q8rmc")
-
-[node name="portao" type="Button" parent="Frente" unique_id=2082407999]
-offset_left = -304.62216
-offset_top = -3.7607498
-offset_right = 248.21048
-offset_bottom = 631.8089
-scale = Vector2(0.9999999, 0.99999946)
-flat = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Frente" unique_id=769974824]
-shape = SubResource("RectangleShape2D_dmfj3")
-
-[node name="Emilia" parent="Frente" unique_id=714122355 instance=ExtResource("2_fcvrn")]
-process_mode = 0
-position = Vector2(-1271.1389, 455.05264)
-scale = Vector2(0.00881524, 0.00881524)
-script = ExtResource("12_3ef2y")
-
-[node name="AnimatedSprite2D" parent="Frente/Emilia" index="0" unique_id=1768111284]
-animation = &"walk"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=697211748]
+process_mode = 3
+stream = ExtResource("17_ukcdm")
+autoplay = true
 
 [connection signal="gui_input" from="Fundo/Rose" to="Fundo/Rose" method="_on_gui_input"]
 [connection signal="input_event" from="Fundo/FlorMurcha" to="Fundo/FlorMurcha" method="_on_input_event"]
 [connection signal="input_event" from="Fundo/FlorAmarela" to="Fundo/FlorAmarela" method="_on_input_event"]
-[connection signal="pressed" from="Frente/portao" to="Frente" method="_on_portao_pressed"]
+[connection signal="button_down" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_button_down"]
+[connection signal="pressed" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_pressed"]
+[connection signal="pressed" from="FadeFala/BotaoFechar" to="FadeFala" method="_on_botao_fechar_pressed"]
 
 [editable path="Fundo/Emilia"]
-[editable path="Frente/Emilia"]

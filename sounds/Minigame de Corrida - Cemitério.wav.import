@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpf185jvmceh6"
+path="res://.godot/imported/Minigame de Corrida - Cemitério.wav-153cfdc88141d8c9cbba870ade1f9c36.sample"
+
+[deps]
+
+source_file="res://sounds/Minigame de Corrida - Cemitério.wav"
+dest_files=["res://.godot/imported/Minigame de Corrida - Cemitério.wav-153cfdc88141d8c9cbba870ade1f9c36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
