@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d22p4l3vyvh3a"
+path="res://.godot/imported/quando toca no armario.mp3-1c6681b9a3022f3b43b488b1b6008a8f.mp3str"
+
+[deps]
+
+source_file="res://sounds/budega/quando toca no armario.mp3"
+dest_files=["res://.godot/imported/quando toca no armario.mp3-1c6681b9a3022f3b43b488b1b6008a8f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

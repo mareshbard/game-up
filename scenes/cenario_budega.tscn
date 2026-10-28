@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://btu2cgrllc77w" path="res://scripts/budega/emilia.gd" id="3_efwru"]
 [ext_resource type="Script" uid="uid://df3kcyknorblo" path="res://scripts/budega/spot_livro.gd" id="4_0kq6u"]
 [ext_resource type="Shader" uid="uid://whnoq4n77ega" path="res://scripts/budega/blur_armario.gdshader" id="4_e0cgk"]
+[ext_resource type="AudioStream" uid="uid://d22p4l3vyvh3a" path="res://sounds/budega/quando toca no armario.mp3" id="7_ixj5p"]
 [ext_resource type="Texture2D" uid="uid://dvtpjmp4jfoat" path="res://assets/budega/giz_ofc.png" id="7_j5nj5"]
 [ext_resource type="Texture2D" uid="uid://dtsq42p221ui3" path="res://assets/budega/armario-fechado-ofc.png" id="7_jcsq8"]
 [ext_resource type="Shader" uid="uid://dk5ssstetcd4e" path="res://scripts/budega/blur_cadeado.gdshader" id="8_abu8e"]
@@ -25,6 +26,7 @@
 [ext_resource type="Script" uid="uid://dxxtsammfnpfq" path="res://scripts/budega/quadro.gd" id="21_j5nj5"]
 [ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="23_nbk48"]
 [ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="24_1mqyq"]
+[ext_resource type="AudioStream" uid="uid://d4h2ydbacbfbf" path="res://sounds/budega/se tocar na balança.mp3" id="25_p27e1"]
 [ext_resource type="AudioStream" uid="uid://eyu4yvdetpj1" path="res://sounds/BASE DE BREGA PARA COMPOR USO LIVRE Observação so for jogar no YouTube colocar meu nome com a # ou @.mp3" id="26_ce4lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
@@ -113,6 +115,9 @@ script = ExtResource("2_se470")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpotArmario" unique_id=1523194651]
 position = Vector2(7, 2)
 shape = SubResource("RectangleShape2D_dmfj3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SpotArmario" unique_id=630989455]
+stream = ExtResource("7_ixj5p")
 
 [node name="SpotCaderno" type="Area2D" parent="." unique_id=520704059]
 script = ExtResource("4_0kq6u")
@@ -347,6 +352,9 @@ script = ExtResource("20_nw8s6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Balanca" unique_id=1036003031]
 position = Vector2(-1, -8.5)
 shape = SubResource("RectangleShape2D_ao08h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Balanca" unique_id=1206675061]
+stream = ExtResource("25_p27e1")
 
 [node name="Quadro" type="Area2D" parent="." unique_id=1253173931]
 position = Vector2(748, 63)
