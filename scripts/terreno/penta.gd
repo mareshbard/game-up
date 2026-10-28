@@ -1,5 +1,6 @@
 extends Control
 
+@onready var tela_desenho_pai: CanvasLayer = $"../../Desenho" # Puxa a camada inteira
 @onready var popup_desenho: Control = $"../../Desenho/PadrãoDesenho"
 @onready var popup_penta: CanvasLayer = $".."
 @onready var inventario = $"../../Inventario"
@@ -25,8 +26,10 @@ func pentagrama_esta_limpo() -> bool:
 	return true
 
 func abrir_popup_desenho() -> void:
+	tela_desenho_pai.show() 
 	popup_desenho.show()
 	
 	if inventario and inventario.has_node("PopUpInventario"):
 		inventario.get_node("PopUpInventario").show()
-	#popup_penta.hide()
+		
+	popup_penta.hide()

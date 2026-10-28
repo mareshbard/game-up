@@ -52,6 +52,8 @@ height = 230.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(193, 101.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_frm3v"]
+
 [node name="cenário-terreno-baldio" type="Node2D" unique_id=290131723]
 script = ExtResource("1_vid8f")
 
@@ -1597,8 +1599,8 @@ scale = Vector2(0.004539084, 0.004539084)
 script = ExtResource("26_f23t7")
 
 [node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
-position = Vector2(881.23486, -10134.202)
-scale = Vector2(9.207621, 9.210002)
+position = Vector2(881.23486, -9032.658)
+scale = Vector2(7.8466554, 7.848685)
 animation = &"walk"
 
 [node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
@@ -1611,6 +1613,7 @@ position = Vector2(197, 229)
 shape = SubResource("RectangleShape2D_4h5tc")
 
 [node name="cena_final" type="Sprite2D" parent="." unique_id=1809944775]
+visible = false
 position = Vector2(430, 195)
 scale = Vector2(0.2577499, 0.2577499)
 texture = ExtResource("33_v4g4a")
@@ -1626,13 +1629,15 @@ parameters/looping = true
 position = Vector2(246.00002, 242.00002)
 scale = Vector2(0.02353367, 0.02353367)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nena" unique_id=1892766852]
+shape = SubResource("CircleShape2D_frm3v")
+
 [node name="Fade" type="CanvasLayer" parent="." unique_id=2129572412]
 visible = false
 script = ExtResource("38_gytoy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Fade" unique_id=95951146]
+[node name="AudioFinal" type="AudioStreamPlayer" parent="Fade" unique_id=95951146]
 stream = ExtResource("36_fsfby")
-autoplay = true
 parameters/looping = true
 
 [node name="ColorRect" type="ColorRect" parent="Fade" unique_id=767668291]

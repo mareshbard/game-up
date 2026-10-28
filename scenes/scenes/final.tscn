@@ -1,0 +1,277 @@
+[gd_scene format=3 uid="uid://bhku7dhiw4fv0"]
+
+[ext_resource type="Script" uid="uid://b6n4xon73f0d2" path="res://scripts/cutscene_final.gd" id="1_86m4i"]
+[ext_resource type="Texture2D" uid="uid://uv6psp84tm4v" path="res://assets/cutscenes/cut1.png" id="2_4w2rq"]
+[ext_resource type="Texture2D" uid="uid://caclai03h57hj" path="res://assets/cutscenes/cut3.png" id="4_nkynd"]
+[ext_resource type="Texture2D" uid="uid://w7g7hiitm14x" path="res://assets/cutscenes/cut4.png" id="5_ydnlx"]
+[ext_resource type="Texture2D" uid="uid://cs01lblx5u5qw" path="res://assets/cutscenes/cut5.png" id="6_7ew5m"]
+[ext_resource type="Texture2D" uid="uid://dks5b5uxkpwb2" path="res://assets/cutscenes/cut6.png" id="7_gx5se"]
+[ext_resource type="Texture2D" uid="uid://br057r4p7m8mv" path="res://assets/cutscenes/cut7.png" id="8_tod4r"]
+[ext_resource type="Texture2D" uid="uid://cjgcbxx4rndpp" path="res://assets/cutscenes/cut8.png" id="9_k7re4"]
+[ext_resource type="Texture2D" uid="uid://csmgubyvquf2i" path="res://assets/cutscenes/cut9.png" id="10_2of77"]
+[ext_resource type="Texture2D" uid="uid://riqdgqpk1okc" path="res://assets/cutscenes/cut10.png" id="11_taitt"]
+[ext_resource type="Texture2D" uid="uid://b5gkp1gpfy1ma" path="res://assets/cutscenes/boneca1.png" id="11_tod4r"]
+[ext_resource type="Texture2D" uid="uid://chp8m33mfxs6y" path="res://assets/cutscenes/boneca2.png" id="12_k7re4"]
+[ext_resource type="Texture2D" uid="uid://cc5862hstgb47" path="res://assets/cutscenes/boneca3.png" id="13_2of77"]
+[ext_resource type="Texture2D" uid="uid://dm3xug58hybia" path="res://assets/cutscenes/boneca4.png" id="14_taitt"]
+[ext_resource type="Texture2D" uid="uid://dctxmthydhi6" path="res://assets/cutscenes/boneca5.png" id="15_j0brn"]
+[ext_resource type="Texture2D" uid="uid://dm0gyfgmha8hu" path="res://assets/cutscenes/boneca6.png" id="16_7as0j"]
+[ext_resource type="Texture2D" uid="uid://benso108w6y4f" path="res://assets/cutscenes/boneca7.png" id="17_tb6n3"]
+[ext_resource type="Texture2D" uid="uid://dggg7ooweyl0m" path="res://assets/cutscenes/boneca8.png" id="18_ibd0q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r5ua7"]
+load_path = "res://.godot/imported/cut2.png-b7427cecfafae8c5b893547e9dcf7025.ctex"
+
+[node name="Final" type="Node2D" unique_id=1971403869]
+script = ExtResource("1_86m4i")
+
+[node name="Cut1" type="Sprite2D" parent="." unique_id=1012852402]
+position = Vector2(425, 199)
+scale = Vector2(0.25279796, 0.2575645)
+texture = ExtResource("2_4w2rq")
+
+[node name="Botao1" type="Button" parent="Cut1" unique_id=91309457]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut2" type="Sprite2D" parent="." unique_id=1523447506]
+visible = false
+position = Vector2(427, 194.50002)
+scale = Vector2(0.3367187, 0.33276886)
+texture = SubResource("CompressedTexture2D_r5ua7")
+
+[node name="Botao2" type="Button" parent="Cut2" unique_id=1378316847]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut3" type="Sprite2D" parent="." unique_id=85970431]
+visible = false
+position = Vector2(425, 199)
+scale = Vector2(0.25279796, 0.2575645)
+texture = ExtResource("4_nkynd")
+
+[node name="Botao3" type="Button" parent="Cut3" unique_id=908875843]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut4" type="Sprite2D" parent="." unique_id=1636000609]
+visible = false
+position = Vector2(425, 199)
+scale = Vector2(0.25279796, 0.2575645)
+texture = ExtResource("5_ydnlx")
+
+[node name="Botao4" type="Button" parent="Cut4" unique_id=108246413]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut5" type="Sprite2D" parent="." unique_id=249462560]
+visible = false
+position = Vector2(425, 199)
+scale = Vector2(0.25279796, 0.2575645)
+texture = ExtResource("6_7ew5m")
+
+[node name="Boato5" type="Button" parent="Cut5" unique_id=573462182]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut6" type="Sprite2D" parent="." unique_id=2128697769]
+visible = false
+position = Vector2(425, 199)
+scale = Vector2(0.25279796, 0.2575645)
+texture = ExtResource("7_gx5se")
+
+[node name="Boato6" type="Button" parent="Cut6" unique_id=2109775853]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut7" type="Sprite2D" parent="." unique_id=104239636]
+visible = false
+position = Vector2(425, 199)
+scale = Vector2(0.25279796, 0.2575645)
+texture = ExtResource("8_tod4r")
+
+[node name="Botao7" type="Button" parent="Cut7" unique_id=610966007]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut8" type="Sprite2D" parent="." unique_id=1309745161]
+visible = false
+position = Vector2(424.99997, 199)
+scale = Vector2(0.33575228, 0.34208295)
+texture = ExtResource("9_k7re4")
+
+[node name="Botao8" type="Button" parent="Cut8" unique_id=1247251247]
+offset_left = -1304.5332
+offset_top = -587.5768
+offset_right = 1319.4253
+offset_bottom = 593.4232
+flat = true
+
+[node name="Cut9" type="Sprite2D" parent="." unique_id=1906407993]
+visible = false
+position = Vector2(427.63638, 200.00003)
+scale = Vector2(0.33448765, 0.34038952)
+texture = ExtResource("10_2of77")
+
+[node name="Botao9" type="Button" parent="Cut9" unique_id=759716705]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut10" type="Sprite2D" parent="." unique_id=56691815]
+visible = false
+position = Vector2(426.0638, 199.50002)
+scale = Vector2(0.33492127, 0.3412362)
+texture = ExtResource("11_taitt")
+
+[node name="Botao10" type="Button" parent="Cut10" unique_id=1283086899]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut11" type="Sprite2D" parent="." unique_id=2129992010]
+visible = false
+position = Vector2(425.53952, 199)
+scale = Vector2(0.2532509, 0.2582697)
+texture = ExtResource("11_tod4r")
+
+[node name="Botao11" type="Button" parent="Cut11" unique_id=1745537973]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut12" type="Sprite2D" parent="." unique_id=118090363]
+visible = false
+position = Vector2(425.27557, 196.8221)
+scale = Vector2(0.25246358, 0.25722378)
+texture = ExtResource("12_k7re4")
+
+[node name="Botao12" type="Button" parent="Cut12" unique_id=1984768751]
+offset_left = -1536.6191
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 719.44293
+flat = true
+
+[node name="Cut13" type="Sprite2D" parent="." unique_id=1905074944]
+visible = false
+position = Vector2(423.93594, 198.50002)
+scale = Vector2(0.2541145, 0.25890586)
+texture = ExtResource("13_2of77")
+
+[node name="Botao13" type="Button" parent="Cut13" unique_id=1672495465]
+offset_left = -1307.9604
+offset_top = -622.73584
+offset_right = 1307.2476
+offset_bottom = 605.1527
+flat = true
+
+[node name="Cut14" type="Sprite2D" parent="." unique_id=261414420]
+visible = false
+position = Vector2(429.99997, 197.99997)
+scale = Vector2(0.25727007, 0.25785992)
+texture = ExtResource("14_taitt")
+
+[node name="Botao14" type="Button" parent="Cut14" unique_id=935764777]
+offset_left = -1325.8752
+offset_top = -613.9443
+offset_right = 1327.7378
+offset_bottom = 616.8747
+flat = true
+
+[node name="Cut15" type="Sprite2D" parent="." unique_id=814312788]
+visible = false
+position = Vector2(423.93594, 198.50002)
+scale = Vector2(0.2541145, 0.25890586)
+texture = ExtResource("15_j0brn")
+
+[node name="Botao15" type="Button" parent="Cut15" unique_id=1550470272]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut16" type="Sprite2D" parent="." unique_id=1484657557]
+visible = false
+position = Vector2(426.12708, 195.57208)
+scale = Vector2(0.2540245, 0.25881413)
+texture = ExtResource("16_7as0j")
+
+[node name="Botao16" type="Button" parent="Cut16" unique_id=335579359]
+offset_left = -1352.916
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 634.4578
+flat = true
+
+[node name="Cut17" type="Sprite2D" parent="." unique_id=593221376]
+visible = false
+position = Vector2(426.0638, 199.50002)
+scale = Vector2(0.33492127, 0.3412362)
+texture = ExtResource("17_tb6n3")
+
+[node name="Botao17" type="Button" parent="Cut17" unique_id=1400417842]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[node name="Cut18" type="Sprite2D" parent="." unique_id=286535228]
+visible = false
+position = Vector2(427.1277, 200)
+scale = Vector2(1.0239505, 1.043257)
+texture = ExtResource("18_ibd0q")
+
+[node name="Botao18" type="Button" parent="Cut18" unique_id=1687269410]
+offset_left = -1685.1401
+offset_top = -776.50446
+offset_right = 1697.0073
+offset_bottom = 788.15204
+flat = true
+
+[connection signal="pressed" from="Cut1/Botao1" to="." method="_on_botao_1_pressed"]
+[connection signal="pressed" from="Cut2/Botao2" to="." method="_on_botao_2_pressed"]
+[connection signal="pressed" from="Cut3/Botao3" to="." method="_on_botao_3_pressed"]
+[connection signal="pressed" from="Cut4/Botao4" to="." method="_on_botao_4_pressed"]
+[connection signal="pressed" from="Cut5/Boato5" to="." method="_on_boato_5_pressed"]
+[connection signal="pressed" from="Cut6/Boato6" to="." method="_on_boato_6_pressed"]
+[connection signal="pressed" from="Cut7/Botao7" to="." method="_on_botao_7_pressed"]
+[connection signal="pressed" from="Cut8/Botao8" to="." method="_on_botao_8_pressed"]
+[connection signal="pressed" from="Cut9/Botao9" to="." method="_on_botao_9_pressed"]
+[connection signal="pressed" from="Cut10/Botao10" to="." method="_on_botao_10_pressed"]
+[connection signal="pressed" from="Cut12/Botao12" to="." method="_on_botao_12_pressed"]
+[connection signal="pressed" from="Cut13/Botao13" to="." method="_on_botao_13_pressed"]
+[connection signal="pressed" from="Cut14/Botao14" to="." method="_on_botao_10_pressed"]
+[connection signal="pressed" from="Cut15/Botao15" to="." method="_on_botao_10_pressed"]
+[connection signal="pressed" from="Cut16/Botao16" to="." method="_on_botao_10_pressed"]
+[connection signal="pressed" from="Cut17/Botao17" to="." method="_on_botao_10_pressed"]
+[connection signal="pressed" from="Cut18/Botao18" to="." method="_on_botao_10_pressed"]

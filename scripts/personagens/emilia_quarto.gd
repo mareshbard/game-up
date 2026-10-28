@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#gem
 const SPEED = 300.0
 const JUMP_VELOCITY = -1700.0
 const FALL_MULTIPLIER = 3.5 
@@ -41,32 +42,26 @@ func _physics_process(delta: float) -> void:
 		
 	if MOVENDO:
 		var distancia_alvo = global_position.distance_to(ALVO)
+		
 		if distancia_alvo > DIST_PARADA:
 			var direcao = global_position.direction_to(ALVO)
-			var colisao = move_and_collide(direcao * 4.0, true) 
+			velocity = direcao * SPEED
 			
-			if colisao:
-				if distancia_alvo < 45.0:
+			if ALVO.x < global_position.x - 1.0:
+				$AnimatedSprite2D.flip_h = true
+			elif ALVO.x > global_position.x + 1.0:
+				$AnimatedSprite2D.flip_h = false
+				
+			$AnimatedSprite2D.play("walk")
+			
+			move_and_slide()
+			
+			if get_slide_collision_count() > 0:
+				if get_real_velocity().length() < SPEED * 0.1:
 					MOVENDO = false
 					velocity = Vector2.ZERO
 					$AnimatedSprite2D.stop()
-					# CORREÇÃO: Dispara o sinal se ela parar por colisão muito perto do alvo, evitando travar o jogo.
 					target_reached.emit()
-					return
-					
-				var normal = colisao.get_normal()
-				var desvio = normal.orthogonal()
-				
-				if desvio.dot(direcao) < 0:
-					desvio = - desvio	
-				direcao = (desvio + direcao * 0.25).normalized()
-				
-			velocity = direcao * SPEED	 	
-			if direcao.x < -0.05:
-				$AnimatedSprite2D.flip_h = true
-			elif direcao.x > 0.05:
-				$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("walk")
 		else:
 			MOVENDO = false
 			velocity = Vector2.ZERO
@@ -74,6 +69,3 @@ func _physics_process(delta: float) -> void:
 			target_reached.emit()
 	else:
 		velocity = Vector2.ZERO
-
-	move_and_slide()
-	

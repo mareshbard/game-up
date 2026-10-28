@@ -6,6 +6,7 @@ extends TextureRect
 @onready var tela_chao: CanvasLayer = $"../../PopUpChao"
 @onready var inventario = $"../../Inventario"
 @onready var cena_final = $"../../cena_final"
+@onready var boneca = $"../../Nena"
 
 @export var raio_tolerancia: float = 40.0 
 @export var distancia_maxima_erro: float = 65.0
@@ -128,10 +129,13 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 func concluir_ritual() -> void:
 	if inventario and inventario.has_node("PopUpInventario"):
 		inventario.get_node("PopUpInventario").hide()
-	
+		
 	await get_tree().create_timer(1.0).timeout
 	
 	tela_chao.hide()
 	tela_desenho.hide()
+	boneca.hide() 
+	
 	cena_final.show()
+	cena_final.iniciar_final()
 	

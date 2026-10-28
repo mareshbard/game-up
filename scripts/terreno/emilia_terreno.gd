@@ -11,7 +11,7 @@ var MOVENDO = false
 var tempo_travada: float = 0.0
 var ultima_posicao: Vector2 = Vector2.ZERO
 
-@export var LIMITE_TOPO: float = 230
+@export var LIMITE_TOPO: float = 270
 @export var LIMITE_BASE: float = 330
 
 func _ready() -> void:
@@ -98,5 +98,4 @@ func parar_personagem() -> void:
 	tempo_travada = 0.0
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.stop()
-	# Emite o sinal ao parar para desbloquear interações!
 	target_reached.emit()
