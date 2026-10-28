@@ -1,5 +1,5 @@
 extends Area2D
-
+@onready var som_clique = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,4 +23,6 @@ func _on_balanca_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		DialogueManager.start_dialogue([{
 		"text": "Ela tá guardada a muito tempo… Mas meu avô odiava ela, ela vivia quebrando", "character": "emilia"
 	}])
+		som_clique.play()
+	
 	

@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var PopUpArmario: CanvasLayer = $"../PopUpArmario"
+@onready var som_clique = $AudioStreamPlayer
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)
@@ -11,7 +12,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		emilia.walk_to(posicao_alvo)
 		await emilia.target_reached
 		emilia.get_node("AnimatedSprite2D").flip_h = false
-		
+		som_clique.play()
 		if not Global.progresso["cachaca_pega"]:
 			DialogueManager.start_dialogue([{
 		"text": "Ah, acho que pode ter algo aqui!", "character": "emilia"},

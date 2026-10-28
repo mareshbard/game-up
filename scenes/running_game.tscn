@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d1pa87vn5f7gn" path="res://scripts/cemiterio/hole.gd" id="4_3mdbh"]
 [ext_resource type="Script" uid="uid://djc8iad0m3e6g" path="res://scripts/personagens/guarda.gd" id="5_3v8x1"]
 [ext_resource type="Texture2D" uid="uid://bam4jn1gju8tw" path="res://assets/personagens/guarda.png" id="6_ud57f"]
+[ext_resource type="AudioStream" uid="uid://cpf185jvmceh6" path="res://sounds/Minigame de Corrida - Cemitério.wav" id="7_ud57f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ao08h"]
 
@@ -263,6 +264,11 @@ frame_progress = 0.3054434
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Guarda" unique_id=411075610]
 position = Vector2(1249.5, 1328.875)
 shape = SubResource("RectangleShape2D_x7tdj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2057918670]
+process_mode = 3
+stream = ExtResource("7_ud57f")
+autoplay = true
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole2" to="Hole2" method="_on_body_entered"]

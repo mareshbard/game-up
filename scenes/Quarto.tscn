@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="16_pfmra"]
 [ext_resource type="Script" uid="uid://cxe3le8byoox7" path="res://scripts/personagens/nena.gd" id="17_cp8v5"]
 [ext_resource type="Texture2D" uid="uid://dgu3lbtcsrfht" path="res://assets/personagens/nena_sentada.png" id="19_l0ahu"]
+[ext_resource type="AudioStream" uid="uid://vbid3wgw78g6" path="res://sounds/Tema da Emília.mp3" id="20_8euob"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3xpb"]
 shader = ExtResource("2_8thnl")
@@ -45,6 +46,8 @@ scale = Vector2(0.25080746, 0.25080746)
 texture = ExtResource("1_05ih3")
 
 [node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("16_pfmra")]
+position = Vector2(0, -19.935612)
+scale = Vector2(1.2692541, 1.2692541)
 
 [node name="TelaDaCaixa" type="CanvasLayer" parent="." unique_id=896079545]
 process_mode = 3
@@ -227,7 +230,8 @@ scale = Vector2(0.5927238, 0.5927238)
 texture = ExtResource("16_m0x61")
 
 [node name="Nena" type="StaticBody2D" parent="." unique_id=687621328]
-position = Vector2(606.04254, 426.62207)
+position = Vector2(606.04254, 406.68646)
+scale = Vector2(1.2692541, 1.2692541)
 input_pickable = true
 script = ExtResource("17_cp8v5")
 
@@ -246,6 +250,12 @@ position = Vector2(1379.5442, -67.781075)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Porta" unique_id=179475862]
 position = Vector2(7.9743347, -35.88412)
 shape = SubResource("RectangleShape2D_ao08h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=290384379]
+process_mode = 3
+stream = ExtResource("20_8euob")
+autoplay = true
+parameters/looping = true
 
 [connection signal="gui_input" from="TelaDaCaixa/CaixaCompleta/Urso" to="Caixa" method="_on_urso_1_gui_input"]
 [connection signal="gui_input" from="TelaDaCaixa/Urso1" to="Caixa" method="_on_urso_clicked_gui_input"]
