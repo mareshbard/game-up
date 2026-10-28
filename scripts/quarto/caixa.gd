@@ -55,7 +55,6 @@ func _on_urso_clicked_gui_input(event: InputEvent) -> void:
 		$%Urso4.show()
 
 func _on_urso_4_button_down() -> void:
-		Global.collected_pilhas = true
 		Global.progresso["pilhas_pegas"] = true
 		Global.progresso["cena_atual"] = "res://scenes/cenario_budega.tscn"
 		Global.salvar_jogo()
