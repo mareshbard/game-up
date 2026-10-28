@@ -58,7 +58,8 @@ func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx
 			{"text": "Então vamos lá? Quanto mais rápido a gente conseguir tudo, melhor!", "character": "boneca"}
 		])
 			await DialogueManager.dialogue_finished
-			get_tree().change_scene_to_file("res://scenes/cenario_budega.tscn")
+			DialogueManager.get_tree().change_scene_to_file("res://scenes/cenario_budega.tscn")
+			
 func abrir_dialogo(object):
 			var nena = get_node("../Nena") 
 			var posicao_alvo = nena.global_position + Vector2(-50, 25)
