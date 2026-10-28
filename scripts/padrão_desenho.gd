@@ -6,6 +6,7 @@ extends TextureRect
 @onready var tela_chao: CanvasLayer = $"../../PopUpChao"
 @onready var inventario = $"../../Inventario"
 @onready var cena_final = $"../../cena_final"
+@onready var boneca = $"../../Nena"
 
 @export var raio_tolerancia: float = 40.0 
 @export var distancia_maxima_erro: float = 65.0
@@ -130,4 +131,5 @@ func concluir_ritual() -> void:
 	
 	tela_chao.hide()
 	tela_desenho.hide()
+	boneca.hide()
 	cena_final.show()

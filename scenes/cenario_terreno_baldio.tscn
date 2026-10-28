@@ -49,6 +49,8 @@ height = 230.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(193, 101.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_frm3v"]
+
 [node name="cenário-terreno-baldio" type="Node2D" unique_id=290131723]
 script = ExtResource("1_vid8f")
 
@@ -1621,6 +1623,9 @@ parameters/looping = true
 [node name="Nena" parent="." unique_id=22767454 instance=ExtResource("36_7b1lb")]
 position = Vector2(246.00002, 242.00002)
 scale = Vector2(0.02353367, 0.02353367)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nena" unique_id=1892766852]
+shape = SubResource("CircleShape2D_frm3v")
 
 [connection signal="gui_input" from="Desenho/PadrãoDesenho" to="Desenho/PadrãoDesenho" method="_on_gui_input"]
 [connection signal="pressed" from="Desenho/PadrãoDesenho/BotaoFechar" to="Desenho/PadrãoDesenho" method="_on_botao_fechar_pressed"]
