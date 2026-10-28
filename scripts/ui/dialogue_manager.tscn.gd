@@ -63,15 +63,28 @@ func advance_dialogue():
 		dialogue_finished.emit()
 
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
+	#if not is_dialogue_active:
+		#return
+		#
+	#var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)	
+	#
+	#if click_esquerdo:
+		#get_viewport().set_input_as_handled()
+		#if digitando:
+			#dialogue_text.visible_characters = dialogue_text.text.length()
+			#digitando = false
+		#else:
+			#advance_dialogue()	
+			pass
+
+
+func _on_proximo_botao_pressed() -> void:
 	if not is_dialogue_active:
 		return
-		
-	var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)	
-	
-	if click_esquerdo:
-		get_viewport().set_input_as_handled()
-		if digitando:
+
+	if digitando:
 			dialogue_text.visible_characters = dialogue_text.text.length()
 			digitando = false
-		else:
+	else:
 			advance_dialogue()	
+	get_viewport().set_input_as_handled()	

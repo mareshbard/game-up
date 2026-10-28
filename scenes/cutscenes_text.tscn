@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://n6cln7d6k6ar"]
+
+[ext_resource type="Script" uid="uid://dlevoj8shylhf" path="res://scripts/ui/cutscenes_text.gd" id="1_sg7p5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h5tc"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[node name="CutscenesText" type="CanvasLayer" unique_id=838223547]
+process_mode = 3
+script = ExtResource("1_sg7p5")
+
+[node name="DialogueBox" type="Control" parent="." unique_id=935353815]
+custom_minimum_size = Vector2(802, 100)
+custom_maximum_size = Vector2(802, -1)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="DialogueBox" unique_id=836568867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="DialogueText" type="Label" parent="DialogueBox/Margin" unique_id=578163100]
+custom_minimum_size = Vector2(205, 70)
+layout_mode = 2
+text = "Olá, me chamo Emília
+"
+label_settings = SubResource("LabelSettings_4h5tc")
+vertical_alignment = 1
+autowrap_mode = 3

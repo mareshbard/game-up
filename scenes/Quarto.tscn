@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dx6mrfpu5cqlr" path="res://assets/ui/balao.png" id="16_m0x61"]
 [ext_resource type="PackedScene" uid="uid://j5cmy6cvi0bo" path="res://scenes/inventario.tscn" id="16_pfmra"]
 [ext_resource type="Script" uid="uid://cxe3le8byoox7" path="res://scripts/personagens/nena.gd" id="17_cp8v5"]
-[ext_resource type="Texture2D" uid="uid://daixsap8t7qmc" path="res://assets/personagens/nena.png" id="18_cp8v5"]
+[ext_resource type="Texture2D" uid="uid://dgu3lbtcsrfht" path="res://assets/personagens/nena_sentada.png" id="19_l0ahu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u3xpb"]
 shader = ExtResource("2_8thnl")
@@ -33,7 +33,7 @@ height = 337.8042
 radius = 2542.124
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp8v5"]
-size = Vector2(127.58777, 334.91837)
+size = Vector2(183.40744, 247.20139)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao08h"]
 size = Vector2(550.2226, 905.0768)
@@ -232,12 +232,12 @@ input_pickable = true
 script = ExtResource("17_cp8v5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Nena" unique_id=876016427]
-position = Vector2(-7.974243, -43.858032)
-scale = Vector2(0.06541364, 0.065413654)
-texture = ExtResource("18_cp8v5")
+position = Vector2(-11.961353, -35.88408)
+scale = Vector2(0.10618222, 0.10618224)
+texture = ExtResource("19_l0ahu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nena" unique_id=362063756]
-position = Vector2(-11.961426, -43.858154)
+position = Vector2(-11.961426, -35.883667)
 shape = SubResource("RectangleShape2D_cp8v5")
 
 [node name="Porta" type="Area2D" parent="." unique_id=1454960980]

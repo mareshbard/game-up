@@ -10,7 +10,6 @@ func _on_input_event(viewport, event, shape_idx) -> void:
 		
 		emilia.walk_to(posicao_alvo)
 		
-		# Espera ela chegar
 		await emilia.target_reached
 		$"../TelaDaCaixa".show()	
 		$"../TelaDaCaixa/CaixaCompleta".show()	
@@ -59,8 +58,6 @@ func _on_urso_4_button_down() -> void:
 		Global.progresso["pilhas_pegas"] = true
 		Global.progresso["cena_atual"] = "res://scenes/cenario_budega.tscn"
 		Global.salvar_jogo()
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://scenes/cenario_budega.tscn")
 		print("Pegou pilhas")
 
 
