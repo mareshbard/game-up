@@ -17,6 +17,7 @@ var imagens_dos_itens = {
 }
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	pos_aberto = painel_inventario.position.y
 	pos_fechado = -get_viewport_rect().size.y - 50
 	painel_inventario.position.y = pos_fechado
@@ -31,10 +32,12 @@ func _on_botao_bolsa_pressed() -> void:
 	if esta_aberto:
 		tween.tween_property(painel_inventario, "position:y", pos_fechado, 0.4)
 		esta_aberto = false
+		get_tree().paused = false
 	else:
 		atualizar_visual_dos_slots()
 		tween.tween_property(painel_inventario, "position:y", pos_aberto, 0.4)
 		esta_aberto = true
+		get_tree().paused = true
 
 func _on_botao_fechar_pressed() -> void:
 	if esta_aberto:
@@ -44,6 +47,7 @@ func _on_botao_fechar_pressed() -> void:
 		
 		tween.tween_property(painel_inventario, "position:y", pos_fechado, 0.4)
 		esta_aberto = false
+		get_tree().paused = false
 
 func atualizar_visual_dos_slots() -> void:
 	var slots = grade_slots.get_children()
