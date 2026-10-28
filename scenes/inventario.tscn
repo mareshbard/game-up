@@ -26,6 +26,7 @@ offset_left = 593.00006
 offset_right = 633.00006
 offset_bottom = 40.0
 scale = Vector2(9.9849615, 9.9849615)
+mouse_filter = 0
 texture = ExtResource("2_hswsb")
 expand_mode = 1
 stretch_mode = 5
@@ -47,6 +48,7 @@ offset_top = 1.6024097
 offset_right = 26.024088
 offset_bottom = 49.412
 scale = Vector2(0.8853719, 0.7687846)
+mouse_filter = 0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 

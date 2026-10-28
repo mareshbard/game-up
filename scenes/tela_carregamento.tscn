@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://1lcevrg2ht3s"]
+
+[ext_resource type="Script" uid="uid://nfqpywrefukp" path="res://scripts/tela_carregamento.gd" id="1_xp84d"]
+[ext_resource type="Texture2D" uid="uid://p47d4o2pmhgl" path="res://assets/carregamento/carregamento.png" id="2_wa5io"]
+[ext_resource type="Texture2D" uid="uid://dj0faijutl15e" path="res://assets/carregamento/Origami1.png" id="3_chdm4"]
+[ext_resource type="Texture2D" uid="uid://c6fiu65kmr8ff" path="res://assets/carregamento/Origami2.png" id="4_0ds4r"]
+[ext_resource type="Texture2D" uid="uid://d1on0fq2apgrx" path="res://assets/carregamento/Origami3.png" id="5_yk07v"]
+[ext_resource type="Texture2D" uid="uid://6g445kfiqlic" path="res://assets/carregamento/Origami4.png" id="6_mwu5i"]
+[ext_resource type="Texture2D" uid="uid://jl3w8e8k3scj" path="res://assets/carregamento/Carregando1.png" id="7_2afyf"]
+[ext_resource type="Texture2D" uid="uid://bms340iqnefvo" path="res://assets/carregamento/Carregando2.png" id="8_bk4lk"]
+[ext_resource type="Texture2D" uid="uid://c3s5wb30r1x7b" path="res://assets/carregamento/Carregando3.png" id="9_q5y23"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frm3v"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_chdm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0ds4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yk07v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mwu5i")
+}],
+"loop": 1,
+"name": &"origami",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmfj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2afyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bk4lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q5y23")
+}],
+"loop": 1,
+"name": &"Carregando",
+"speed": 2.0
+}]
+
+[node name="TelaCarregamento" type="Node2D" unique_id=1503562396]
+script = ExtResource("1_xp84d")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=1430305268]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wa5io")
+
+[node name="AnimatedOrigami" type="AnimatedSprite2D" parent="." unique_id=1153357799]
+position = Vector2(334.00003, 207)
+scale = Vector2(0.10566464, 0.10566464)
+sprite_frames = SubResource("SpriteFrames_frm3v")
+animation = &"origami"
+
+[node name="AnimatedCarregando" type="AnimatedSprite2D" parent="." unique_id=1820676161]
+position = Vector2(434, 208)
+scale = Vector2(0.27163056, 0.27163056)
+sprite_frames = SubResource("SpriteFrames_dmfj3")
+animation = &"Carregando"

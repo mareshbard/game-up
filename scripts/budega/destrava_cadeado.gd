@@ -82,7 +82,6 @@ func _on_texture_cachaca_pressed() -> void:
 	botao_cachaca.hide()
 	scene_pass()
 
-
 func _on_texture_giz_pressed() -> void:
 	collected_giz = true
 	botao_giz.hide()

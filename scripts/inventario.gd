@@ -12,7 +12,8 @@ var imagens_dos_itens = {
 	"pilhas": preload("res://assets/quarto/pilhas.png"),
 	"cachaca": preload("res://assets/budega/cachaca.png"),
 	"giz": preload("res://assets/budega/giz_ofc.png"),
-	"rosa": preload("res://assets/cemiterio/rosa.png")
+	"rosa": preload("res://assets/cemiterio/rosa.png"),
+	"urso": preload("res://assets/terreno-baldio/urso_marron.png")
 }
 
 func _ready() -> void:
@@ -20,6 +21,7 @@ func _ready() -> void:
 	pos_fechado = -get_viewport_rect().size.y - 50
 	painel_inventario.position.y = pos_fechado
 	atualizar_visual_dos_slots()
+	
 
 func _on_botao_bolsa_pressed() -> void:
 	var tween = create_tween()
@@ -51,6 +53,7 @@ func atualizar_visual_dos_slots() -> void:
 	if Global.progresso["cachaca_pega"] == true: meus_itens_agora.append("cachaca")
 	if Global.progresso["giz_pego"] == true: meus_itens_agora.append("giz")
 	if Global.progresso["rosa_pega"] == true: meus_itens_agora.append("rosa")
+	if Global.progresso["peguei_urso"] == true: meus_itens_agora.append("urso")
 
 	for i in range(slots.size()):
 		var icone_filho = slots[i].get_node("Item")
@@ -58,5 +61,7 @@ func atualizar_visual_dos_slots() -> void:
 		if i < meus_itens_agora.size():
 			var nome_item = meus_itens_agora[i]
 			icone_filho.texture = imagens_dos_itens[nome_item]
+			slots[i].set_meta("item_nome", nome_item)
 		else:
 			icone_filho.texture = null
+			slots[i].set_meta("item_nome", "")

@@ -77,18 +77,18 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if MOVENDO:
-		if global_position.distance_to(ultima_posicao) < 1.5:
-			tempo_travada += delta
-			if tempo_travada > 0.15:
-				parar_personagem()
-		else:
-			tempo_travada = 0.0
-		ultima_posicao = global_position
-
-func parar_personagem() -> void:
-	MOVENDO = false
-	tempo_travada = 0.0
-	velocity = Vector2.ZERO
-	$AnimatedSprite2D.stop()
-	target_reached.emit()
+	#if MOVENDO:
+		#if global_position.distance_to(ultima_posicao) < 1.5:
+			#tempo_travada += delta
+			#if tempo_travada > 0.15:
+				#parar_personagem()
+		#else:
+			#tempo_travada = 0.0
+		#ultima_posicao = global_position
+#
+#func parar_personagem() -> void:
+	#MOVENDO = false
+	#tempo_travada = 0.0
+	#velocity = Vector2.ZERO
+	#$AnimatedSprite2D.stop()
+	#target_reached.emit()
