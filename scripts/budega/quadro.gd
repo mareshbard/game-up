@@ -15,6 +15,11 @@ func _on_quadro_input_event(viewport: Node, event: InputEvent, shape_idx: int) -
 	var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)
 	
 	if click_esquerdo:
+		var posicao_alvo = self.global_position + Vector2(-50, 200)
+		var emilia = get_node("../Emilia2") 
+		emilia.walk_to(posicao_alvo)
+		await emilia.target_reached
+		emilia.get_node("AnimatedSprite2D").flip_h = false
 		DialogueManager.start_dialogue([{
 		"text": "Deve ter sido uma linda cerimônia", "character": "emilia"
 	}])

@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bh2qveoupd6ye" path="res://scripts/cemiterio/emilia_corrida.gd" id="2_3mdbh"]
 [ext_resource type="Texture2D" uid="uid://dym35q738aafa" path="res://assets/cemiterio/Minigame.png" id="3_872uf"]
 [ext_resource type="Script" uid="uid://d1pa87vn5f7gn" path="res://scripts/cemiterio/hole.gd" id="4_3mdbh"]
+[ext_resource type="Script" uid="uid://djc8iad0m3e6g" path="res://scripts/personagens/guarda.gd" id="5_3v8x1"]
+[ext_resource type="Texture2D" uid="uid://bam4jn1gju8tw" path="res://assets/personagens/guarda.png" id="6_ud57f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ao08h"]
 
@@ -12,6 +14,45 @@ distance = 18.373352
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4h5tc"]
 radius = 643.9331
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlymr"]
+atlas = ExtResource("6_ud57f")
+region = Rect2(0, 0, 3708, 5175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x55y8"]
+atlas = ExtResource("6_ud57f")
+region = Rect2(3708, 0, 3708, 5175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av6lp"]
+atlas = ExtResource("6_ud57f")
+region = Rect2(7416, 0, 3708, 5175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h02dw"]
+atlas = ExtResource("6_ud57f")
+region = Rect2(11124, 0, 3708, 5175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4r51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlymr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x55y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av6lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h02dw")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7tdj"]
+size = Vector2(485, 688.25)
 
 [node name="RunningGame" type="Node2D" unique_id=1129295952]
 
@@ -42,7 +83,11 @@ scale = Vector2(0.056538615, 0.056538615)
 script = ExtResource("2_3mdbh")
 
 [node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
-position = Vector2(17.68744, 0)
+position = Vector2(-795.91583, 0)
+animation = &"run"
+
+[node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]
+position = Vector2(-2582.3047, 813.6035)
 
 [node name="Camera2D" type="Camera2D" parent="Emilia" unique_id=107168342]
 position = Vector2(9674.805, 123.80884)
@@ -134,7 +179,7 @@ scale = Vector2(0.8662147, 0.17823072)
 shape = SubResource("CircleShape2D_4h5tc")
 
 [node name="Hole9" type="Area2D" parent="." unique_id=1358107725]
-position = Vector2(29380, -6)
+position = Vector2(29349, -6)
 script = ExtResource("4_3mdbh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole9" unique_id=29288386]
@@ -204,6 +249,20 @@ script = ExtResource("4_3mdbh")
 position = Vector2(4740.0005, 1622.0001)
 scale = Vector2(0.8662147, 0.17823072)
 shape = SubResource("CircleShape2D_4h5tc")
+
+[node name="Guarda" type="CharacterBody2D" parent="." unique_id=1306743835]
+script = ExtResource("5_3v8x1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guarda" unique_id=827331250]
+position = Vector2(1224.0001, 1224)
+scale = Vector2(0.18000992, 0.18000992)
+sprite_frames = SubResource("SpriteFrames_v4r51")
+animation = &"run"
+frame_progress = 0.3054434
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guarda" unique_id=411075610]
+position = Vector2(1249.5, 1328.875)
+shape = SubResource("RectangleShape2D_x7tdj")
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]
 [connection signal="body_entered" from="Hole2" to="Hole2" method="_on_body_entered"]

@@ -6,10 +6,23 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var click_esquerdo = (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)
 	
 	if click_esquerdo:
-		DialogueManager.start_dialogue([{
+		var posicao_alvo = self.global_position + Vector2(-30, 200)
+		var emilia = get_node("../Emilia2") 
+		emilia.walk_to(posicao_alvo)
+		await emilia.target_reached
+		emilia.get_node("AnimatedSprite2D").flip_h = false
+		
+		if not Global.progresso["cachaca_pega"]:
+			DialogueManager.start_dialogue([{
 		"text": "Ah, acho que pode ter algo aqui!", "character": "emilia"},
 		{"text": "Me lembro da minha avó me contando que compraram essa cachaça há muito tempo, ela tomou com o meu avô no primeiro encontro.", "character": "emilia"
 		}])
+		
+		elif not Global.progresso["giz_pego"]:
+			DialogueManager.start_dialogue([{
+		"text": "Aquele giz também vai ser útil!", "character": "nena"},
+		])	
+		
 		await DialogueManager.dialogue_finished
 		PopUpArmario.show()
 

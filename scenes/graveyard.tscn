@@ -9,6 +9,13 @@
 [ext_resource type="Script" uid="uid://d3kc7c3p4uhhd" path="res://scripts/cemiterio/rose.gd" id="5_f4ox2"]
 [ext_resource type="Script" uid="uid://ckgfy2v8ohepo" path="res://scripts/cemiterio/flor_murcha.gd" id="7_7y5ee"]
 [ext_resource type="Script" uid="uid://b5wnhbsdi56ph" path="res://scripts/cemiterio/flor_amarela.gd" id="8_8sax4"]
+[ext_resource type="Script" uid="uid://cqj2giuqvdvqd" path="res://scripts/cemiterio/fade.gd" id="10_3ef2y"]
+[ext_resource type="Shader" uid="uid://b7cqihlsoypfk" path="res://scripts/quarto/Quarto.gdshader" id="11_tag5n"]
+[ext_resource type="Texture2D" uid="uid://cv53pad4vhwad" path="res://assets/ui/BotaoAvancar.png" id="12_kvjg5"]
+[ext_resource type="Texture2D" uid="uid://bnerotl714nc4" path="res://assets/personagens/emilia_queda.png" id="13_tag5n"]
+[ext_resource type="Texture2D" uid="uid://p7jsrsg2nfks" path="res://assets/ui/AvancarPressed.png" id="13_wcthp"]
+[ext_resource type="FontFile" uid="uid://ci4afabstkp15" path="res://fonts/Gorditas-Bold.ttf" id="14_kvjg5"]
+[ext_resource type="Script" uid="uid://dyq0cq8wccfna" path="res://scripts/cemiterio/fade_fala.gd" id="15_afn5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(34, 58)
@@ -16,13 +23,25 @@ size = Vector2(34, 58)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao08h"]
 size = Vector2(49, 33)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcthp"]
+shader = ExtResource("11_tag5n")
+shader_parameter/forca_desfoque = 3.1200001482
+shader_parameter/cor_escurecimento = Color(0, 0, 0, 0.6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h5tc"]
+font = ExtResource("14_kvjg5")
+font_size = 22
+outline_size = 10
+outline_color = Color(0.70980394, 0.49411765, 0.53333336, 1)
+
 [node name="Graveyard" type="Node2D" unique_id=1504887953]
 metadata/_edit_vertical_guides_ = [-791.0]
 
 [node name="Inventario" parent="." unique_id=1051308000 instance=ExtResource("1_gcky3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1164679974]
-[node name="Cemiterio" type="Sprite2D" parent="." unique_id=1164679974]
+
+[node name="Cemiterio" type="Sprite2D" parent="." unique_id=1176635]
 position = Vector2(1270, 200.99998)
 scale = Vector2(0.50994456, 0.50994456)
 texture = ExtResource("1_x72jc")
@@ -70,8 +89,88 @@ script = ExtResource("8_8sax4")
 position = Vector2(-1.5, -4.5)
 shape = SubResource("RectangleShape2D_ao08h")
 
+[node name="FadeQueda" type="CanvasLayer" parent="." unique_id=131999287]
+
+[node name="Queda" type="Sprite2D" parent="FadeQueda" unique_id=1274602747]
+
+[node name="FadeEmilia" type="CanvasLayer" parent="." unique_id=666048518]
+process_mode = 3
+visible = false
+script = ExtResource("10_3ef2y")
+
+[node name="ColorRect" type="ColorRect" parent="FadeEmilia" unique_id=2106331714]
+material = SubResource("ShaderMaterial_wcthp")
+anchors_preset = -1
+anchor_left = -0.0035211267
+anchor_right = 0.9507042
+anchor_bottom = 0.8982188
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BotaoFechar" type="TextureButton" parent="FadeEmilia" unique_id=1391248432]
+process_mode = 3
+offset_left = 735.00006
+offset_top = 39.000004
+offset_right = 3295.0
+offset_bottom = 2528.0
+scale = Vector2(0.019894186, 0.019894186)
+texture_normal = ExtResource("12_kvjg5")
+texture_pressed = ExtResource("13_wcthp")
+
+[node name="EmiliaCaida" type="Sprite2D" parent="FadeEmilia" unique_id=1752267105]
+position = Vector2(385.00003, 200)
+scale = Vector2(0.043279562, 0.043279566)
+texture = ExtResource("13_tag5n")
+
+[node name="FadeFala" type="CanvasLayer" parent="." unique_id=2095464584]
+visible = false
+script = ExtResource("15_afn5j")
+
+[node name="ColorRect" type="ColorRect" parent="FadeFala" unique_id=1705453094]
+anchors_preset = -1
+anchor_left = -0.0035211267
+anchor_right = 0.9507042
+anchor_bottom = 0.8982188
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="FadeFala" unique_id=549150943]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -71.5
+offset_right = 360.0
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "A flor estava enraízada. Emília fez muita força e caiu para trás..."
+label_settings = SubResource("LabelSettings_4h5tc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoFechar" type="TextureButton" parent="FadeFala" unique_id=1405246911]
+process_mode = 3
+offset_left = 735.00006
+offset_top = 39.000004
+offset_right = 3295.0
+offset_bottom = 2528.0
+scale = Vector2(0.019894186, 0.019894186)
+texture_normal = ExtResource("12_kvjg5")
+texture_pressed = ExtResource("13_wcthp")
+
 [connection signal="gui_input" from="Rose" to="Rose" method="_on_gui_input"]
 [connection signal="input_event" from="FlorMurcha" to="FlorMurcha" method="_on_input_event"]
 [connection signal="input_event" from="FlorAmarela" to="FlorAmarela" method="_on_input_event"]
+[connection signal="button_down" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_button_down"]
+[connection signal="pressed" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_pressed"]
+[connection signal="pressed" from="FadeFala/BotaoFechar" to="FadeFala" method="_on_botao_fechar_pressed"]
 
 [editable path="Emilia"]

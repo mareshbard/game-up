@@ -21,10 +21,10 @@
 [ext_resource type="FontFile" uid="uid://ji0kp17hufiy" path="res://fonts/Khand-Medium.ttf" id="12_41774"]
 [ext_resource type="Script" uid="uid://k8l5keqaqf7k" path="res://scripts/budega/texture_calendario.gd" id="16_n5u8c"]
 [ext_resource type="PackedScene" uid="uid://c4dmbowgw8cje" path="res://scenes/emilia.tscn" id="18_r51w4"]
-[ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="23_nbk48"]
-[ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="24_1mqyq"]
 [ext_resource type="Script" uid="uid://bc7a65de08ple" path="res://scripts/budega/balanca.gd" id="20_nw8s6"]
 [ext_resource type="Script" uid="uid://dxxtsammfnpfq" path="res://scripts/budega/quadro.gd" id="21_j5nj5"]
+[ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="23_nbk48"]
+[ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="24_1mqyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
@@ -106,10 +106,11 @@ scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_frm3v")
 
 [node name="SpotArmario" type="Area2D" parent="." unique_id=1384260507]
+position = Vector2(606, 88)
 script = ExtResource("2_se470")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpotArmario" unique_id=1523194651]
-position = Vector2(605.5, 89)
+position = Vector2(7, 2)
 shape = SubResource("RectangleShape2D_dmfj3")
 
 [node name="SpotCaderno" type="Area2D" parent="." unique_id=520704059]

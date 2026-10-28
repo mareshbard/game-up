@@ -16,6 +16,7 @@ scale = Vector2(0.3355873, 0.33634686)
 texture = ExtResource("1_4abnw")
 
 [node name="BotaoProximo1" type="TextureButton" parent="1Primeiro" unique_id=1083133091]
+process_mode = 3
 offset_left = 681.05
 offset_top = 194.10178
 offset_right = 1258.05
@@ -31,6 +32,7 @@ scale = Vector2(0.33562863, 0.33487377)
 texture = ExtResource("4_afpks")
 
 [node name="BotaoProximo2" type="TextureButton" parent="2Segundo" unique_id=166183292]
+process_mode = 3
 offset_left = 681.05
 offset_top = 194.10178
 offset_right = 1258.05
@@ -46,6 +48,7 @@ scale = Vector2(0.33576125, 0.33576128)
 texture = ExtResource("5_em3cl")
 
 [node name="BotaoProximo3" type="TextureButton" parent="3Terceiro" unique_id=1360554764]
+process_mode = 3
 offset_left = 681.05
 offset_top = 194.10178
 offset_right = 1258.05
