@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://ci4afabstkp15" path="res://fonts/Gorditas-Bold.ttf" id="14_kvjg5"]
 [ext_resource type="Script" uid="uid://dyq0cq8wccfna" path="res://scripts/cemiterio/fade_fala.gd" id="15_afn5j"]
 [ext_resource type="AudioStream" uid="uid://cq80fk17aq7u3" path="res://sounds/Tema do Cemitério.wav" id="17_ukcdm"]
+[ext_resource type="PackedScene" uid="uid://cboe8rpq2s4jh" path="res://scenes/nena.tscn" id="21_8h2go"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(34, 58)
@@ -198,6 +199,10 @@ texture_pressed = ExtResource("13_wcthp")
 process_mode = 3
 stream = ExtResource("17_ukcdm")
 autoplay = true
+
+[node name="Nena" parent="." unique_id=22767454 instance=ExtResource("21_8h2go")]
+position = Vector2(629, 164)
+scale = Vector2(0.038168952, 0.038168952)
 
 [connection signal="gui_input" from="Fundo/Rose" to="Fundo/Rose" method="_on_gui_input"]
 [connection signal="input_event" from="Fundo/FlorMurcha" to="Fundo/FlorMurcha" method="_on_input_event"]
