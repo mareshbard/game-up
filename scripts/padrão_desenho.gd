@@ -31,10 +31,13 @@ func _on_gui_input(event: InputEvent) -> void:
 			iniciar_desenho(event.position)
 		else:
 			finalizar_desenho()
-
 	elif (event is InputEventMouseMotion or event is InputEventScreenDrag) and desenhando:
 		atualizar_desenho(event.position)
 		
+func _input(event: InputEvent) -> void:
+	# O "ui_accept" é uma ação padrão do Godot que reconhece tanto a Barra de Espaço quanto o Enter
+	if event.is_action_pressed("ui_accept"):
+		desafio_concluido()
 func iniciar_desenho(posicao: Vector2) -> void:
 	desenhando = true
 	traco_invalido = false
@@ -126,10 +129,13 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 func concluir_ritual() -> void:
 	if inventario and inventario.has_node("PopUpInventario"):
 		inventario.get_node("PopUpInventario").hide()
-	
+		
 	await get_tree().create_timer(1.0).timeout
 	
 	tela_chao.hide()
 	tela_desenho.hide()
-	boneca.hide()
+	boneca.hide() 
+	
 	cena_final.show()
+	cena_final.iniciar_final()
+	
