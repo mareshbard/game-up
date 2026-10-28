@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://biwa3mcthejn6" path="res://assets/cemiterio/rosa.png" id="8_6moh8"]
 [ext_resource type="Texture2D" uid="uid://b6uj2ob7n8no5" path="res://assets/terreno-baldio/folha-cima-baixo.png" id="10_ndyfy"]
 [ext_resource type="Script" uid="uid://dglwbdg8yvvtj" path="res://scripts/terreno/folhas_cima_baixo.gd" id="11_cuw1a"]
+[ext_resource type="Texture2D" uid="uid://c7rxdd1dhv8oe" path="res://assets/terreno-baldio/chao.png" id="12_6moh8"]
 [ext_resource type="Texture2D" uid="uid://dv0q658pi5j78" path="res://assets/terreno-baldio/folhas.png" id="12_k3q0y"]
 [ext_resource type="Script" uid="uid://chpbb384nwkgq" path="res://scripts/terreno/folhas.gd" id="12_yc40n"]
 [ext_resource type="Texture2D" uid="uid://4mbulevc56o" path="res://assets/terreno-baldio/folhasredon.png" id="14_qkw13"]
@@ -42,9 +43,6 @@ noise = SubResource("FastNoiseLite_sswmf")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmfj3"]
 radius = 36.0
 height = 230.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7xcnt"]
-load_path = "res://.godot/imported/cenario_chao.png-ad47620841e7801eacd8bfa46504d2ca.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
 size = Vector2(193, 101.5)
@@ -248,7 +246,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.198516, 1.198516)
 mouse_filter = 2
-texture = SubResource("CompressedTexture2D_7xcnt")
+texture = ExtResource("12_6moh8")
 expand_mode = 1
 stretch_mode = 5
 
