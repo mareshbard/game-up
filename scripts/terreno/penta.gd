@@ -2,6 +2,7 @@ extends Control
 
 @onready var popup_desenho: Control = $"../../Desenho/PadrãoDesenho"
 @onready var popup_penta: CanvasLayer = $".."
+@onready var inventario = $"../../Inventario"
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -25,4 +26,7 @@ func pentagrama_esta_limpo() -> bool:
 
 func abrir_popup_desenho() -> void:
 	popup_desenho.show()
-	popup_penta.hide()
+	
+	if inventario and inventario.has_node("PopUpInventario"):
+		inventario.get_node("PopUpInventario").show()
+	#popup_penta.hide()
