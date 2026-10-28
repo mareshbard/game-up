@@ -14,6 +14,7 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="DialogueManager" type="CanvasLayer" unique_id=838223547]
 process_mode = 3
+layer = 2
 script = ExtResource("1_516v5")
 
 [node name="SomDigitacao" type="AudioStreamPlayer" parent="." unique_id=1184608249]
