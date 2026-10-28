@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="24_1mqyq"]
 [ext_resource type="AudioStream" uid="uid://d4h2ydbacbfbf" path="res://sounds/budega/se tocar na balança.mp3" id="25_p27e1"]
 [ext_resource type="AudioStream" uid="uid://eyu4yvdetpj1" path="res://sounds/BASE DE BREGA PARA COMPOR USO LIVRE Observação so for jogar no YouTube colocar meu nome com a # ou @.mp3" id="26_ce4lj"]
+[ext_resource type="PackedScene" uid="uid://cboe8rpq2s4jh" path="res://scenes/nena.tscn" id="29_bhlb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixj5p"]
 radius = 69.441635
@@ -85,6 +86,10 @@ limit_bottom = 0
 position = Vector2(426, 196.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_jek3i")
+
+[node name="Nena" parent="." unique_id=22767454 instance=ExtResource("29_bhlb0")]
+position = Vector2(435, 242)
+scale = Vector2(0.032786727, 0.032786727)
 
 [node name="Emilia2" parent="." unique_id=1594740485 instance=ExtResource("18_r51w4")]
 process_mode = 0

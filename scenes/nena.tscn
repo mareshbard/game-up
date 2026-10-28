@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cboe8rpq2s4jh"]
+
+[ext_resource type="Texture2D" uid="uid://dgu3lbtcsrfht" path="res://assets/personagens/nena_sentada.png" id="1_6yrqo"]
+
+[node name="Nena" type="StaticBody2D" unique_id=22767454]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1665716871]
+texture = ExtResource("1_6yrqo")
