@@ -31,8 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://btcekr71em41k" path="res://assets/buttons/fechar-off-big.png" id="26_7xcnt"]
 [ext_resource type="Script" uid="uid://b5eikkhrj503y" path="res://scripts/terreno/emilia_terreno.gd" id="26_f23t7"]
 [ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="27_vid8f"]
-[ext_resource type="Texture2D" uid="uid://c7rxdd1dhv8oe" path="res://assets/terreno-baldio/chao.png" id="28_h2ky1"]
 [ext_resource type="Texture2D" uid="uid://oi0sq0ldw5ou" path="res://assets/terreno-baldio/urso_marron.png" id="29_vid8f"]
+[ext_resource type="Texture2D" uid="uid://dk6eekncf8yew" path="res://assets/terreno-baldio/cena_final.png" id="33_v4g4a"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sswmf"]
 
@@ -240,8 +240,13 @@ visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -446.00003
+offset_top = -20.0
+offset_right = 140.04321
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.198516, 1.198516)
 mouse_filter = 2
 texture = SubResource("CompressedTexture2D_7xcnt")
 expand_mode = 1
@@ -1573,11 +1578,13 @@ scale = Vector2(0.22960281, 0.22512239)
 texture_normal = ExtResource("26_7xcnt")
 texture_pressed = ExtResource("27_vid8f")
 
-[node name="Chao" type="Sprite2D" parent="PopUpChao" unique_id=1282769043]
-z_index = -1
-position = Vector2(413.70123, 216.16064)
-scale = Vector2(0.07278406, 0.07278406)
-texture = ExtResource("28_h2ky1")
+[node name="Urso" type="TextureButton" parent="." unique_id=402285049]
+offset_left = 281.0
+offset_top = 235.0
+offset_right = 2841.0
+offset_bottom = 2795.0
+scale = Vector2(0.023569273, 0.023569273)
+texture_normal = ExtResource("29_vid8f")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("25_xjxfh")]
 process_mode = 0
@@ -1599,13 +1606,11 @@ scale = Vector2(-1.446631, 1.1044477)
 position = Vector2(197, 229)
 shape = SubResource("RectangleShape2D_4h5tc")
 
-[node name="Urso" type="TextureButton" parent="." unique_id=402285049]
-offset_left = 281.0
-offset_top = 235.0
-offset_right = 2841.0
-offset_bottom = 2795.0
-scale = Vector2(0.023569273, 0.023569273)
-texture_normal = ExtResource("29_vid8f")
+[node name="cena_final" type="Sprite2D" parent="." unique_id=1809944775]
+visible = false
+position = Vector2(430, 195)
+scale = Vector2(0.2577499, 0.2577499)
+texture = ExtResource("33_v4g4a")
 
 [connection signal="gui_input" from="Desenho/PadrãoDesenho" to="Desenho/PadrãoDesenho" method="_on_gui_input"]
 [connection signal="pressed" from="Desenho/PadrãoDesenho/BotaoFechar" to="Desenho/PadrãoDesenho" method="_on_botao_fechar_pressed"]

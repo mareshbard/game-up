@@ -4,7 +4,8 @@ extends TextureRect
 @onready var container_pontos: Node2D = $PontosMoldePenta
 @onready var tela_desenho = $".."
 @onready var tela_chao: CanvasLayer = $"../../PopUpChao"
-@onready var inventario = $"../../Inventario" 
+@onready var inventario = $"../../Inventario"
+@onready var cena_final = $"../../cena_final"
 
 @export var raio_tolerancia: float = 40.0 
 @export var distancia_maxima_erro: float = 65.0
@@ -83,11 +84,20 @@ func _on_botao_fechar_pressed() -> void:
 
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	print("O rato tentou soltar o item: ", data)
+	
 	if Global.progresso["pentagrama_desenhado"] == false:
+		print("RECUSADO: O pentagrama ainda não foi desenhado!")
 		return false
 
 	if typeof(data) == TYPE_STRING and etapa_ritual < ordem_correta.size():
-		return data == ordem_correta[etapa_ritual]
+		var aceitou = (data == ordem_correta[etapa_ritual])
+		if aceitou:
+			print("Item CORRETO! Pode soltar.")
+		else:
+			print("RECUSADO: Item errado. Agora é a vez de: ", ordem_correta[etapa_ritual])
+		return aceitou
+	
 	return false
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
@@ -113,4 +123,11 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		concluir_ritual()
 
 func concluir_ritual() -> void:
-	print("Ritual Concluído! A boneca vai aparecer...")
+	if inventario and inventario.has_node("PopUpInventario"):
+		inventario.get_node("PopUpInventario").hide()
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	tela_chao.hide()
+	tela_desenho.hide()
+	cena_final.show()
