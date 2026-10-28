@@ -35,7 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://oi0sq0ldw5ou" path="res://assets/terreno-baldio/urso_marron.png" id="29_vid8f"]
 [ext_resource type="Texture2D" uid="uid://dk6eekncf8yew" path="res://assets/terreno-baldio/cena_final.png" id="33_v4g4a"]
 [ext_resource type="AudioStream" uid="uid://b1dwyjqbptnaj" path="res://sounds/Música Assustadora - Tema do Terreno Baldio.mp3" id="34_6moh8"]
+[ext_resource type="Script" uid="uid://b0dbydvlng5nx" path="res://scripts/terreno/cena_final.gd" id="35_in6qc"]
 [ext_resource type="PackedScene" uid="uid://cboe8rpq2s4jh" path="res://scenes/nena.tscn" id="36_7b1lb"]
+[ext_resource type="AudioStream" uid="uid://dyl6qvxq2rwyl" path="res://sounds/terreno/quando o ritual termina.mp3" id="36_fsfby"]
+[ext_resource type="Script" uid="uid://beyob7sfb0th6" path="res://scripts/terreno/fade.gd" id="38_gytoy"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sswmf"]
 
@@ -55,6 +58,7 @@ script = ExtResource("1_vid8f")
 [node name="Desenho" type="CanvasLayer" parent="." unique_id=186350063]
 
 [node name="PadrãoDesenho" type="TextureRect" parent="Desenho" unique_id=1432659056]
+process_mode = 3
 visible = false
 offset_left = -18.0
 offset_top = -187.0
@@ -1607,10 +1611,10 @@ position = Vector2(197, 229)
 shape = SubResource("RectangleShape2D_4h5tc")
 
 [node name="cena_final" type="Sprite2D" parent="." unique_id=1809944775]
-visible = false
 position = Vector2(430, 195)
 scale = Vector2(0.2577499, 0.2577499)
 texture = ExtResource("33_v4g4a")
+script = ExtResource("35_in6qc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1956351174]
 process_mode = 3
@@ -1621,6 +1625,26 @@ parameters/looping = true
 [node name="Nena" parent="." unique_id=22767454 instance=ExtResource("36_7b1lb")]
 position = Vector2(246.00002, 242.00002)
 scale = Vector2(0.02353367, 0.02353367)
+
+[node name="Fade" type="CanvasLayer" parent="." unique_id=2129572412]
+visible = false
+script = ExtResource("38_gytoy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Fade" unique_id=95951146]
+stream = ExtResource("36_fsfby")
+autoplay = true
+parameters/looping = true
+
+[node name="ColorRect" type="ColorRect" parent="Fade" unique_id=767668291]
+anchors_preset = -1
+anchor_left = -0.0035211267
+anchor_right = 0.9507042
+anchor_bottom = 0.8982188
+offset_left = 3.0
+offset_right = 43.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="gui_input" from="Desenho/PadrãoDesenho" to="Desenho/PadrãoDesenho" method="_on_gui_input"]
 [connection signal="pressed" from="Desenho/PadrãoDesenho/BotaoFechar" to="Desenho/PadrãoDesenho" method="_on_botao_fechar_pressed"]
