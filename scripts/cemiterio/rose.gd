@@ -21,4 +21,3 @@ func _on_gui_input(event: InputEvent) -> void:
 		Global.progresso["cena_atual"] = "res://scenes/running_game.tscn" 
 	
 		Global.salvar_jogo()
-		#get_tree().change_scene_to_file("res://scenes/running_game.tscn")		

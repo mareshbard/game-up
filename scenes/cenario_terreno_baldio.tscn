@@ -1594,8 +1594,8 @@ scale = Vector2(0.004539084, 0.004539084)
 script = ExtResource("26_f23t7")
 
 [node name="AnimatedSprite2D" parent="Emilia" index="0" unique_id=1768111284]
-position = Vector2(881.23486, -10134.202)
-scale = Vector2(9.207621, 9.210002)
+position = Vector2(881.23486, -9032.658)
+scale = Vector2(7.8466554, 7.848685)
 animation = &"walk"
 
 [node name="CollisionShape2D" parent="Emilia" index="2" unique_id=72783836]

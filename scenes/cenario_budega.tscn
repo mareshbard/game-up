@@ -29,6 +29,9 @@
 [ext_resource type="AudioStream" uid="uid://d4h2ydbacbfbf" path="res://sounds/budega/se tocar na balança.mp3" id="25_p27e1"]
 [ext_resource type="AudioStream" uid="uid://eyu4yvdetpj1" path="res://sounds/BASE DE BREGA PARA COMPOR USO LIVRE Observação so for jogar no YouTube colocar meu nome com a # ou @.mp3" id="26_ce4lj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixj5p"]
+radius = 69.441635
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frm3v"]
 size = Vector2(585.0435, 864.8523)
 
@@ -58,8 +61,8 @@ shader = ExtResource("2_fdnq5")
 shader_parameter/forca_desfoque = 3.1200001482
 shader_parameter/cor_escurecimento = Color(0.06469653, 0.06469653, 0.06469653, 0.6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h5tc"]
-size = Vector2(20, 19.487188)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixj5p"]
+size = Vector2(16.680878, 37.77722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao08h"]
 size = Vector2(102, 97)
@@ -95,8 +98,9 @@ scale = Vector2(6.9128933, 6.8947673)
 animation = &"walk"
 
 [node name="CollisionShape2D" parent="Emilia2" index="2" unique_id=72783836]
-position = Vector2(-552.51855, 11180.358)
-scale = Vector2(-1.0682842, 0.51447815)
+position = Vector2(-276.25903, 11318.388)
+scale = Vector2(-32.73585, 25.976501)
+shape = SubResource("CircleShape2D_ixj5p")
 
 [node name="SpotCalendario" type="Area2D" parent="." unique_id=259090627]
 position = Vector2(143, 80)
@@ -341,9 +345,9 @@ position = Vector2(255, 301.00003)
 scale = Vector2(25.56763, -4.7432423)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1067387524]
-position = Vector2(0, -0.25640488)
-scale = Vector2(1, 0.9999999)
-shape = SubResource("RectangleShape2D_4h5tc")
+position = Vector2(0.09778023, 2.9515724)
+scale = Vector2(1.2122192, 0.66969323)
+shape = SubResource("RectangleShape2D_ixj5p")
 
 [node name="Balanca" type="Area2D" parent="." unique_id=1785651816]
 position = Vector2(295, 206)
