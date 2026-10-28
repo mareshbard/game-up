@@ -19,7 +19,8 @@ func iniciar_final() -> void:
 	$".".hide()
 	$"../Fade".show()
 	audio_final.play()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+	await get_tree().create_timer(3.5).timeout
+	
+	audio_final.stop()
+	get_tree().change_scene_to_file("res://scenes/scenes/final.tscn")
