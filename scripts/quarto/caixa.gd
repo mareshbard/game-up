@@ -52,14 +52,20 @@ func _on_urso_1_gui_input(event: InputEvent) -> void:
  
 func _on_urso_clicked_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
-		$%Urso4.show()
+		if Global.progresso["pilhas_pegas"] == false:
+			$%Urso4.show()
+		else:
+			DialogueManager.start_dialogue([{"text": "Já peguei o que tinha aqui dentro.", "character": "emilia"}])
 
 func _on_urso_4_button_down() -> void:
-		Global.progresso["pilhas_pegas"] = true
-		Global.progresso["cena_atual"] = "res://scenes/cenario_budega.tscn"
-		Global.salvar_jogo()
-		print("Pegou pilhas")
-
+	Global.progresso["pilhas_pegas"] = true
+	Global.salvar_jogo()
+	
+	DialogueManager.start_dialogue([{"text": "Pilhas! Exatamente o que eu precisava.", "character": "emilia"}])
+	
+	var inventario = get_node_or_null("../../Inventario")
+	if inventario and inventario.has_method("atualizar_visual_dos_slots"):
+		inventario.atualizar_visual_dos_slots()
 
 func _on_botao_fechar_button_down() -> void:
 		$%Emilia.MOVENDO = false
