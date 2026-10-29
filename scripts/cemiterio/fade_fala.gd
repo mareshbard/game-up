@@ -15,3 +15,9 @@ func _on_botao_fechar_pressed() -> void:
 
 		$".".hide()
 		$"../FadeEmilia".show()
+		DialogueManager.start_dialogue([
+			{"text": "Ei, você aí!", "character": "guarda"}
+		])
+		await DialogueManager.dialogue_finished
+		$".".hide()
+		get_tree().change_scene_to_file("res://scenes/running_game.tscn")	

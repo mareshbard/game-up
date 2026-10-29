@@ -21,6 +21,7 @@ var etapa_ritual: int = 0
 var ordem_correta = ["cachaca", "urso", "rosa"]
 
 func _ready() -> void:
+	#concluir_ritual()
 	for filho in container_pontos.get_children():
 		if filho is Marker2D:
 			pontos_molde.append(filho.position)

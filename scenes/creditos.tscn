@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://5wl7jmc4ud6r"]
+
+[ext_resource type="Texture2D" uid="uid://p47d4o2pmhgl" path="res://assets/carregamento/carregamento.png" id="1_6yhot"]
+[ext_resource type="Script" uid="uid://dw148fixmddwq" path="res://scripts/ui/creditos.gd" id="1_ul0vb"]
+[ext_resource type="FontFile" uid="uid://ci4afabstkp15" path="res://fonts/Gorditas-Bold.ttf" id="2_jddgq"]
+[ext_resource type="Texture2D" uid="uid://dxrk72uj2f6mp" path="res://assets/ui/new=off.png" id="4_idjxt"]
+[ext_resource type="Texture2D" uid="uid://cp23ep1o8ged6" path="res://assets/ui/new=on.png" id="5_ufadv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4h5tc"]
+font = ExtResource("2_jddgq")
+
+[node name="Creditos" type="Node2D" unique_id=1812801306]
+script = ExtResource("1_ul0vb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=902710593]
+position = Vector2(418, 198)
+texture = ExtResource("1_6yhot")
+
+[node name="Label" type="Label" parent="Sprite2D" unique_id=1100394424]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -778.0
+offset_top = -320.5
+offset_right = -312.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4627271, 1.4627271)
+text = "CRÉDITOS
+Ana Tainara
+Letícia Gomes
+Suzane Bianca
+Maria Luisa"
+label_settings = SubResource("LabelSettings_4h5tc")
+horizontal_alignment = 1
+
+[node name="NovoJogo" type="TextureButton" parent="." unique_id=336192281]
+offset_left = 314.0
+offset_top = 283.0
+offset_right = 891.0
+offset_bottom = 506.0
+scale = Vector2(0.32908574, 0.32908574)
+texture_normal = ExtResource("4_idjxt")
+texture_pressed = ExtResource("5_ufadv")
+
+[connection signal="pressed" from="NovoJogo" to="." method="_on_novo_jogo_pressed"]

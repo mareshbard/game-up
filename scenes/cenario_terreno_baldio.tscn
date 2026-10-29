@@ -1560,6 +1560,7 @@ script = ExtResource("32_m4r70")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("25_xjxfh")]
 process_mode = 0
+z_index = 1
 position = Vector2(169, 312)
 scale = Vector2(0.004539084, 0.004539084)
 script = ExtResource("26_f23t7")

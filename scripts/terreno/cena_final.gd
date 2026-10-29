@@ -8,9 +8,9 @@ func iniciar_final() -> void:
 		{"text": "esTÁ tydO indo dE ACorD0 COm o pl4no...", "character": "nena"},
 		{"text": "São os UltimOs elEMEntoS do nosso RIT...-encantamento para que eu possa sair.", "character": "nena"},
 		{"text": "Nossa amizade é o elemento principal dessa magia. Agora repita comigo:", "character": "nena"},
-		{"text": "Que meu corpo encontre forma. Que minha alma encontre abrigo.", "character": "nena"},
+		{"text": "Que meu corpo enConTre forma. Que mInha alma encontrE abrigo.", "character": "nena"},
 		{"text": "Que meu corpo encontre forma. Que minha alma encontre abrigo.", "character": "rosa"},
-		{"text": "Que aquilo que é seu... torne-se meu.", "character": "nena"},
+		{"text": "Que aquilo que é sEu... torne-se MEU.", "character": "nena"},
 		{"text": "Que aquilo que é seu... torne-se meu.", "character": "emilia"}
 	])
 	
@@ -23,4 +23,4 @@ func iniciar_final() -> void:
 	await get_tree().create_timer(3.5).timeout
 	
 	audio_final.stop()
-	get_tree().change_scene_to_file("res://scenes/scenes/final.tscn")
+	get_tree().change_scene_to_file("res://scenes/scenes/cutscene_final.tscn")
