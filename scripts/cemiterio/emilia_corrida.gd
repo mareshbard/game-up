@@ -28,7 +28,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	Global.progresso["minigame_vencido"] = true
-	Global.progresso["cena_atual"] = "res://scenes/cenario_terreno_baldio.tscn"
+	#Global.progresso["cena_atual"] = "res://scenes/cenario_terreno_baldio.tscn"
+	Global.progresso["cena_atual"] = "res://scenes/graveyard.tscn"
 	Global.salvar_jogo()
 	
-	get_tree().change_scene_to_file("res://scenes/cenario_terreno_baldio.tscn")
+	get_tree().change_scene_to_file("res://scenes/graveyard.tscn")

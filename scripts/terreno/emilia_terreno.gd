@@ -19,7 +19,8 @@ func _ready() -> void:
 	{"text": "É aqui que você queria parar? Não tem nada aqui.", "character": "rosa"}, #[cite: 7]
 	{"text": "Se você procurar direitinho, vai ver que tem uma coisa muito interessante. Mas esse é o lugar perfeito.", "character": "nena"}, #[cite: 7]
 	{"text": "Mas eu tenho que entrar aí?", "character": "rosa"}, #[cite: 7]
-	{"text": "Sim. Esse é o momento em que tudo se complementa. Precisamos de um lugar deSErto para ninguém atrapalhar o nosso ri-.. feitiço.", "character": "nena"} #[cite: 7]
+	{"text": "Sim. Esse é o momento em que tudo se complementa. Precisamos de um lugar deSErto para ninguém atrapalhar o nosso ri-.. feitiço.", "character": "nena"} ,
+	{"text": "Pegue aquele urso! Ele vai ser útil.", "character": "nena"}
 ])
 
 func walk_to(destination: Vector2) -> void:

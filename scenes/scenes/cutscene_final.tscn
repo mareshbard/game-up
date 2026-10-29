@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://drh14dodffbxi"]
+
+[ext_resource type="Script" uid="uid://0u1n3rwj8547" path="res://scripts/ui/cutscene_final.gd" id="1_skm27"]
+
+[node name="CutsceneFinal" type="Node2D" unique_id=1002065615]
+script = ExtResource("1_skm27")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1624735]

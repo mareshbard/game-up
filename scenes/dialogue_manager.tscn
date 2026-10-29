@@ -17,6 +17,12 @@ process_mode = 3
 layer = 2
 script = ExtResource("1_516v5")
 
+[node name="CutsceneBackground" type="TextureRect" parent="." unique_id=1416824201]
+visible = false
+offset_right = 857.0
+offset_bottom = 397.0
+expand_mode = 1
+
 [node name="SomDigitacao" type="AudioStreamPlayer" parent="." unique_id=1184608249]
 stream = ExtResource("6_507jh")
 parameters/looping = true

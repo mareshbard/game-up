@@ -138,16 +138,6 @@ offset_right = 43.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="BotaoFechar" type="TextureButton" parent="FadeEmilia" unique_id=1391248432]
-process_mode = 3
-offset_left = 735.00006
-offset_top = 39.000004
-offset_right = 3295.0
-offset_bottom = 2528.0
-scale = Vector2(0.019894186, 0.019894186)
-texture_normal = ExtResource("12_kvjg5")
-texture_pressed = ExtResource("13_wcthp")
-
 [node name="EmiliaCaida" type="Sprite2D" parent="FadeEmilia" unique_id=1752267105]
 position = Vector2(385.00003, 200)
 scale = Vector2(0.043279562, 0.043279566)
@@ -208,8 +198,6 @@ scale = Vector2(0.038168952, 0.038168952)
 [connection signal="input_event" from="Fundo/FlorMurcha" to="Fundo/FlorMurcha" method="_on_input_event"]
 [connection signal="input_event" from="Fundo/FlorAmarela" to="Fundo/FlorAmarela" method="_on_input_event"]
 [connection signal="pressed" from="Frente/portao" to="Frente" method="_on_portao_pressed"]
-[connection signal="button_down" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_button_down"]
-[connection signal="pressed" from="FadeEmilia/BotaoFechar" to="FadeEmilia" method="_on_botao_fechar_pressed"]
 [connection signal="pressed" from="FadeFala/BotaoFechar" to="FadeFala" method="_on_botao_fechar_pressed"]
 
 [editable path="Fundo/Emilia"]

@@ -17,5 +17,4 @@ func _on_botao_fechar_button_down() -> void:
 
 
 func _on_botao_fechar_pressed() -> void:
-		$".".hide()
-		get_tree().change_scene_to_file("res://scenes/running_game.tscn")	
+	pass
