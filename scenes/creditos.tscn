@@ -10,6 +10,7 @@
 font = ExtResource("2_jddgq")
 
 [node name="Creditos" type="Node2D" unique_id=1812801306]
+position = Vector2(9, 0)
 script = ExtResource("1_ul0vb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=902710593]
@@ -23,17 +24,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -778.0
-offset_top = -320.5
+offset_top = -344.5
 offset_right = -312.0
-offset_bottom = -186.0
+offset_bottom = -179.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.4627271, 1.4627271)
 text = "CRÉDITOS
 Ana Tainara
+Ivna Almeida
 Letícia Gomes
+Maria Luisa
 Suzane Bianca
-Maria Luisa"
+"
 label_settings = SubResource("LabelSettings_4h5tc")
 horizontal_alignment = 1
 
