@@ -25,6 +25,26 @@ func _ready() -> void:
 		if filho is Marker2D:
 			pontos_molde.append(filho.position)
 			
+	if Global.progresso["pentagrama_desenhado"]:
+		linha_jogador.clear_points()
+		
+		if Global.progresso.has("pontos_linha"):
+			for pt in Global.progresso["pontos_linha"]:
+				linha_jogador.add_point(pt)
+				
+		linha_jogador.default_color = Color.YELLOW 
+		pontos_restantes.clear()
+		
+	if Global.progresso["cachaca_colocada"]:
+		$SpriteCachaca.show()
+		etapa_ritual = 1
+	if Global.progresso["urso_colocado"]:
+		$SpriteUrso.show()
+		etapa_ritual = 2
+	if Global.progresso["rosa_colocada"]:
+		$SpriteRosa.show()
+		etapa_ritual = 3
+			
 func _on_gui_input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch):
 		if event.pressed:
@@ -35,9 +55,9 @@ func _on_gui_input(event: InputEvent) -> void:
 		atualizar_desenho(event.position)
 		
 func _input(event: InputEvent) -> void:
-	# O "ui_accept" é uma ação padrão do Godot que reconhece tanto a Barra de Espaço quanto o Enter
 	if event.is_action_pressed("ui_accept"):
 		desafio_concluido()
+
 func iniciar_desenho(posicao: Vector2) -> void:
 	desenhando = true
 	traco_invalido = false
@@ -74,33 +94,24 @@ func finalizar_desenho() -> void:
 
 func desafio_concluido() -> void:
 	print("Padrão correto")
-	linha_jogador.default_color = Color.GREEN
+	linha_jogador.default_color = Color.YELLOW
 	Global.progresso["pentagrama_desenhado"] = true
+	Global.progresso["pontos_linha"] = linha_jogador.points 
 	Global.salvar_jogo()
 
 func _on_botao_fechar_pressed() -> void:
 	get_viewport().set_input_as_handled()
-	#tela_chao.show()
 	tela_desenho.call_deferred("hide")
 	
 	if inventario and inventario.has_node("PopUpInventario"):
 		inventario.get_node("PopUpInventario").hide()
 
-
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	print("O rato tentou soltar o item: ", data)
-	
 	if Global.progresso["pentagrama_desenhado"] == false:
-		print("RECUSADO: O pentagrama ainda não foi desenhado!")
 		return false
 
 	if typeof(data) == TYPE_STRING and etapa_ritual < ordem_correta.size():
-		var aceitou = (data == ordem_correta[etapa_ritual])
-		if aceitou:
-			print("Item CORRETO! Pode soltar.")
-		else:
-			print("RECUSADO: Item errado. Agora é a vez de: ", ordem_correta[etapa_ritual])
-		return aceitou
+		return data == ordem_correta[etapa_ritual]
 	
 	return false
 
@@ -108,12 +119,15 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	if data == "cachaca":
 		$SpriteCachaca.show()
 		Global.progresso["cachaca_pega"] = false 
+		Global.progresso["cachaca_colocada"] = true 
 	elif data == "urso":
 		$SpriteUrso.show()
 		Global.progresso["peguei_urso"] = false 
+		Global.progresso["urso_colocado"] = true 
 	elif data == "rosa":
 		$SpriteRosa.show()
 		Global.progresso["rosa_pega"] = false 
+		Global.progresso["rosa_colocada"] = true 
 		
 	Global.salvar_jogo()
 	
@@ -121,7 +135,6 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 		inventario.atualizar_visual_dos_slots()
 	
 	etapa_ritual += 1
-	print("Item aceito! Etapa atual: ", etapa_ritual)
 	
 	if etapa_ritual == 3:
 		concluir_ritual()
@@ -138,4 +151,3 @@ func concluir_ritual() -> void:
 	
 	cena_final.show()
 	cena_final.iniciar_final()
-	

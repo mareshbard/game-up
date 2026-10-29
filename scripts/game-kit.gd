@@ -4,11 +4,11 @@ extends Node2D
 
 #var game_center: GameCenterManager
 ##
-#func _ready() -> void:
-	#if FileAccess.file_exists(Global.caminho_save):
-		#botao_continuar.show()
-	#else:
-		#botao_continuar.hide()
+func _ready() -> void:
+	if FileAccess.file_exists(Global.caminho_save):
+		botao_continuar.show()
+	else:
+		botao_continuar.hide()
 	#game_center = GameCenterManager.new()
 #
 	#game_center.authentication_error.connect(_ao_falhar_autenticacao)

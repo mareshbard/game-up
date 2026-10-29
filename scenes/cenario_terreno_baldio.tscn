@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://b5eikkhrj503y" path="res://scripts/terreno/emilia_terreno.gd" id="26_f23t7"]
 [ext_resource type="Texture2D" uid="uid://oytru05afouf" path="res://assets/buttons/fechar-on-big.png" id="27_vid8f"]
 [ext_resource type="Texture2D" uid="uid://oi0sq0ldw5ou" path="res://assets/terreno-baldio/urso_marron.png" id="29_vid8f"]
+[ext_resource type="Script" uid="uid://brrt8mvft36qn" path="res://scripts/urso_terreno.gd" id="32_m4r70"]
 [ext_resource type="Texture2D" uid="uid://dk6eekncf8yew" path="res://assets/terreno-baldio/cena_final.png" id="33_v4g4a"]
 [ext_resource type="AudioStream" uid="uid://b1dwyjqbptnaj" path="res://sounds/Música Assustadora - Tema do Terreno Baldio.mp3" id="34_6moh8"]
 [ext_resource type="Script" uid="uid://b0dbydvlng5nx" path="res://scripts/terreno/cena_final.gd" id="35_in6qc"]
@@ -84,68 +85,35 @@ end_cap_mode = 2
 [node name="Marco-1" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=777442318]
 position = Vector2(301, 353)
 
-[node name="Marco-2" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1889057231]
-position = Vector2(319, 312)
-
 [node name="Marco-3" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=315467041]
-position = Vector2(373, 263)
+position = Vector2(346, 280)
 
 [node name="Marco-4" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=976832470]
 position = Vector2(434, 249)
 
-[node name="Marco-5" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1213482202]
-position = Vector2(490, 259)
-
 [node name="Marco-6" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1771870749]
-position = Vector2(546, 301)
+position = Vector2(524, 274)
 
 [node name="Marco-7" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1716254279]
 position = Vector2(572, 354)
 
-[node name="Marco-8" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1183672424]
-position = Vector2(577, 413)
-
 [node name="Marco-9" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=346890112]
-position = Vector2(552, 469)
+position = Vector2(567, 440)
 
 [node name="Marco-10" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1984598476]
 position = Vector2(512, 510)
 
-[node name="Marco-11" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=869069839]
-position = Vector2(456, 529)
-
 [node name="Marco-12" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=56226447]
-position = Vector2(405, 526)
-
-[node name="Marco-13" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1040129725]
-position = Vector2(334, 487)
+position = Vector2(431, 531)
 
 [node name="Marco-16" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1086685562]
 position = Vector2(368, 453)
 
-[node name="Marco-14" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=2056468401]
-position = Vector2(306, 441)
-
 [node name="Marco-15" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=2124936597]
-position = Vector2(296, 400)
+position = Vector2(301, 426)
 
 [node name="Marco-17" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=581111858]
 position = Vector2(384, 403)
-
-[node name="Marco-33" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=878088341]
-position = Vector2(430, 348)
-
-[node name="Marco-34" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=970402953]
-position = Vector2(394, 373)
-
-[node name="Marco-35" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=867432764]
-position = Vector2(407, 421)
-
-[node name="Marco-36" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=611439259]
-position = Vector2(407, 421)
-
-[node name="Marco-37" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=764423188]
-position = Vector2(458, 425)
 
 [node name="Marco-20" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=31489007]
 position = Vector2(434, 444)
@@ -182,9 +150,6 @@ position = Vector2(468, 471)
 
 [node name="Marco-31" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1300093433]
 position = Vector2(400, 471)
-
-[node name="Marco-32" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1427006812]
-position = Vector2(470, 376)
 
 [node name="Marco-19" type="Marker2D" parent="Desenho/PadrãoDesenho/PontosMoldePenta" unique_id=1761159625]
 position = Vector2(356, 503)
@@ -1591,6 +1556,7 @@ offset_right = 2841.0
 offset_bottom = 2795.0
 scale = Vector2(0.023569273, 0.023569273)
 texture_normal = ExtResource("29_vid8f")
+script = ExtResource("32_m4r70")
 
 [node name="Emilia" parent="." unique_id=1594740485 instance=ExtResource("25_xjxfh")]
 process_mode = 0

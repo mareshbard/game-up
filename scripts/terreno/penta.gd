@@ -1,13 +1,24 @@
 extends Control
 
-@onready var tela_desenho_pai: CanvasLayer = $"../../Desenho" # Puxa a camada inteira
+@onready var tela_desenho_pai: CanvasLayer = $"../../Desenho"
 @onready var popup_desenho: Control = $"../../Desenho/PadrãoDesenho"
 @onready var popup_penta: CanvasLayer = $".."
 @onready var inventario = $"../../Inventario"
 
+func _ready() -> void:
+	if Global.progresso["pentagrama_limpo"]:
+		for filho in popup_penta.get_children():
+			if filho != self and filho.name != "cenario_chao":
+				if filho is Control:
+					filho.hide()
+
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if pentagrama_esta_limpo():
+			if not Global.progresso["pentagrama_limpo"]:
+				Global.progresso["pentagrama_limpo"] = true
+				Global.salvar_jogo()
+				
 			abrir_popup_desenho()
 		else:
 			print("Ainda há folhas ou pedras por cima do pentagrama!")

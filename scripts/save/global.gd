@@ -12,7 +12,15 @@ var progresso = {
 	"minigame_vencido": false,
 	"peguei_urso": false,
 	"pentagrama_desenhado": false,
+	
+	"cachaca_colocada": false,
+	"urso_colocado": false,
+	"rosa_colocada": false,
+	"pentagrama_limpo": false,
+	
 	"cena_atual": "res://scenes/Quarto.tscn" 
+	
+	
 }
 
 func _ready() -> void:
@@ -46,6 +54,14 @@ func novo_jogo() -> void:
 		"minigame_vencido": false,
 		"peguei_urso": false,
 		"pentagrama_desenhado": false,
+		
+		"cachaca_colocada": false,
+		"urso_colocado": false,
+		"rosa_colocada": false,
+		"pentagrama_limpo": false,
+		
+		"pontos_linha": [],
+	
 		"cena_atual": "res://scenes/Quarto.tscn"
 	}
 	salvar_jogo()

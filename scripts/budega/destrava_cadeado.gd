@@ -27,6 +27,28 @@ var senha_correta = [1, 4, 2, 5]
 
 func _ready() -> void:
 	atualizar_visor()
+	
+	if Global.progresso["cachaca_pega"]:
+		collected_cachaca = true
+		botao_cachaca.hide()
+		
+	if Global.progresso["giz_pego"]:
+		collected_giz = true
+		botao_giz.hide()
+
+	if Global.progresso["minigame_vencido"]:
+		imagem_cadeado.texture = foto_cadeado_aberto
+		imagem_armario.texture = foto_armario_aberto 
+		imagem_armario.position.x += 50
+		botao1.hide()
+		botao2.hide()
+		botao3.hide()
+		botao4.hide()
+		
+		if not collected_cachaca:
+			botao_cachaca.show()
+		if not collected_giz:
+			botao_giz.show()
 
 func atualizar_visor() -> void:
 	botao1.text = str(num1)
@@ -37,6 +59,9 @@ func atualizar_visor() -> void:
 
 func verificar_senha() -> void:
 	if num1 == senha_correta[0] and num2 == senha_correta[1] and num3 == senha_correta[2] and num4 == senha_correta[3]:
+		Global.progresso["minigame_vencido"] = true
+		Global.salvar_jogo()
+		
 		imagem_cadeado.texture = foto_cadeado_aberto
 		imagem_armario.texture = foto_armario_aberto 
 		imagem_armario.position.x += 50
@@ -71,11 +96,12 @@ func _on_cor_de_fundo_gui_input(event: InputEvent) -> void:
 		esperar_abrir()
 
 func esperar_abrir() -> void:
-	await abriu
-	DialogueManager.start_dialogue([{
-		"text": "Acho que essa cachaça serve.", "character": "emilia"},
-		{"text": "Eba, é isso aí! Vamos para o nosso próximo item.", "character": "nena"}])
-	await DialogueManager.dialogue_finished
+	if not Global.progresso["minigame_vencido"]:
+		await abriu
+		DialogueManager.start_dialogue([{
+			"text": "Acho que essa cachaça serve.", "character": "emilia"},
+			{"text": "Eba, é isso aí! Vamos para o nosso próximo item.", "character": "nena"}])
+		await DialogueManager.dialogue_finished
 
 func _on_texture_cachaca_pressed() -> void:
 	collected_cachaca = true
@@ -104,8 +130,10 @@ func scene_pass() -> void:
 			{"text": "Não precisa ter medo! Eu sempre vou estar te protegendo.", "character": "nena"}
 		])
 		await DialogueManager.dialogue_finished
+		
 		Global.progresso["cena_atual"] = "res://scenes/graveyard.tscn"
 		Global.salvar_jogo()
+		
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/graveyard.tscn")
 
