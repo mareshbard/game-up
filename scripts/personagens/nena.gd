@@ -47,7 +47,7 @@ func _on_static_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx
 			{"text": "Mas você é só uma boneca.. Eu preciso de amigas reais", "character": "rosa"},
 			{"text": "Bom… Eu já fui real, mas acabei ficando presa aqui. Se você me ajudar, eu posso me tornar real e podemos ser melhores amigas.", "character": "nena"},
 			{"text": "Sério?", "character": "rosa"},
-			{"text": "Sim!", "character": "boneca"},
+			{"text": "Sim!", "character": "nena"},
 			{"text": "E o que eu tenho que fazer?", "character": "rosa"},
 			{"text": "Nós vamos precisar de três coisinhas bem simples. Esses itens vão representar nossa amizade e fortalecer a nossa conexão.", "character": "nena"},
 			{"text": "Você só precisa juntar todos eles e aí vamos poder brincar juntas para todo o sempre.", "character": "nena"},
