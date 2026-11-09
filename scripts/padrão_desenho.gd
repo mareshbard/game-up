@@ -99,6 +99,7 @@ func desafio_concluido() -> void:
 	Global.progresso["pentagrama_desenhado"] = true
 	Global.progresso["pontos_linha"] = linha_jogador.points 
 	Global.salvar_jogo()
+	$"../../Emilia".hide()
 
 func _on_botao_fechar_pressed() -> void:
 	get_viewport().set_input_as_handled()
